@@ -32,9 +32,14 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "side"
+		$LightOccluder2D.rotation_degrees = 0
 		$AnimatedSprite.flip_h = velocity.x < 0
+		if $AnimatedSprite.flip_h:
+			$LightOccluder2D.rotation_degrees = 180
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "down"
+		$LightOccluder2D.rotation_degrees = 90
 	elif velocity.y < 0:
 		$AnimatedSprite.animation = "up"
+		$LightOccluder2D.rotation_degrees = 270
 	

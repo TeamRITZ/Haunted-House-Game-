@@ -28,7 +28,8 @@ animations = [ {
 extents = Vector2( 37.224, 73.1235 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 54.4222, 2.32644, -20.473, 25.0724, 54.4222, 47.2636, -40.7225, 48.3731, -39.8903, 2.88122 )
+cull_mode = 1
+polygon = PoolVector2Array( -8.26788, 0.627165, 34.8853, 15.7447, -19.3393, 0.0481396, 33.6962, -12.5567 )
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 4 )
@@ -53,5 +54,5 @@ shadow_filter = 3
 shadow_filter_smooth = 3.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( -3.60606, 0.554779 )
+position = Vector2( 0, 25.2774 )
 occluder = SubResource( 3 )
