@@ -21,7 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="New Game Project"
+run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
 
 [gdnative]
 
@@ -29,4 +36,5 @@ singletons=[ "res://git_api.gdnlib" ]
 
 [rendering]
 
+quality/filters/anisotropic_filter_level=1
 environment/default_environment="res://default_env.tres"
