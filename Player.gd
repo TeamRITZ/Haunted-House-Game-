@@ -60,19 +60,12 @@ func _process(delta):
 		
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "side"
-<<<<<<< Updated upstream
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y > 0:
-		$AnimatedSprite.animation = "down"
-	elif velocity.y < 0:
-		$AnimatedSprite.animation = "up"
-=======
 		$LightOccluder2D.rotation_degrees = 0
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
 		$AnimatedSprite.flip_h = velocity.x < 0
 		if $AnimatedSprite.flip_h:
 			$LightOccluder2D.rotation_degrees = 180
-			$FlashlightBeam/CollisionShape2D.rotation_degrees = 180
+			$FlashlightBeam/CollisionShape2D.rotation_degrees=180
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "down"
 		$LightOccluder2D.rotation_degrees = 90
@@ -81,14 +74,14 @@ func _process(delta):
 		$AnimatedSprite.animation = "up"
 		$LightOccluder2D.rotation_degrees = 270
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
->>>>>>> Stashed changes
+
 	
 
 
 func _on_Player_area_entered(area):
 	if area.get_name() != "FlashlightBeam":
 		health -= 25
-		$CollisionShape2D.disabled = true
+		$CollisionShape2D.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
 
