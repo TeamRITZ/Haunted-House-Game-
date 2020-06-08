@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.8, 0, 1 )
+border_color = Color( 0, 0, 0, 0 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color( 0, 0, 0, 0.588235 )
+shadow_size = 1
+shadow_offset = Vector2( 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.8, 0, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_size = 1
+shadow_offset = Vector2( 1, 1 )
+anti_aliasing = false
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="FlashlightBar" type="ProgressBar" parent="."]
+margin_top = 7.0
+margin_right = 100.0
+margin_bottom = 12.0
+custom_styles/fg = SubResource( 1 )
+step = 0.1
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+rect_min_size = Vector2( 100, 5 )
+custom_styles/fg = SubResource( 2 )
+step = 0.5
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
