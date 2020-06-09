@@ -46,8 +46,3 @@ func _on_Demo_enemy_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
 	
-	
-	
-
-
-
