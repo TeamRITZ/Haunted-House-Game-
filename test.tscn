@@ -5,12 +5,6 @@
 [ext_resource path="res://test.gd" type="Script" id=3]
 [ext_resource path="res://demo_enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://flashlight_meter.gd" type="Script" id=5]
-[ext_resource path="res://WhiteGhost.tscn" type="PackedScene" id=6]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 531.239, 113.02, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
-}
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 40, 0, 40, 220, 0, 220 )
@@ -56,7 +50,6 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 237.735, 192.277 )
 scale = Vector2( 0.5, 0.5 )
 
-<<<<<<< HEAD
 [node name="Wall" type="ColorRect" parent="."]
 anchor_left = 100.0
 anchor_top = 10.0
@@ -100,16 +93,4 @@ shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Wall2"]
 occluder = SubResource( 2 )
-=======
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 89.1335, 104.155 )
-rotation = 0.0200484
-rotate = false
-
-[node name="WhiteGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
-position = Vector2( 1.74207, -2.24494 )
->>>>>>> 851235263582be193ef984c726ce30c4df11c368
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
