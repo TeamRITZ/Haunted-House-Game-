@@ -4,7 +4,7 @@ export var battery = 100;
 export var health = 100;
 var flashlight_enabled = true
 export var speed = 400
-
+signal health_changed
 var screen_size
 # Declare member variables here. Examples:
 # var a = 2
@@ -84,6 +84,7 @@ func _on_Player_area_entered(area):
 		$CollisionShape2D.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
+		emit_signal("health_changed", health)
 
 
 func _on_HurtTimer_timeout():
