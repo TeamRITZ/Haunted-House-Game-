@@ -2,7 +2,7 @@ extends Area2D
 
 export var speed = 150
 var move_direction = 0
-export var hp = 50
+export var hp = 500
 var harm = false
 var prevAnimation
 
@@ -41,7 +41,11 @@ func AnimationLoop():
 func _on_WhiteGhost_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
+		speed = speed * 2
+		
 
 func _on_WhiteGhost_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = true
+		speed = speed / 2
+		$GhostHurtSound.play()
