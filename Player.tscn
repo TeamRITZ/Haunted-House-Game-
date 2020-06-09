@@ -54,7 +54,6 @@ enabled = false
 texture = ExtResource( 5 )
 texture_scale = 0.75
 color = Color( 1, 1, 0.819608, 1 )
-energy = 1.5
 shadow_enabled = true
 shadow_gradient_length = 3.0
 shadow_filter = 3
