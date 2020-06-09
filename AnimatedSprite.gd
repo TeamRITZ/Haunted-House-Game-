@@ -1,8 +1,6 @@
 extends AnimatedSprite
-var tempElapsed = 0
 func _ready():
-	pass # Replace with function body.
+	play()
 
 func _process(delta):
-	tempElapsed = tempElapsed + delta
-	
+	play()
