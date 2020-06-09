@@ -20,8 +20,7 @@ func _process(_delta):
 func _on_Area2D_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = true
-
-
+		
 #func _on_Timer_timeout():
 	#queue_free()
 
