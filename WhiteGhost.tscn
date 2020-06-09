@@ -13,8 +13,7 @@
 [ext_resource path="res://ASSETS/stendhal_ghost-a61bdba/7.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/stendhal_ghost-a61bdba/8.png" type="Texture" id=12]
 [ext_resource path="res://WhiteGhost.gd" type="Script" id=13]
-
-[sub_resource type="PhysicsMaterial" id=3]
+[ext_resource path="res://AnimatedSprite.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,20 +42,17 @@ animations = [ {
 radius = 13.5129
 height = 19.4284
 
-[node name="WhiteGhost" type="RigidBody2D"]
+[node name="WhiteGhost" type="KinematicBody2D"]
 position = Vector2( 10.8711, 10.8711 )
-physics_material_override = SubResource( 3 )
-gravity_scale = 0.0
 script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.02987, 1 )
 frames = SubResource( 1 )
-animation = "right"
-frame = 2
+animation = "down"
+frame = 1
+playing = true
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
