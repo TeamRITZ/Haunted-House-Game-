@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 export var speed = 150
 var move_direction = 0
@@ -38,16 +38,10 @@ func AnimationLoop():
 	elif move_direction >= 135 or move_direction <= -135:
 		$AnimatedSprite.animation = "left"
 
-func _on_Area2D_area_entered(area):
-	if area.get_name() == "FlashlightBeam":
-		harm = true
-
-func _on_Demo_enemy_area_exited(area):
+func _on_WhiteGhost_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
-	
-	
-	
 
-
-
+func _on_WhiteGhost_area_entered(area):
+	if area.get_name() == "FlashlightBeam":
+		harm = true
