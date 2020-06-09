@@ -110,6 +110,10 @@ rotation = 0.0200484
 rotate = false
 
 [node name="WhiteGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+<<<<<<< HEAD
 position = Vector2( 1.74207, -2.24494 )
 >>>>>>> 851235263582be193ef984c726ce30c4df11c368
+=======
+position = Vector2( 0.612042, -3.33053 )
+>>>>>>> 31897dba8a93ebec4385e6c9d72966e4d06a8a8b
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
