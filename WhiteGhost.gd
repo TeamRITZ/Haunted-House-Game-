@@ -20,6 +20,8 @@ func MovementLoop(delta):
 
 func _process(delta):
 	AnimationLoop()
+	
+	#Checks if ghost is in flashlight beam
 	if harm:
 		hp -= 1
 	if hp <=0:
@@ -39,12 +41,10 @@ func AnimationLoop():
 func _on_Area2D_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = true
-		print("enter")
-		
+
 func _on_Demo_enemy_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
-		print("leave")
 	
 	
 	
