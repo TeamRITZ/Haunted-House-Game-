@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://flashlight_meter.tscn" type="PackedScene" id=2]
@@ -11,11 +11,8 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 531.239, 113.02, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
+"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 531.239, 113.02, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
 }
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 26.8443, 20.6651 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -58,6 +55,7 @@ position = Vector2( 237.735, 192.277 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 28.5001, 116.85 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -76,10 +74,4 @@ scale = Vector2( 2, 2 )
 show_behind_parent = true
 position = Vector2( -223.994, -118.436 )
 scale = Vector2( 2.91809, 2.13665 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Bedroom"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom/StaticBody2D"]
-position = Vector2( 289.175, 222.178 )
-shape = SubResource( 2 )
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
