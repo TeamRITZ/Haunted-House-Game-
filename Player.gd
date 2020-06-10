@@ -1,13 +1,10 @@
 extends Area2D
 
-signal health_changed
 export var battery = 100;
-export var battery_drain = .5
-export var battery_recharge = .25
 export var health = 100;
-export var speed = 400
-
 var flashlight_enabled = true
+export var speed = 400
+signal health_changed
 var screen_size
 # Declare member variables here. Examples:
 # var a = 2
@@ -49,10 +46,9 @@ func _process(delta):
 
 	
 	if $Light2D.enabled:
-		battery -= battery_drain
+		battery -= .5
 	else:
-		battery += battery_recharge
-		
+		battery += .25
 	battery = clamp(battery, 0, 100)
 	
 	if battery == 0:
