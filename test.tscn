@@ -29,6 +29,9 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 431.538, 389.33 )
 scale = Vector2( 0.5, 0.5 )
+battery = 150
+battery_drain = 0.5
+battery_recharge = 0.25
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 offset = Vector2( 5, 5 )
@@ -63,6 +66,9 @@ rotate = false
 
 [node name="WhiteGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
 position = Vector2( 0.612042, -3.33053 )
+<<<<<<< HEAD
+speed = 100
+=======
 
 [node name="HealthPotion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 687.749, 280.117 )
@@ -72,4 +78,5 @@ scale = Vector2( 2, 2 )
 show_behind_parent = true
 position = Vector2( -223.994, -118.436 )
 scale = Vector2( 2.91809, 2.13665 )
+>>>>>>> e6f965e087ad6a67312282ea533b2cd746aa4589
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
