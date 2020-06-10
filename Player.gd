@@ -4,7 +4,7 @@ export var battery = 100;
 export var health = 100;
 var flashlight_enabled = true
 export var speed = 400
-
+signal health_changed
 var screen_size
 # Declare member variables here. Examples:
 # var a = 2
@@ -60,19 +60,12 @@ func _process(delta):
 		
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "side"
-<<<<<<< Updated upstream
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y > 0:
-		$AnimatedSprite.animation = "down"
-	elif velocity.y < 0:
-		$AnimatedSprite.animation = "up"
-=======
 		$LightOccluder2D.rotation_degrees = 0
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
 		$AnimatedSprite.flip_h = velocity.x < 0
 		if $AnimatedSprite.flip_h:
 			$LightOccluder2D.rotation_degrees = 180
-			$FlashlightBeam/CollisionShape2D.rotation_degrees = 180
+			$FlashlightBeam/CollisionShape2D.rotation_degrees=180
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "down"
 		$LightOccluder2D.rotation_degrees = 90
@@ -81,18 +74,19 @@ func _process(delta):
 		$AnimatedSprite.animation = "up"
 		$LightOccluder2D.rotation_degrees = 270
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
->>>>>>> Stashed changes
-	
-
 
 func _on_Player_area_entered(area):
-	if area.get_name() != "FlashlightBeam":
+	if area.get_name() == "HealthPotion":
+		health = 100
+		$PotionSound.play()
+		emit_signal("health_changed", health)
+	if area.get_name() != "FlashlightBeam" and area.get_name() != "HealthPotion":
 		health -= 25
-		$CollisionShape2D.disabled = true
+		$CollisionShape2D.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
-
-
+		emit_signal("health_changed", health)
+	
 func _on_HurtTimer_timeout():
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.set_modulate(Color(1,1,1))
