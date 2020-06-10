@@ -17,7 +17,6 @@
 [ext_resource path="res://ASSETS/Audio/whiteGhostPain.wav" type="AudioStream" id=15]
 [ext_resource path="res://SCENES/HealthBar.tscn" type="PackedScene" id=16]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ) ],

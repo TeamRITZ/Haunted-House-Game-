@@ -1,4 +1,5 @@
 extends Control
+#Health bar for ghosts
 
 onready var health_bar = $HealthBar
 onready var update_tween = $UpdateTween
