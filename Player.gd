@@ -75,18 +75,18 @@ func _process(delta):
 		$LightOccluder2D.rotation_degrees = 270
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
 
+	
+
+
 func _on_Player_area_entered(area):
-	if area.get_name() == "HealthPotion":
-		health = 100
-		$PotionSound.play()
-		emit_signal("health_changed", health)
-	if area.get_name() != "FlashlightBeam" and area.get_name() != "HealthPotion":
+	if area.get_name() != "FlashlightBeam":
 		health -= 25
 		$CollisionShape2D.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
 		emit_signal("health_changed", health)
-	
+
+
 func _on_HurtTimer_timeout():
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.set_modulate(Color(1,1,1))
