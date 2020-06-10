@@ -35,7 +35,7 @@ polygon = PoolVector2Array( -8.26788, 0.627165, 34.8853, 15.7447, -19.3393, 0.04
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 300, 140, 300, -110 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="Area2D"]
 script = ExtResource( 4 )
 speed = 200
 
@@ -74,16 +74,7 @@ shape = SubResource( 4 )
 wait_time = 0.5
 one_shot = true
 
-<<<<<<< HEAD
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
-=======
-[node name="Hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -3.88345, 8.59908 )
-shape = SubResource( 2 )
->>>>>>> PlayerCollision
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
-[connection signal="area_entered" from="Hitbox" to="." method="_on_Area2D_area_entered"]
