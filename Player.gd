@@ -57,6 +57,19 @@ func _physics_process(delta):
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#Change flashlight direction based on arrow keys
+	if Input.is_action_pressed("light_right"):
+		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees + 1 
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
+	if Input.is_action_pressed("light_left"):
+		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees - 1
+		$FlashlightBeam/CollisionShape2D.rotation_degrees=180
+	if Input.is_action_pressed("light_back"):
+		$LightOccluder2D.rotation_degrees = 90
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 90
+	if Input.is_action_pressed("light_forward"):
+		$LightOccluder2D.rotation_degrees = 270
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
 	if Input.is_action_pressed(("ui_accept")):
 		if flashlight_enabled:
 			$Light2D.enabled = true
@@ -91,4 +104,8 @@ func _on_Area2D_area_entered(area):
 		$CollisionShape2D.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
+		emit_signal("health_changed", health)
+	elif area.get_name() == "HealthPotion":
+		health = 100
+		$PotionSound.play()
 		emit_signal("health_changed", health)
