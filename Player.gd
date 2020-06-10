@@ -13,9 +13,7 @@ var prevPlayerDir = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
+func _physics_process(delta):
 	var velocity = Vector2()
 	#Change player movement direction based on w,a,s,d, keys
 	if Input.is_action_pressed("ui_right"):
@@ -26,7 +24,24 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-		
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed*delta
+		$AnimatedSprite.play()
+	else:
+		$AnimatedSprite.stop()
+	move_and_collide(velocity)
+	if velocity.x >0:
+		$AnimatedSprite.animation = "walk_right"
+	elif velocity.x < 0:
+		$AnimatedSprite.animation = "walk_left"
+	elif velocity.y > 0:
+		$AnimatedSprite.animation = "walk_down"
+	elif velocity.y < 0:
+		$AnimatedSprite.animation = "walk_up"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	#Change flashlight direction based on arrow keys
 	if Input.is_action_pressed("light_right"):
 		if $LightOccluder2D.rotation_degrees < playerDirection + 90:
@@ -47,15 +62,9 @@ func _process(delta):
 	else:
 		$Light2D.enabled = false
 		$FlashlightBeam/CollisionShape2D.disabled = true
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
 
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+
+	
 
 	
 	if $Light2D.enabled:
@@ -70,6 +79,7 @@ func _process(delta):
 		$FlashlightBeam/CollisionShape2D.disabled = true
 	if battery > 30:
 		flashlight_enabled = true
+
 	if velocity.x >0:
 		$AnimatedSprite.animation = "walk_right"
 		playerDirection = 0
@@ -94,7 +104,7 @@ func _process(delta):
 		if prevPlayerDir != 270:
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
-
+      
 func _on_Player_area_entered(area):
 	print(area.get_name())
 	if area.get_name() == "HealthPotion":
