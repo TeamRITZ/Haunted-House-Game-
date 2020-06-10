@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export var battery = 100;
 export var health = 100;
@@ -69,16 +69,18 @@ func _process(delta):
 		$FlashlightBeam/CollisionShape2D.disabled = true
 	if battery > 30:
 		flashlight_enabled = true
-	if velocity.x != 0:
-		$AnimatedSprite.animation = "side"
-		$AnimatedSprite.flip_h = velocity.x < 0
+	if velocity.x >0:
+		$AnimatedSprite.animation = "walk_right"
+	elif velocity.x < 0:
+		$AnimatedSprite.animation = "walk_left"
 	elif velocity.y > 0:
-		$AnimatedSprite.animation = "down"
+		$AnimatedSprite.animation = "walk_down"
 	elif velocity.y < 0:
-		$AnimatedSprite.animation = "up"
+		$AnimatedSprite.animation = "walk_up"
 		
 
 func _on_Player_area_entered(area):
+	print(area.get_name())
 	if area.get_name() == "HealthPotion":
 		health = 100
 		$PotionSound.play()

@@ -24,9 +24,9 @@ animations = [ {
 "name": "walk_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "walk_up",
+"name": "walk_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 3 ) ],
@@ -34,14 +34,14 @@ animations = [ {
 "name": "walk_left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walk_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "light left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk_up",
 "speed": 5.0
 } ]
 
@@ -55,7 +55,7 @@ polygon = PoolVector2Array( -8.26788, 0.627165, 34.8853, 15.7447, -19.3393, 0.04
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 300, 140, 300, -110 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 4 )
 speed = 200
 
@@ -63,8 +63,7 @@ speed = 200
 position = Vector2( 0.554779, 6.65736 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-animation = "light left"
-frame = 2
+animation = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.88345, 8.59908 )
@@ -97,5 +96,10 @@ one_shot = true
 
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
-[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -3.88345, 8.59908 )
+shape = SubResource( 2 )
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
