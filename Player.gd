@@ -5,8 +5,10 @@ export var health = 100;
 var flashlight_enabled = true
 export var speed = 400
 signal health_changed
+signal directionChanged
 var screen_size
-var playerDirection
+var playerDirection = 0
+var prevPlayerDir = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,17 +29,16 @@ func _process(delta):
 		
 	#Change flashlight direction based on arrow keys
 	if Input.is_action_pressed("light_right"):
-		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees + 1 
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
+		if $LightOccluder2D.rotation_degrees < playerDirection + 90:
+			$LightOccluder2D.rotation_degrees += 1
+			$FlashlightBeam/CollisionShape2D.rotation_degrees += 1
 	if Input.is_action_pressed("light_left"):
-		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees - 1
-		$FlashlightBeam/CollisionShape2D.rotation_degrees=180
-	if Input.is_action_pressed("light_back"):
-		$LightOccluder2D.rotation_degrees = 90
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 90
-	if Input.is_action_pressed("light_forward"):
-		$LightOccluder2D.rotation_degrees = 270
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
+		if $LightOccluder2D.rotation_degrees > playerDirection - 90:
+			$LightOccluder2D.rotation_degrees -= 1
+			$FlashlightBeam/CollisionShape2D.rotation_degrees -= 1
+	if Input.is_action_pressed("light_forward"): #sets light to face same direction as player
+		$LightOccluder2D.rotation_degrees = playerDirection
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
 
 	if Input.is_action_pressed(("ui_accept")):
 		if flashlight_enabled:
@@ -71,13 +72,28 @@ func _process(delta):
 		flashlight_enabled = true
 	if velocity.x >0:
 		$AnimatedSprite.animation = "walk_right"
+		playerDirection = 0
+		if prevPlayerDir != 0:
+			emit_signal("directionChanged")
+			prevPlayerDir = playerDirection
 	elif velocity.x < 0:
 		$AnimatedSprite.animation = "walk_left"
+		playerDirection = 180
+		if prevPlayerDir != 180:
+			emit_signal("directionChanged")
+			prevPlayerDir = playerDirection
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "walk_down"
+		playerDirection = 90
+		if prevPlayerDir != 90:
+			emit_signal("directionChanged")
+			prevPlayerDir = playerDirection
 	elif velocity.y < 0:
 		$AnimatedSprite.animation = "walk_up"
-		
+		playerDirection = 270
+		if prevPlayerDir != 270:
+			emit_signal("directionChanged")
+			prevPlayerDir = playerDirection
 
 func _on_Player_area_entered(area):
 	print(area.get_name())
@@ -95,3 +111,8 @@ func _on_Player_area_entered(area):
 func _on_HurtTimer_timeout():
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.set_modulate(Color(1,1,1))
+
+
+func _on_Player_directionChanged():
+	$LightOccluder2D.rotation_degrees = playerDirection
+	$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
