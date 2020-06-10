@@ -5,7 +5,7 @@
 [ext_resource path="res://test.gd" type="Script" id=3]
 [ext_resource path="res://demo_enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://flashlight_meter.gd" type="Script" id=5]
-[ext_resource path="res://WhiteGhost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/WhiteGhost.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
