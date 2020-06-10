@@ -27,11 +27,11 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed*delta
+		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
-	move_and_collide(velocity)
+	move_and_slide(velocity)
 	if velocity.x >0:
 		$AnimatedSprite.animation = "walk_right"
 		playerDirection = 0
@@ -91,8 +91,20 @@ func _process(delta):
 		$FlashlightBeam/CollisionShape2D.disabled = true
 	if battery > 30:
 		flashlight_enabled = true
-	  
-func _on_Player_area_entered(area):
+
+
+
+func _on_HurtTimer_timeout():
+	$Hitbox/CollisionShape2D2.disabled = false
+	$AnimatedSprite.set_modulate(Color(1,1,1))
+
+
+func _on_Player_directionChanged():
+	$LightOccluder2D.rotation_degrees = playerDirection
+	$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
+
+
+func _on_Hitbox_area_entered(area):
 	print(area.get_name())
 	if area.get_name() == "HealthPotion":
 		health = 100
@@ -100,16 +112,7 @@ func _on_Player_area_entered(area):
 		emit_signal("health_changed", health)
 	if area.get_name() != "FlashlightBeam" and area.get_name() != "HealthPotion":
 		health -= 25
-		$CollisionShape2D.set_deferred("disabled", true)
+		$Hitbox/CollisionShape2D2.set_deferred("disabled", true)
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
 		emit_signal("health_changed", health)
-	
-func _on_HurtTimer_timeout():
-	$CollisionShape2D.disabled = false
-	$AnimatedSprite.set_modulate(Color(1,1,1))
-
-
-func _on_Player_directionChanged():
-	$LightOccluder2D.rotation_degrees = playerDirection
-	$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
