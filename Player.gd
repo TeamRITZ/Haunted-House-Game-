@@ -6,10 +6,7 @@ var flashlight_enabled = true
 export var speed = 400
 signal health_changed
 var screen_size
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var playerDirection
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +15,7 @@ func _ready():
 func _process(delta):
 	
 	var velocity = Vector2()
+	#Change player movement direction based on w,a,s,d, keys
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
@@ -26,6 +24,20 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
+		
+	#Change flashlight direction based on arrow keys
+	if Input.is_action_pressed("light_right"):
+		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees + 1 
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
+	if Input.is_action_pressed("light_left"):
+		$LightOccluder2D.rotation_degrees = $LightOccluder2D.rotation_degrees - 1
+		$FlashlightBeam/CollisionShape2D.rotation_degrees=180
+	if Input.is_action_pressed("light_back"):
+		$LightOccluder2D.rotation_degrees = 90
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 90
+	if Input.is_action_pressed("light_forward"):
+		$LightOccluder2D.rotation_degrees = 270
+		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
 
 	if Input.is_action_pressed(("ui_accept")):
 		if flashlight_enabled:
@@ -57,23 +69,14 @@ func _process(delta):
 		$FlashlightBeam/CollisionShape2D.disabled = true
 	if battery > 30:
 		flashlight_enabled = true
-		
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "side"
-		$LightOccluder2D.rotation_degrees = 0
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 0
 		$AnimatedSprite.flip_h = velocity.x < 0
-		if $AnimatedSprite.flip_h:
-			$LightOccluder2D.rotation_degrees = 180
-			$FlashlightBeam/CollisionShape2D.rotation_degrees=180
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "down"
-		$LightOccluder2D.rotation_degrees = 90
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 90
 	elif velocity.y < 0:
 		$AnimatedSprite.animation = "up"
-		$LightOccluder2D.rotation_degrees = 270
-		$FlashlightBeam/CollisionShape2D.rotation_degrees = 270
+		
 
 func _on_Player_area_entered(area):
 	if area.get_name() == "HealthPotion":
