@@ -24,6 +24,11 @@ animations = [ {
 "name": "walk_right",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "light left",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk_down",
@@ -34,11 +39,6 @@ animations = [ {
 "name": "walk_left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "light left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk_up",
@@ -46,7 +46,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 37.224, 73.1235 )
+extents = Vector2( 74.5248, 122 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 cull_mode = 1
@@ -60,13 +60,12 @@ script = ExtResource( 4 )
 speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.554779, 6.65736 )
-scale = Vector2( 5, 5 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.88345, 8.59908 )
+position = Vector2( 20, 0 )
 shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -98,8 +97,4 @@ one_shot = true
 stream = ExtResource( 6 )
 
 [node name="Hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -3.88345, 8.59908 )
-shape = SubResource( 2 )
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
