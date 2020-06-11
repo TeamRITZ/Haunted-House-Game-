@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 531.239, 113.02, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
+"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 535.87, 107.361, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
 }
 
 [node name="Node2D" type="Node2D"]
@@ -56,8 +56,8 @@ position = Vector2( 687.749, 280.117 )
 scale = Vector2( 2, 2 )
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.329412, 0.329412, 0.329412, 1 )
 show_behind_parent = true
 position = Vector2( -223.994, -118.436 )
 scale = Vector2( 2.91809, 2.13665 )
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
-[connection signal="body_shape_entered" from="HealthPotion" to="HealthPotion" method="_on_HealthPotion_body_shape_entered"]
