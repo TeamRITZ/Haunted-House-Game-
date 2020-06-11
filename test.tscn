@@ -6,10 +6,23 @@
 [ext_resource path="res://flashlight_meter.gd" type="Script" id=5]
 [ext_resource path="res://SCENES/WhiteGhost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SCENES/HealthPotion.tscn" type="PackedScene" id=7]
+<<<<<<< HEAD
 [ext_resource path="res://TSCN Files/Bedroom.tscn" type="PackedScene" id=8]
 
 <<<<<<< HEAD
 =======
+=======
+[ext_resource path="res://TSCN Files/Asset/castle.png" type="Texture" id=8]
+[ext_resource path="res://TSCN Files/Asset/interior.png" type="Texture" id=9]
+[ext_resource path="res://348834__darkgamer364__creepy-eerie-horror-loop.wav" type="AudioStream" id=10]
+[ext_resource path="res://TSCN Files/Asset/Inside_B.png" type="Texture" id=11]
+[ext_resource path="res://TSCN Files/Asset/container.png" type="Texture" id=12]
+[ext_resource path="res://TSCN Files/Asset/food.png" type="Texture" id=13]
+[ext_resource path="res://TSCN Files/Asset/dark-wood.png" type="Texture" id=14]
+[ext_resource path="res://TSCN Files/Asset/decorations-medieval.png" type="Texture" id=15]
+[ext_resource path="res://Kitchen.tscn" type="PackedScene" id=16]
+
+>>>>>>> parent of 78598db... Kitchen Lighting
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
 
@@ -1363,6 +1376,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 64, 0, 64 )
 } ]
 59/z_index = 0
 
+<<<<<<< HEAD
+>>>>>>> parent of 78598db... Kitchen Lighting
+=======
 >>>>>>> parent of 78598db... Kitchen Lighting
 [sub_resource type="Curve2D" id=1]
 _data = {
