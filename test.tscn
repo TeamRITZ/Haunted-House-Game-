@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://flashlight_meter.tscn" type="PackedScene" id=2]
@@ -8,23 +8,24 @@
 [ext_resource path="res://SCENES/WhiteGhost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SCENES/HealthPotion.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TSCN Files/Bedroom.tscn" type="PackedScene" id=8]
+[ext_resource path="res://princess.gd" type="Script" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 535.87, 107.361, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
 }
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44366, 5.39517, 4.38928 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=3]
 closed = false
 polygon = PoolVector2Array( -47.5897, 30.7076, -48.9863, 7.66241, -27.478, -22.4612, 25.5957, -21.0645, 43.1943, -0.01931, 43.1943, 36.2943 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -117.934, -25.2971, -117.199, 120.251, -488.42, 120.251, -488.42, -26.0322 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 113.037, 101.43, 123.87, 102.204, 124.643, 121.549, 151.726, 124.644, 151.726, 199.701, 130.06, 211.307, 123.87, 227.557, 115.358, 227.557, 114.584, 213.629, 84.4067, 205.891, 85.1805, 129.286, 109.168, 120.775 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
@@ -46,6 +47,9 @@ polygon = PoolVector2Array( -92.7894, 285.59, -55.6478, 282.495, -52.5527, 239.1
 closed = false
 cull_mode = 2
 polygon = PoolVector2Array( -97.4321, 262.377, -60.2905, 263.924, -54.874, 237.616, -42.4935, 240.711, -40.946, 303.387 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 39.0001, 67 )
 
 [node name="Node2D" type="Node2D"]
 modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
@@ -91,7 +95,7 @@ position = Vector2( 687.749, 280.117 )
 scale = Vector2( 2, 2 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="HealthPotion"]
-occluder = SubResource( 5 )
+occluder = SubResource( 2 )
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
 show_behind_parent = true
@@ -108,13 +112,13 @@ shadow_filter_smooth = 5.0
 
 [node name="curtain" type="LightOccluder2D" parent="window"]
 position = Vector2( 3.09332, 4.98795 )
-occluder = SubResource( 2 )
-
-[node name="bookshelf" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 3 )
 
-[node name="dresses" type="LightOccluder2D" parent="window"]
+[node name="bookshelf" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 4 )
+
+[node name="dresses" type="LightOccluder2D" parent="window"]
+occluder = SubResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 6 )
@@ -127,4 +131,12 @@ occluder = SubResource( 8 )
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 898.004, 469.002 )
+shape = SubResource( 10 )
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
