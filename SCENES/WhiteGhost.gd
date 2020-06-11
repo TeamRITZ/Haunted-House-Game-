@@ -46,11 +46,11 @@ func AnimationLoop():
 func _on_WhiteGhost_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
-		speed = speed * 2
+		speed = speed * 3
 		
 
 func _on_WhiteGhost_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = true
-		speed = speed / 2
+		speed = speed / 3
 		$GhostHurtSound.play()
