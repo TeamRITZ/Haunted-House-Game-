@@ -46,6 +46,8 @@ height = 19.4284
 
 [node name="WhiteGhost" type="Area2D"]
 position = Vector2( 10.8711, 10.8711 )
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

@@ -2,7 +2,7 @@ extends Area2D
 
 export var speed = 150
 var move_direction = 0
-export var hp = 500
+export var hp = 200
 var harm = false
 var prevAnimation
 
