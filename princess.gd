@@ -6,8 +6,7 @@ extends Area2D
 # var b = "text"
 
 func interact_action():
-	print("Princess action")
-	Global.goto_scene("res://interaction_test.tscn")
+	SceneChanger.change_scene("res://interaction_test.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
