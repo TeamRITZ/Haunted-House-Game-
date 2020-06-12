@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-17b6717ee7010df0c830a7de35e1e72c.stex"
+path="res://.import/DemonicSymbols.png-7486d1697c26a0f543d62554cb7ad559.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap Images/light.png"
-dest_files=[ "res://.import/light.png-17b6717ee7010df0c830a7de35e1e72c.stex" ]
+source_file="res://Tilemap Images/Asset/DemonicSymbols.png"
+dest_files=[ "res://.import/DemonicSymbols.png-7486d1697c26a0f543d62554cb7ad559.stex" ]
 
 [params]
 

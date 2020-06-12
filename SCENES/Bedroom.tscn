@@ -6,12 +6,17 @@
 [ext_resource path="res://Tilemap Images/Asset/dark-wood.png" type="Texture" id=4]
 [ext_resource path="res://Tilemap Images/Asset/Inside_B.png" type="Texture" id=5]
 [ext_resource path="res://Tilemap Images/Asset/$princess.png" type="Texture" id=6]
-[ext_resource path="res://Tilemap Images/dungeonex.png" type="Texture" id=7]
-[ext_resource path="res://Tilemap Images/AssetsHorror.png" type="Texture" id=8]
-[ext_resource path="res://Tilemap Images/DemonicSymbols.png" type="Texture" id=9]
-[ext_resource path="res://Tilemap Images/spritesheet.png" type="Texture" id=10]
-[ext_resource path="res://Tilemap Images/Music Box.png" type="Texture" id=11]
+[ext_resource path="res://Tilemap Images/Asset/dungeonex.png" type="Texture" id=7]
+[ext_resource path="res://Tilemap Images/Asset/AssetsHorror.png" type="Texture" id=8]
+[ext_resource path="res://Tilemap Images/Asset/DemonicSymbols.png" type="Texture" id=9]
+[ext_resource path="res://Tilemap Images/Asset/spritesheet.png" type="Texture" id=10]
+[ext_resource path="res://Tilemap Images/Asset/Music Box.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=12]
+
+
+
+
+
 
 
 
