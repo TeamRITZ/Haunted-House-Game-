@@ -7,18 +7,8 @@
 [ext_resource path="res://flashlight_meter.gd" type="Script" id=5]
 [ext_resource path="res://SCENES/WhiteGhost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SCENES/HealthPotion.tscn" type="PackedScene" id=7]
-<<<<<<< HEAD:SCENES/test.tscn
 [ext_resource path="res://TSCN Files/Bedroom.tscn" type="PackedScene" id=8]
-<<<<<<< HEAD:test.tscn
 [ext_resource path="res://princess.gd" type="Script" id=9]
-=======
-[ext_resource path="res://SCRIPTS/princess.gd" type="Script" id=9]
-=======
-[ext_resource path="res://Bedroom.tscn" type="PackedScene" id=8]
-[ext_resource path="res://RedLight.png" type="Texture" id=9]
-[ext_resource path="res://277192__thedweebman__eerie-tone-music-background-loop.ogg" type="AudioStream" id=10]
->>>>>>> origin/Ozma:test.tscn
->>>>>>> parent of d7f227a... Revert "New Bedroom Level (Pls work)":SCENES/test.tscn
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -27,7 +17,6 @@ _data = {
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44366, 5.39517, 4.38928 )
-<<<<<<< HEAD:SCENES/test.tscn
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
@@ -38,38 +27,26 @@ polygon = PoolVector2Array( -117.934, -25.2971, -117.199, 120.251, -488.42, 120.
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 113.037, 101.43, 123.87, 102.204, 124.643, 121.549, 151.726, 124.644, 151.726, 199.701, 130.06, 211.307, 123.87, 227.557, 115.358, 227.557, 114.584, 213.629, 84.4067, 205.891, 85.1805, 129.286, 109.168, 120.775 )
-=======
-
-[sub_resource type="OccluderPolygon2D" id=3]
-closed = false
-polygon = PoolVector2Array( -27.2906, 29.8048, -19.2019, -26.4471, -18.7618, -26.4471, -6.03058, -26.5536, 6.76563, -26.4471, 15.6249, 27.8541 )
-
-[sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( -235.569, -6.64414, -235.192, 62.0345, -347.266, 62.4118, -346.889, -7.0215 )
-
-[sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 141.687, 112.67, 152.185, 111.504, 153.351, 124.334, 162.682, 127.833, 163.848, 176.82, 163.848, 179.153, 152.185, 190.816, 151.018, 204.812, 139.355, 207.145, 138.188, 190.816, 132.357, 174.487, 133.523, 132.498, 140.521, 125.5 )
->>>>>>> origin/Ozma:test.tscn
 
 [sub_resource type="OccluderPolygon2D" id=6]
 closed = false
 cull_mode = 1
-polygon = PoolVector2Array( -175.941, 261.964, -171.275, 239.803, -140.95, 238.637, -136.284, 259.631 )
+polygon = PoolVector2Array( -206.535, 264.698, -186.417, 238.39, -139.99, 239.937, -122.193, 250.77 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
 closed = false
 cull_mode = 2
-polygon = PoolVector2Array( -138.617, 266.629, -132.785, 289.956, -114.124, 287.624, -111.791, 277.126 )
+polygon = PoolVector2Array( -204.988, 273.984, -194.155, 284.817, -133.026, 285.59, -116.777, 270.889 )
 
 [sub_resource type="OccluderPolygon2D" id=8]
 closed = false
 cull_mode = 1
-polygon = PoolVector2Array( -66.3031, 285.291, -55.6478, 282.495, -55.8058, 263.13, -42.976, 265.463, -40.1722, 301.066 )
+polygon = PoolVector2Array( -92.7894, 285.59, -55.6478, 282.495, -52.5527, 239.163, -41.7197, 240.711, -40.1722, 301.066 )
 
 [sub_resource type="OccluderPolygon2D" id=9]
 closed = false
 cull_mode = 2
-polygon = PoolVector2Array( -75.6339, 265.463, -60.2905, 263.924, -56.9722, 246.801, -47.6414, 251.467, -45.3087, 268.962, -47.6414, 285.291 )
+polygon = PoolVector2Array( -97.4321, 262.377, -60.2905, 263.924, -54.874, 237.616, -42.4935, 240.711, -40.946, 303.387 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 39.0001, 67 )
@@ -87,8 +64,6 @@ color = Color( 0.231373, 0.0901961, 0.0901961, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Bedroom" parent="." instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 433.438, 387.43 )
@@ -121,17 +96,14 @@ scale = Vector2( 2, 2 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="HealthPotion"]
 occluder = SubResource( 2 )
-<<<<<<< HEAD:SCENES/test.tscn
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
 show_behind_parent = true
 position = Vector2( -223.994, -118.436 )
 scale = Vector2( 2.91809, 2.13665 )
-=======
->>>>>>> origin/Ozma:test.tscn
 
 [node name="window" type="Light2D" parent="."]
-position = Vector2( 782.505, 88.2107 )
+position = Vector2( 778.948, 88.4212 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0
@@ -139,39 +111,27 @@ shadow_filter = 5
 shadow_filter_smooth = 5.0
 
 [node name="curtain" type="LightOccluder2D" parent="window"]
-<<<<<<< HEAD:SCENES/test.tscn
 position = Vector2( 3.09332, 4.98795 )
 occluder = SubResource( 3 )
 
 [node name="bookshelf" type="LightOccluder2D" parent="window"]
-=======
-position = Vector2( 0.453244, 2.71831 )
-occluder = SubResource( 3 )
-
-[node name="bookshelf" type="LightOccluder2D" parent="window"]
-position = Vector2( 195.948, -44.3215 )
->>>>>>> origin/Ozma:test.tscn
 occluder = SubResource( 4 )
 
 [node name="dresses" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="window"]
-position = Vector2( 61.9919, 23.2688 )
 occluder = SubResource( 6 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="window"]
-position = Vector2( 3.49902, 5.83176 )
 occluder = SubResource( 7 )
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="window"]
 occluder = SubResource( 8 )
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="window"]
-position = Vector2( 1.16632, 14.9876 )
 occluder = SubResource( 9 )
 
-<<<<<<< HEAD:SCENES/test.tscn
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 7
 script = ExtResource( 9 )
@@ -179,37 +139,4 @@ script = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 898.004, 469.002 )
 shape = SubResource( 10 )
-=======
-[node name="window2" type="Light2D" parent="."]
-position = Vector2( 589.87, 90.9729 )
-texture = ExtResource( 4 )
-shadow_enabled = true
-shadow_gradient_length = 10.0
-shadow_filter = 5
-shadow_filter_smooth = 5.0
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="curtain2" type="LightOccluder2D" parent="window2"]
-position = Vector2( 15.5406, 0.791222 )
-occluder = SubResource( 3 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="DemonicSymbolLight" type="Light2D" parent="window2"]
-position = Vector2( -502.322, 115.673 )
-scale = Vector2( 0.337169, 0.290979 )
-texture = ExtResource( 9 )
-
-[node name="CandleLight" type="Light2D" parent="."]
-position = Vector2( 27.6825, 465.475 )
-scale = Vector2( 0.0768506, 0.0748481 )
-texture = ExtResource( 4 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-autoplay = true
->>>>>>> origin/Ozma:test.tscn
 [connection signal="health_changed" from="Player" to="CanvasLayer" method="_on_Player_health_changed"]
