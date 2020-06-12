@@ -20,7 +20,11 @@ polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
+<<<<<<< HEAD:SCENES/test.tscn
 polygon = PoolVector2Array( -47.5897, 30.7076, -48.9863, 7.66241, -27.478, -22.4612, 25.5957, -21.0645, 43.1943, -0.01931, 43.1943, 36.2943 )
+=======
+polygon = PoolVector2Array( -31.025, 20.0769, -19.2019, -26.4471, -18.7618, -26.4471, 6.76563, -26.4471, 15.3043, 20.0769 )
+>>>>>>> origin/Ozma:test.tscn
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -117.934, -25.2971, -117.199, 120.251, -488.42, 120.251, -488.42, -26.0322 )
