@@ -13,10 +13,12 @@
 [ext_resource path="res://ASSETS/Art/stendhal_ghost-a61bdba/7.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/Art/stendhal_ghost-a61bdba/8.png" type="Texture" id=12]
 [ext_resource path="res://SCENES/WhiteGhost.gd" type="Script" id=13]
-[ext_resource path="res://AnimatedSprite.gd" type="Script" id=14]
+[ext_resource path="res://SCRIPTS/AnimatedSprite.gd" type="Script" id=14]
 [ext_resource path="res://ASSETS/Audio/whiteGhostPain.wav" type="AudioStream" id=15]
 [ext_resource path="res://SCENES/HealthBar.tscn" type="PackedScene" id=16]
-[ext_resource path="res://light.png" type="Texture" id=17]
+[ext_resource path="res://ASSETS/Art/light.png" type="Texture" id=17]
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
