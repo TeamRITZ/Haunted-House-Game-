@@ -21,7 +21,7 @@ polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
-polygon = PoolVector2Array( -27.2906, 29.8048, -19.2019, -26.4471, -18.7618, -26.4471, -6.03058, -26.5536, 6.76563, -26.4471, 15.6249, 27.8541 )
+polygon = PoolVector2Array( -31.025, 20.0769, -19.2019, -26.4471, -18.7618, -26.4471, 6.76563, -26.4471, 15.3043, 20.0769 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -235.569, -6.64414, -235.192, 62.0345, -347.266, 62.4118, -346.889, -7.0215 )
