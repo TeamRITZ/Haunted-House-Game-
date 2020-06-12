@@ -21,13 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Haunted House Game"
-run/main_scene="res://test.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://SCENES/test.tscn"
+config/icon="res://ASSETS/Art/icon.png"
 
 [autoload]
 
 Global="*res://Global.gd"
-SceneChanger="*res://SceneChanger.tscn"
+SceneChanger="*res://SCENES/SceneChanger.tscn"
 
 [display]
 
