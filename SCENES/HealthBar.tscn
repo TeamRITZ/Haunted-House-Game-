@@ -3,7 +3,8 @@
 [ext_resource path="res://ASSETS/Art/Health_Bars/HP/Borders/Border_Style_1.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/Art/Health_Bars/HP/Style_3.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/Art/Health_Bars/HP/Style_2.png" type="Texture" id=3]
-[ext_resource path="res://SCENES/HealthBar.gd" type="Script" id=4]
+[ext_resource path="res://SCRIPTS/HealthBar.gd" type="Script" id=4]
+
 
 [node name="HealthBar" type="Control"]
 margin_left = 12.605
