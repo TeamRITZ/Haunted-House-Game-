@@ -5,7 +5,6 @@
 [ext_resource path="res://ASSETS/Art/Health_Bars/HP/Style_2.png" type="Texture" id=3]
 [ext_resource path="res://SCENES/Scripts/HealthBar.gd" type="Script" id=4]
 
-
 [node name="HealthBar" type="Control"]
 margin_left = 12.605
 margin_top = 15.126

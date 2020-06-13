@@ -3,7 +3,6 @@
 [ext_resource path="res://ASSETS/Art/shiny_rpg_potions_16x16/shiny_rpg_potions_16x16.png" type="Texture" id=1]
 [ext_resource path="res://SCENES/Scripts/HealthPotion.gd" type="Script" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.44892
 height = 0.192482
