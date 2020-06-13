@@ -132,6 +132,10 @@ texture = ExtResource( 4 )
 position = Vector2( 433.438, 387.43 )
 scale = Vector2( 0.5, 0.5 )
 
+[node name="RedGhost" parent="." instance=ExtResource( 11 )]
+position = Vector2( 124.004, 388.427 )
+scale = Vector2( 1.48, 1.48 )
+
 [node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 offset = Vector2( 5, 5 )
 scale = Vector2( 2, 2 )
@@ -152,10 +156,6 @@ rotate = false
 position = Vector2( 0.612042, -3.33053 )
 scale = Vector2( 1.5, 1.5 )
 hp = 250
-
-[node name="RedGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 11 )]
-position = Vector2( 9.72523, 167.261 )
-rotation = -0.0200484
 
 [node name="HealthPotion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 687.749, 280.117 )
