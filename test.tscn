@@ -54,20 +54,10 @@ polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44
 modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
 script = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-show_behind_parent = true
-margin_right = 960.0
-margin_bottom = 540.0
-color = Color( 0.231373, 0.0901961, 0.0901961, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
 
 [node name="window" type="Light2D" parent="Bedroom"]
-position = Vector2( 782.505, 88.2107 )
+position = Vector2( 780.769, 85.4695 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0
@@ -75,7 +65,7 @@ shadow_filter = 5
 shadow_filter_smooth = 5.0
 
 [node name="curtain" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 0.453244, 2.71831 )
+position = Vector2( 0.993649, -19.9769 )
 occluder = SubResource( 1 )
 
 [node name="bookshelf" type="LightOccluder2D" parent="Bedroom/window"]
@@ -86,7 +76,7 @@ occluder = SubResource( 2 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 61.9919, 23.2688 )
+position = Vector2( 62.26, 31.4677 )
 occluder = SubResource( 4 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Bedroom/window"]
@@ -101,7 +91,7 @@ position = Vector2( 1.16632, 14.9876 )
 occluder = SubResource( 7 )
 
 [node name="window2" type="Light2D" parent="Bedroom"]
-position = Vector2( 589.87, 90.9729 )
+position = Vector2( 600.337, 51.2165 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0
@@ -112,7 +102,7 @@ __meta__ = {
 }
 
 [node name="curtain2" type="LightOccluder2D" parent="Bedroom/window2"]
-position = Vector2( 15.5406, 0.791222 )
+position = Vector2( 5.47541, 14.2932 )
 occluder = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
@@ -129,8 +119,8 @@ scale = Vector2( 0.0768506, 0.0748481 )
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 433.438, 387.43 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 382.938, 393.946 )
+scale = Vector2( 0.516466, 0.533881 )
 
 [node name="RedGhost" parent="." instance=ExtResource( 11 )]
 position = Vector2( 124.004, 388.427 )

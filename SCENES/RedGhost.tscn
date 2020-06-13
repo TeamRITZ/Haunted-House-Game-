@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://ASSETS/Art/RedGhost/0.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/Art/RedGhost/11.png" type="Texture" id=2]
@@ -16,17 +16,18 @@
 [ext_resource path="res://Tilemap Images/RedLight.png" type="Texture" id=14]
 [ext_resource path="res://ASSETS/Audio/whiteGhostPain.wav" type="AudioStream" id=15]
 [ext_resource path="res://SCENES/RedGhost.gd" type="Script" id=16]
+[ext_resource path="res://SCENES/Scripts/redGhostBodyArea.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 5 ) ],
@@ -41,13 +42,15 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 10.797
-height = 21.7463
+radius = 1.60859
+height = 0.976836
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 267.263
 
 [sub_resource type="CapsuleShape2D" id=4]
+radius = 10.7414
+height = 23.9651
 
 [node name="RedGhost" type="KinematicBody2D"]
 collision_layer = 5
@@ -79,6 +82,8 @@ color = Color( 0.933333, 0.235294, 0.235294, 1 )
 energy = 0.9
 
 [node name="Sight" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
 shape = SubResource( 3 )
@@ -86,6 +91,7 @@ shape = SubResource( 3 )
 [node name="BodyArea" type="Area2D" parent="."]
 collision_layer = 5
 collision_mask = 5
+script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
 shape = SubResource( 4 )
