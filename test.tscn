@@ -26,6 +26,7 @@ polygon = PoolVector2Array( -47.5897, 30.7076, -48.9863, 7.66241, -27.478, -22.4
 polygon = PoolVector2Array( -117.934, -25.2971, -117.199, 120.251, -488.42, 120.251, -488.42, -26.0322 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
+cull_mode = 1
 polygon = PoolVector2Array( 113.037, 101.43, 123.87, 102.204, 124.643, 121.549, 151.726, 124.644, 151.726, 199.701, 130.06, 211.307, 123.87, 227.557, 115.358, 227.557, 114.584, 213.629, 84.4067, 205.891, 85.1805, 129.286, 109.168, 120.775 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
@@ -68,6 +69,8 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 433.438, 387.43 )
 scale = Vector2( 0.5, 0.5 )
+battery = 100
+health = 100
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 offset = Vector2( 5, 5 )
@@ -99,7 +102,6 @@ occluder = SubResource( 2 )
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
 show_behind_parent = true
-position = Vector2( -223.994, -118.436 )
 scale = Vector2( 2.91809, 2.13665 )
 
 [node name="window" type="Light2D" parent="."]

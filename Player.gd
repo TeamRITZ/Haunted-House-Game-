@@ -28,8 +28,8 @@ func _physics_process(_delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
@@ -81,6 +81,14 @@ func _process(_delta):
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
 
 	if Input.is_action_pressed(("ui_accept")):
+		if playerDirection == 0:
+			$AnimatedSprite.animation = "light_right"
+		elif playerDirection == 90:
+			$AnimatedSprite.animation = "light_down"
+		elif playerDirection == 180:
+			$AnimatedSprite.animation = "light_left"
+		elif playerDirection == 270:
+			$AnimatedSprite.animation = "light_up"
 		if flashlight_enabled:
 			$Light2D.enabled = true
 			$FlashlightBeam/CollisionShape2D.disabled = false
@@ -112,14 +120,30 @@ func _on_HurtTimer_timeout():
 func _on_Player_directionChanged():
 	$LightOccluder2D.rotation_degrees = playerDirection
 	$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
-
+	if playerDirection == 0:
+		$Light2D.position = Vector2 (70, -15)
+		$LightOccluder2D.position = Vector2 (70, -15)
+		$FlashlightBeam.position = Vector2 (70, -15)
+	elif playerDirection == 90:
+		$Light2D.position = Vector2 (-42, -15)
+		$LightOccluder2D.position = Vector2 (-42, -15)
+		$FlashlightBeam.position = Vector2 (-42, -15)
+	elif playerDirection == 180:
+		$Light2D.position = Vector2 (-60, -10)
+		$LightOccluder2D.position = Vector2 (-60, -10)
+		$FlashlightBeam.position = Vector2 (-60, -10)
+	elif playerDirection == 270:
+		$Light2D.position = Vector2 (50, -5)
+		$LightOccluder2D.position = Vector2 (50, -5)
+		$FlashlightBeam.position = Vector2 (50, -5)
 
 func _on_Hitbox_area_entered(area):
-	if area.get_name() == "HealthPotion":
+	if area.get("TYPE") == "HPOTION":
 		health = 100
 		$PotionSound.play()
 		emit_signal("health_changed", health)
-	if area.get_name() != "HealthPotion":
+		area.queue_free()
+	if area.get("TYPE") == "GHOST":
 		health -= 25
 		$Hitbox/CollisionShape2D2.set_deferred("disabled", true)
 		$HurtTimer.start()
@@ -129,7 +153,6 @@ func _on_Hitbox_area_entered(area):
 
 func _on_InteractionArea_area_entered(area):
 	interaction_target = area
-
 
 func _on_InteractionArea_area_exited(_area):
 	interaction_target = null

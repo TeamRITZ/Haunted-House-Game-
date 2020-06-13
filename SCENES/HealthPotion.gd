@@ -1,5 +1,6 @@
 extends Area2D
 
+const TYPE = "HPOTION"
 #signal healPlayer
 
 func _on_HealthPotion_area_entered(area):

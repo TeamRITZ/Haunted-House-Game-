@@ -5,7 +5,7 @@ var move_direction = 0
 export var hp = 200
 var harm = false
 var prevAnimation
-
+const TYPE = "GHOST"
 func ready():
 	$HealthBar/HealthBar.max_value = hp
 	$HealthBar/HealthBar.value = hp
