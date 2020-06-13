@@ -11,6 +11,7 @@ var interaction_target = null
 var screen_size
 var playerDirection = 0
 var prevPlayerDir = 0
+var prevAnimation = "walk_up"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +38,7 @@ func _physics_process(_delta):
 
 	if velocity.x >0:
 		$AnimatedSprite.animation = "walk_right"
+		prevAnimation = "walk_right"
 		playerDirection = 0
 		$InteractionArea/CollisionShape2D.position = Vector2 (100,0)
 		if prevPlayerDir != 0:
@@ -44,6 +46,7 @@ func _physics_process(_delta):
 			prevPlayerDir = playerDirection
 	elif velocity.x < 0:
 		$AnimatedSprite.animation = "walk_left"
+		prevAnimation = "walk_left"
 		playerDirection = 180
 		$InteractionArea/CollisionShape2D.position = Vector2 (-100,0)
 		if prevPlayerDir != 180:
@@ -51,6 +54,7 @@ func _physics_process(_delta):
 			prevPlayerDir = playerDirection
 	elif velocity.y > 0:
 		$AnimatedSprite.animation = "walk_down"
+		prevAnimation = "walk_down"
 		playerDirection = 90
 		$InteractionArea/CollisionShape2D.position = Vector2 (20,120)
 		if prevPlayerDir != 90:
@@ -58,6 +62,7 @@ func _physics_process(_delta):
 			prevPlayerDir = playerDirection
 	elif velocity.y < 0:
 		$AnimatedSprite.animation = "walk_up"
+		prevAnimation = "walk_up"
 		playerDirection = 270
 		$InteractionArea/CollisionShape2D.position = Vector2 (20,-120)
 		if prevPlayerDir != 270:
@@ -94,6 +99,7 @@ func _process(_delta):
 	else:
 		$Light2D.enabled = false
 		$FlashlightBeam/CollisionShape2D.disabled = true
+		$AnimatedSprite.animation = prevAnimation
 
 	if $Light2D.enabled:
 		battery -= .5
