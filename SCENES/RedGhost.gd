@@ -93,10 +93,9 @@ func SightCheck():
 				state = "Follow"
 			else:
 				player_in_sight = false
-				print("Sight blocked")
 				state = "Return"
 	else: 
-		state = "Return"			
+		state = "Return"
 
 func _on_BodyArea_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
@@ -104,9 +103,7 @@ func _on_BodyArea_area_entered(area):
 		speed = speed / 3
 		$GhostHurtSound.play()
 
-
 func _on_BodyArea_area_exited(area):
-	
 	if area.get_name() == "FlashlightBeam":
 		harm = false
 		speed = speed * 3
