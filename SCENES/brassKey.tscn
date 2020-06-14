@@ -8,6 +8,7 @@ radius = 11.7641
 height = 13.2965
 
 [node name="brassKey" type="Area2D"]
+position = Vector2( -1.43396, 1.79245 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

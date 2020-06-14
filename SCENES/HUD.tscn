@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ASSETS/Art/brassKey.png" type="Texture" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0.8, 0, 1 )
@@ -48,3 +50,8 @@ __meta__ = {
 }
 
 [node name="HealthBarAnimation" type="Tween" parent="."]
+
+[node name="brassKey" type="Sprite" parent="."]
+position = Vector2( 11.352, 24.0232 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )

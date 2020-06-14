@@ -147,6 +147,11 @@ func _on_Hitbox_area_entered(area):
 		$PotionSound.play()
 		emit_signal("health_changed", health)
 		area.queue_free()
+	if area.get("TYPE") == "BKEY":
+		health = 100
+		$PotionSound.play()
+		emit_signal("health_changed", health)
+		area.queue_free()
 	if area.get("TYPE") == "GHOST":
 		health -= 25
 		$Hitbox/CollisionShape2D2.set_deferred("disabled", true)
