@@ -71,6 +71,7 @@ shape = SubResource( 2 )
 stream = ExtResource( 15 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 13 )]
+visible = false
 margin_left = -17.5417
 margin_top = -35.4977
 margin_right = 22.4583

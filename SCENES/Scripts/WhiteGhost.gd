@@ -9,6 +9,7 @@ const TYPE = "GHOST"
 var dead = false
 
 func ready():
+	$HealthBar.visible = false
 	$HealthBar/HealthBar.max_value = hp
 	$HealthBar/HealthBar.value = hp
 
@@ -59,6 +60,7 @@ func _on_WhiteGhost_area_exited(area):
 
 func _on_WhiteGhost_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
+		$HealthBar.visible = true
 		harm = true
 		speed = speed / 3
 		$GhostHurtSound.play()

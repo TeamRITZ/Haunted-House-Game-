@@ -1320,7 +1320,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 16, 0, 16 )
 61/z_index = 0
 
 [node name="Kitchen" type="Node2D"]
-modulate = Color( 0.290196, 0.278431, 0.278431, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 1.00647, 1.03368 )

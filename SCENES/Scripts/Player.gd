@@ -11,16 +11,19 @@ var interaction_target = null
 var screen_size
 var playerDirection = 0
 var prevPlayerDir = 0
-var prevAnimation = "walk_up"
-var velocity
+var prevAnimation = "walk_right"
+var lightOn = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 	$InteractPrompt.visible = false
+	#Set starting conditions
+	
 
 
 func _physics_process(_delta):
-	velocity = Vector2()
+	var velocity = Vector2()
 	#Change player movement direction based on w,a,s,d, keys
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -38,7 +41,7 @@ func _physics_process(_delta):
 	move_and_slide(velocity)
 
 	if velocity.x >0:
-		if Input.is_action_pressed("ui_accept"):
+		if lightOn:
 			$AnimatedSprite.animation = "light_right"
 		else:
 			$AnimatedSprite.animation = "walk_right"
@@ -49,7 +52,7 @@ func _physics_process(_delta):
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.x < 0:
-		if Input.is_action_pressed("ui_accept"):
+		if lightOn:
 			$AnimatedSprite.animation = "light_left"
 		else:
 			$AnimatedSprite.animation = "walk_left"
@@ -60,7 +63,7 @@ func _physics_process(_delta):
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.y > 0:
-		if Input.is_action_pressed("ui_accept"):
+		if lightOn:
 			$AnimatedSprite.animation = "light_down"
 		else:
 			$AnimatedSprite.animation = "walk_down"
@@ -71,7 +74,7 @@ func _physics_process(_delta):
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.y < 0:
-		if Input.is_action_pressed("ui_accept"):
+		if lightOn:
 			$AnimatedSprite.animation = "light_up"
 		else:
 			$AnimatedSprite.animation = "walk_up"
@@ -97,10 +100,20 @@ func _process(_delta):
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
 
 	if Input.is_action_pressed(("ui_accept")):
+		if playerDirection == 0:
+			$AnimatedSprite.animation = "light_right"
+		elif playerDirection == 180:
+			$AnimatedSprite.animation = "light_left"
+		elif playerDirection == 270:
+			$AnimatedSprite.animation = "light_up"
+		elif playerDirection == 90:
+			$AnimatedSprite.animation = "light_down"
 		if flashlight_enabled:
+			lightOn = true
 			$Light2D.enabled = true
 			$FlashlightBeam/CollisionShape2D.disabled = false
 	else:
+		lightOn = false
 		$Light2D.enabled = false
 		$FlashlightBeam/CollisionShape2D.disabled = true
 		$AnimatedSprite.animation = prevAnimation

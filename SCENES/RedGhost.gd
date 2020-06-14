@@ -120,6 +120,7 @@ func SightCheck():
 
 func _on_BodyArea_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
+		$HealthBar.visible = true
 		harm = true
 		speed = speed / 3
 		$GhostHurtSound.play()
