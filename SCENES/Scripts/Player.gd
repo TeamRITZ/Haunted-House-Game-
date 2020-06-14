@@ -115,11 +115,9 @@ func _process(_delta):
 	if interaction_target != null && Input.is_action_just_pressed("interact"):
 		interaction_target.interact_action()
 
-
 func _on_HurtTimer_timeout():
 	$Hitbox/CollisionShape2D2.disabled = false
 	$AnimatedSprite.set_modulate(Color(1,1,1))
-
 
 func _on_Player_directionChanged():
 	$LightOccluder2D.rotation_degrees = playerDirection
@@ -148,10 +146,7 @@ func _on_Hitbox_area_entered(area):
 		emit_signal("health_changed", health)
 		area.queue_free()
 	if area.get("TYPE") == "BKEY":
-		health = 100
-		$PotionSound.play()
-		emit_signal("health_changed", health)
-		area.queue_free()
+		pass
 	if area.get("TYPE") == "GHOST":
 		health -= 25
 		$Hitbox/CollisionShape2D2.set_deferred("disabled", true)
