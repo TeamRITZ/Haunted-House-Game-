@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ghosts_agro.wav-78157ab2af836a44960d4d562b4e75df.sample"
+
+[deps]
+
+source_file="res://ASSETS/Audio/ghosts_agro.wav"
+dest_files=[ "res://.import/ghosts_agro.wav-78157ab2af836a44960d4d562b4e75df.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

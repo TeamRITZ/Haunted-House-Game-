@@ -11,6 +11,10 @@ var player_in_sight = false
 var player_seen
 var follow_direction
 var player_position
+var dead = false
+
+var rng = RandomNumberGenerator.new()
+var potion_scene = preload("res://SCENES/HealthPotion.tscn")
 
 onready var player = get_parent().get_node("Player")
 onready var start_position = get_global_position()
@@ -18,6 +22,7 @@ onready var start_position = get_global_position()
 func ready():
 	$HealthBar/HealthBar.max_value = hp
 	$HealthBar/HealthBar.value = hp
+	
 
 onready var path_follow = get_parent()
 
@@ -40,7 +45,21 @@ func _process(delta):
 		hp -= 1
 		$HealthBar._on_health_updated(hp, hp-1)
 	if hp <=0:
-		queue_free()
+		$GhostAgro.stop()
+		if dead == false:
+			rng.randomize()
+			var random = rng.randf()
+			if random <= 0.4: #40% cahnce to drop health potion on death
+				var Health_Potion = potion_scene.instance()
+				get_tree().get_root().add_child(Health_Potion)
+				Health_Potion.position = position
+			$GhostDeath.play()
+			dead = true
+			visible = false
+			$BodyArea/CollisionShape2D.disabled = true
+			$CollisionShape2D.disabled = true
+		if $GhostDeath.playing == false:
+			queue_free()
 
 #Picks the appropriate animation based on direction of movement
 func AnimationLoop():
@@ -91,6 +110,8 @@ func SightCheck():
 				player_seen = true
 				player_position = player.get_global_position()
 				state = "Follow"
+				if $GhostAgro.playing == false:
+					$GhostAgro.play()
 			else:
 				player_in_sight = false
 				state = "Return"

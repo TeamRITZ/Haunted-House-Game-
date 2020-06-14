@@ -149,7 +149,6 @@ hp = 250
 
 [node name="HealthPotion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 687.749, 280.117 )
-scale = Vector2( 2, 2 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="HealthPotion"]
 occluder = SubResource( 9 )
