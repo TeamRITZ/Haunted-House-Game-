@@ -6,6 +6,7 @@ export var hp = 200
 var harm = false
 var prevAnimation
 const TYPE = "GHOST"
+var dead = false
 
 func ready():
 	$HealthBar/HealthBar.max_value = hp
@@ -31,7 +32,13 @@ func _process(delta):
 		hp -= 1
 		$HealthBar._on_health_updated(hp, hp-1)
 	if hp <=0:
-		queue_free()
+		if dead == false:
+			$GhostDeath.play()
+			dead = true
+			visible = false
+			$CollisionShape2D.disabled = true
+		if $GhostDeath.playing == false:
+			queue_free()
 
 #Picks the appropriate animation based on direction of movement
 func AnimationLoop():
