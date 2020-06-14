@@ -84,17 +84,16 @@ func _process(_delta):
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
 
 	if Input.is_action_pressed(("ui_accept")):
-		if Input.is_action_pressed(("ui_accept")):
-			if playerDirection == 0:
-				$AnimatedSprite.animation = "light_right"
-			elif playerDirection == 90:
-				$AnimatedSprite.animation = "light_down"
-			elif playerDirection == 180:
-				$AnimatedSprite.animation = "light_left"
-			elif playerDirection == 270:
-				$AnimatedSprite.animation = "light_up"
-			if flashlight_enabled:
-				$Light2D.enabled = true
+		if playerDirection == 0:
+			$AnimatedSprite.animation = "light_right"
+		elif playerDirection == 90:
+			$AnimatedSprite.animation = "light_down"
+		elif playerDirection == 180:
+			$AnimatedSprite.animation = "light_left"
+		elif playerDirection == 270:
+			$AnimatedSprite.animation = "light_up"
+		if flashlight_enabled:
+			$Light2D.enabled = true
 			$FlashlightBeam/CollisionShape2D.disabled = false
 	else:
 		$Light2D.enabled = false
