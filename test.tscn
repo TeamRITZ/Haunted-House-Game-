@@ -109,8 +109,8 @@ __meta__ = {
 }
 
 [node name="DemonicSymbolLight" type="Light2D" parent="Bedroom/window2"]
-position = Vector2( -502.322, 115.673 )
-scale = Vector2( 0.337169, 0.290979 )
+position = Vector2( -514.51, 154.454 )
+scale = Vector2( 0.315008, 0.351921 )
 texture = ExtResource( 9 )
 
 [node name="CandleLight" type="Light2D" parent="Bedroom"]
