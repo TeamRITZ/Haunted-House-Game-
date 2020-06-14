@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light left 2.png-639b30d6826c686f00fa961b3bc97d66.stex"
+path="res://.import/e_mid.png-d6a254284554ee67b4ea941ac8252be1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/Magician-Magi_Witch/Magician-Magi-Witch/light left/light left 2.png"
-dest_files=[ "res://.import/light left 2.png-639b30d6826c686f00fa961b3bc97d66.stex" ]
+source_file="res://ASSETS/Art/KeyPrompt/e_mid.png"
+dest_files=[ "res://.import/e_mid.png-d6a254284554ee67b4ea941ac8252be1.stex" ]
 
 [params]
 

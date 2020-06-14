@@ -12,14 +12,15 @@ var screen_size
 var playerDirection = 0
 var prevPlayerDir = 0
 var prevAnimation = "walk_up"
-
+var velocity
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	$InteractPrompt.visible = false
 
 
 func _physics_process(_delta):
-	var velocity = Vector2()
+	velocity = Vector2()
 	#Change player movement direction based on w,a,s,d, keys
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -37,32 +38,44 @@ func _physics_process(_delta):
 	move_and_slide(velocity)
 
 	if velocity.x >0:
-		$AnimatedSprite.animation = "walk_right"
-		prevAnimation = "walk_right"
+		if Input.is_action_pressed("ui_accept"):
+			$AnimatedSprite.animation = "light_right"
+		else:
+			$AnimatedSprite.animation = "walk_right"
+			prevAnimation = "walk_right"
 		playerDirection = 0
 		$InteractionArea/CollisionShape2D.position = Vector2 (100,0)
 		if prevPlayerDir != 0:
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.x < 0:
-		$AnimatedSprite.animation = "walk_left"
-		prevAnimation = "walk_left"
+		if Input.is_action_pressed("ui_accept"):
+			$AnimatedSprite.animation = "light_left"
+		else:
+			$AnimatedSprite.animation = "walk_left"
+			prevAnimation = "walk_left"
 		playerDirection = 180
 		$InteractionArea/CollisionShape2D.position = Vector2 (-100,0)
 		if prevPlayerDir != 180:
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.y > 0:
-		$AnimatedSprite.animation = "walk_down"
-		prevAnimation = "walk_down"
+		if Input.is_action_pressed("ui_accept"):
+			$AnimatedSprite.animation = "light_down"
+		else:
+			$AnimatedSprite.animation = "walk_down"
+			prevAnimation = "walk_down"
 		playerDirection = 90
 		$InteractionArea/CollisionShape2D.position = Vector2 (20,120)
 		if prevPlayerDir != 90:
 			emit_signal("directionChanged")
 			prevPlayerDir = playerDirection
 	elif velocity.y < 0:
-		$AnimatedSprite.animation = "walk_up"
-		prevAnimation = "walk_up"
+		if Input.is_action_pressed("ui_accept"):
+			$AnimatedSprite.animation = "light_up"
+		else:
+			$AnimatedSprite.animation = "walk_up"
+			prevAnimation = "walk_up"
 		playerDirection = 270
 		$InteractionArea/CollisionShape2D.position = Vector2 (20,-120)
 		if prevPlayerDir != 270:
@@ -84,14 +97,6 @@ func _process(_delta):
 		$FlashlightBeam/CollisionShape2D.rotation_degrees = playerDirection
 
 	if Input.is_action_pressed(("ui_accept")):
-		if playerDirection == 0:
-			$AnimatedSprite.animation = "light_right"
-		elif playerDirection == 90:
-			$AnimatedSprite.animation = "light_down"
-		elif playerDirection == 180:
-			$AnimatedSprite.animation = "light_left"
-		elif playerDirection == 270:
-			$AnimatedSprite.animation = "light_up"
 		if flashlight_enabled:
 			$Light2D.enabled = true
 			$FlashlightBeam/CollisionShape2D.disabled = false
@@ -156,8 +161,14 @@ func _on_Hitbox_area_entered(area):
 
 
 func _on_InteractionArea_area_entered(area):
-	interaction_target = area
+	if area.has_method("interact_action"):
+		interaction_target = area
+		$InteractPrompt.visible = true
+		$InteractPrompt.play()
 
 
 func _on_InteractionArea_area_exited(_area):
 	interaction_target = null
+	$InteractPrompt.stop()
+	$InteractPrompt.visible = false
+	
