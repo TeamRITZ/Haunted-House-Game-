@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Tilemap Images/RedLight.png" type="Texture" id=9]
 [ext_resource path="res://Background Sounds/277192__thedweebman__eerie-tone-music-background-loop.ogg" type="AudioStream" id=10]
 [ext_resource path="res://SCENES/RedGhost.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SCENES/MusicBox.tscn" type="PackedScene" id=12]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
@@ -159,3 +160,7 @@ transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 visible = false
 current = true
+
+[node name="Music Box" parent="." instance=ExtResource( 12 )]
+position = Vector2( 412.857, 97.2701 )
+scale = Vector2( 0.570743, 0.659984 )
