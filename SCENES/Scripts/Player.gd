@@ -8,6 +8,8 @@ export var speed = 400
 var flashlight_enabled = true
 var interaction_target = null
 
+var hasBrassKey = false
+
 var screen_size
 var playerDirection = 0
 var prevPlayerDir = 0
@@ -171,6 +173,10 @@ func _on_Hitbox_area_entered(area):
 		$HurtTimer.start()
 		$AnimatedSprite.set_modulate(Color(1,0,0))
 		emit_signal("health_changed", health)
+	if area.get("TYPE") == "BKEY":
+		hasBrassKey = true
+		print("You now have the brass key")
+		area.queue_free()
 
 
 func _on_InteractionArea_area_entered(area):
