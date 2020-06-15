@@ -20,19 +20,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Control" type="Control"]
-anchor_left = 0.3
-anchor_top = 0.05
-anchor_right = 1.0
-anchor_bottom = 0.1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
+layer = 3
+script = ExtResource( 1 )
 
 [node name="JournalPage" type="Control" parent="."]
-margin_right = 527.0
-margin_bottom = 527.0
-script = ExtResource( 1 )
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -42,6 +38,7 @@ __meta__ = {
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 259.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
@@ -52,16 +49,14 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="JournalPage"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 103.0
+margin_left = 373.0
 margin_top = 99.0
-margin_right = -132.0
+margin_right = -284.0
 margin_bottom = -85.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = " \"The candles in this room are strange.\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
-visible_characters = 0
-percent_visible = 0.739
 text = " \"The candles in this room are strange.\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,7 +65,7 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="JournalPage"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="JournalPage"]
-position = Vector2( 402.011, 396.251 )
+position = Vector2( 682.152, 362.328 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 frame = 3
