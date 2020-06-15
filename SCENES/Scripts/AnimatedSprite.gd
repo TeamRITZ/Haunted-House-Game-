@@ -2,5 +2,5 @@ extends AnimatedSprite
 func _ready():
 	play()
 
-func _process(delta):
+func _process(_delta):
 	play()

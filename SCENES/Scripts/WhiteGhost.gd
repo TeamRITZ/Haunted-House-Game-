@@ -25,7 +25,7 @@ func MovementLoop(delta):
 	var pos = path_follow.get_global_position()
 	move_direction = (pos.angle_to_point(prepos) / 3.14) * 180
 
-func _process(delta):
+func _process(_delta):
 	AnimationLoop()
 	
 	#Checks if ghost is in flashlight beam

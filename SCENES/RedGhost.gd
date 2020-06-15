@@ -27,7 +27,7 @@ func ready():
 
 onready var path_follow = get_parent()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	SightCheck()
 
 func _process(delta):
@@ -80,14 +80,14 @@ func AnimationLoop():
 		$AnimatedSprite.animation = "left"
 	
 #Ghost will follow player
-func Follow(delta):
+func Follow(_delta):
 	follow_direction = (get_angle_to(player_position) / 3.14) * 180
 	AnimationLoop()
 	var move_rotation = get_angle_to(player_position)
 	var motion = Vector2(speed,0).rotated(move_rotation)
 	move_and_slide(motion)
 
-func Return(delta):
+func Return(_delta):
 	if get_global_position() >= start_position:
 		follow_direction = (get_angle_to(start_position) /3.14) * 180
 		AnimationLoop()

@@ -2,7 +2,7 @@ extends Control
 #Health bar for ghosts
 
 onready var health_bar = $HealthBar
-onready var update_tween = $UpdateTween
+#onready var update_tween = $UpdateTween
 
 func _on_health_updated(health, ammount):
 	health_bar.value = health
