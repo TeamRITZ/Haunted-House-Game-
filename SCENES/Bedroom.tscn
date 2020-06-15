@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/ak&#039;s_assets.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/tileset_16x16_interior.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Tilemap Images/Asset/Music Box.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=12]
 [ext_resource path="res://Tilemap Images/Asset/door.png" type="Texture" id=13]
+[ext_resource path="res://SCENES/Door.gd" type="Script" id=14]
+[ext_resource path="res://SCENES/interactionEnabler.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -1134,6 +1136,9 @@ outlines = [ PoolVector2Array( 321.339, 121.756, 390.155, 120.589, 401.818, 138.
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 32.3156, 33.8739 )
 
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 32.6019, 34.9457 )
+
 [node name="Bedroom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1167,6 +1172,7 @@ __meta__ = {
 navpoly = SubResource( 47 )
 
 [node name="Door" type="StaticBody2D" parent="."]
+script = ExtResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="Door"]
 position = Vector2( 531.344, 67.3692 )
@@ -1174,5 +1180,15 @@ scale = Vector2( 1.01753, 1 )
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+visible = false
 position = Vector2( 531.932, 64.9159 )
 shape = SubResource( 48 )
+
+[node name="interactionEnabler" type="Area2D" parent="Door"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/interactionEnabler"]
+position = Vector2( 531.932, 64.916 )
+shape = SubResource( 49 )
