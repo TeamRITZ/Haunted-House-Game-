@@ -38,4 +38,14 @@ scale = Vector2( 2, 2 )
 position = Vector2( 391.092, 199.496 )
 
 [node name="Paper" parent="." instance=ExtResource( 5 )]
-position = Vector2( 733.791, 267.641 )
+position = Vector2( 734.778, 266.654 )
+
+[node name="JournalPage" parent="Paper" index="2"]
+visible = false
+light_mask = 0
+margin_left = -495.921
+margin_top = -226.741
+margin_right = -495.921
+margin_bottom = -226.741
+
+[editable path="Paper"]

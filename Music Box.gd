@@ -15,6 +15,7 @@ func interact_action(_area):
 	else:
 		$AudioStreamPlayer2D.stop()
 		$AnimatedSprite.animation = "closing"
+		playing = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

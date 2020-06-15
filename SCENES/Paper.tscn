@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Paper.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/Art/paper/Paper.png" type="Texture" id=2]
+[ext_resource path="res://SCENES/JournalPage.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.1408, 24.6321 )
@@ -19,6 +20,7 @@ animations = [ {
 } ]
 
 [node name="Paper" type="Area2D"]
+pause_mode = 2
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 1 )
@@ -28,3 +30,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+
+[node name="JournalPage" parent="." instance=ExtResource( 3 )]
+pause_mode = 2
