@@ -133,7 +133,7 @@ func _process(_delta):
 	if battery > 30:
 		flashlight_enabled = true
 	if interaction_target != null && Input.is_action_just_pressed("interact"):
-		interaction_target.interact_action()
+		interaction_target.interact_action($InteractionArea)
 
 
 func _on_HurtTimer_timeout():

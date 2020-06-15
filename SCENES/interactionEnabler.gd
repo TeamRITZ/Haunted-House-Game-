@@ -1,6 +1,11 @@
 extends Area2D
 
-func interact_action():
-	print("I am a brass door")
-	$CollisionShape2D.disabled = true
-	get_parent().get_node("CollisionShape2D").disabled = true
+func interact_action(area):
+	if area.TYPE == "PLAYER":
+		if area.get_parent().hasBrassKey == true:
+			$CollisionShape2D.disabled = true
+			get_parent().get_node("CollisionShape2D").disabled = true
+			$DoorOpen.play()
+			get_parent().get_node("Sprite").visible = false #Should be replaced with door opening animation
+		else:
+			$DoorLocked.play()
