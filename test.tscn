@@ -125,6 +125,7 @@ scale = Vector2( 0.516466, 0.533881 )
 [node name="RedGhost" parent="." instance=ExtResource( 11 )]
 position = Vector2( 124.004, 388.427 )
 scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 28.5001, 116.85 )

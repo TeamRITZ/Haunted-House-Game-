@@ -175,7 +175,8 @@ func _on_Hitbox_area_entered(area):
 		emit_signal("health_changed", health)
 	if area.get("TYPE") == "BKEY":
 		hasBrassKey = true
-		print("You now have the brass key")
+		get_parent().get_node("HUD/Inventory Background/BrassKey").visible = true
+		$ItemPickup.play()
 		area.queue_free()
 
 

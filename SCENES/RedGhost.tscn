@@ -22,14 +22,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 5 ) ],
@@ -55,6 +55,7 @@ radius = 10.7414
 height = 23.9651
 
 [node name="RedGhost" type="KinematicBody2D"]
+position = Vector2( 0.225952, 0 )
 collision_layer = 5
 collision_mask = 5
 script = ExtResource( 16 )

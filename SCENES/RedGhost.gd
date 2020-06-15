@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed = 125
 export var hp = 125
+export var dropBrassKey = false
 var harm = false
 var prevAnimation
 
@@ -15,6 +16,7 @@ var dead = false
 
 var rng = RandomNumberGenerator.new()
 var potion_scene = preload("res://SCENES/HealthPotion.tscn")
+var brass_key_scene = preload("res://SCENES/brassKey.tscn")
 
 onready var player = get_parent().get_node("Player")
 onready var start_position = get_global_position()
@@ -22,7 +24,6 @@ onready var start_position = get_global_position()
 func ready():
 	$HealthBar/HealthBar.max_value = hp
 	$HealthBar/HealthBar.value = hp
-	
 
 onready var path_follow = get_parent()
 
@@ -47,12 +48,18 @@ func _process(delta):
 	if hp <=0:
 		$GhostAgro.stop()
 		if dead == false:
-			rng.randomize()
-			var random = rng.randf()
-			if random <= 0.4: #40% cahnce to drop health potion on death
-				var Health_Potion = potion_scene.instance()
-				get_tree().get_root().add_child(Health_Potion)
-				Health_Potion.position = position
+			if dropBrassKey == true:
+				var key = brass_key_scene.instance()
+				get_tree().get_root().add_child(key)
+				key.position = position
+			else:
+				rng.randomize()
+				var random = rng.randf()
+				if random <= 0.4: #40% cahnce to drop health potion on death
+					var Health_Potion = potion_scene.instance()
+					get_tree().get_root().add_child(Health_Potion)
+					Health_Potion.position = position
+				
 			$GhostDeath.play()
 			dead = true
 			visible = false
