@@ -157,4 +157,5 @@ scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
+visible = false
 current = true

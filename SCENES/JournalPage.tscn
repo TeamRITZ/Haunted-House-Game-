@@ -33,9 +33,9 @@ __meta__ = {
 
 [node name="JournalPage" type="Control" parent="."]
 margin_left = 221.164
-margin_top = -6.91136
+margin_top = -5.75947
 margin_right = 748.164
-margin_bottom = 520.089
+margin_bottom = 521.241
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -64,7 +64,7 @@ custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = " \"The candles in this room are strange.\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
-visible_characters = 90
+visible_characters = 0
 percent_visible = 0.739
 text = " \"The candles in this room are strange.\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
 __meta__ = {
