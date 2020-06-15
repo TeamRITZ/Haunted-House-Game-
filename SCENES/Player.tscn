@@ -45,9 +45,19 @@ animations = [ {
 "name": "light_left",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "light_up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
@@ -63,16 +73,6 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walk_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "light_up",
 "speed": 5.0
 } ]
 

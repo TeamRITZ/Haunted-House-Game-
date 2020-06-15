@@ -51,7 +51,7 @@ __meta__ = {
 
 [node name="HealthBarAnimation" type="Tween" parent="."]
 
-[node name="Inventory Background" type="ColorRect" parent="."]
+[node name="InventoryBackground" type="ColorRect" parent="."]
 show_behind_parent = true
 margin_left = 0.250343
 margin_top = 15.0
@@ -62,7 +62,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InventoryLabel" type="Label" parent="Inventory Background"]
+[node name="InventoryLabel" type="Label" parent="InventoryBackground"]
 margin_left = 13.2683
 margin_top = -0.250343
 margin_right = 86.2683
@@ -73,7 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BrassKey" type="Sprite" parent="Inventory Background"]
+[node name="BrassKey" type="Sprite" parent="InventoryBackground"]
 visible = false
 position = Vector2( 7.049, 6.75 )
 scale = Vector2( 0.4, 0.4 )
