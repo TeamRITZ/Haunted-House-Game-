@@ -51,8 +51,29 @@ __meta__ = {
 
 [node name="HealthBarAnimation" type="Tween" parent="."]
 
-[node name="BrassKey" type="Sprite" parent="."]
-visible = false
-position = Vector2( 110.943, 6.41508 )
-scale = Vector2( 0.5, 0.5 )
+[node name="Inventory Background" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 0.250343
+margin_top = 15.0
+margin_right = 101.25
+margin_bottom = 28.0
+color = Color( 0.454902, 0.443137, 0.443137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryLabel" type="Label" parent="Inventory Background"]
+margin_left = 13.2683
+margin_top = -0.250343
+margin_right = 86.2683
+margin_bottom = 13.7497
+custom_colors/font_color = Color( 0.564706, 0.556863, 0.556863, 1 )
+text = "INVENTORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BrassKey" type="Sprite" parent="Inventory Background"]
+position = Vector2( 7.049, 6.75 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )

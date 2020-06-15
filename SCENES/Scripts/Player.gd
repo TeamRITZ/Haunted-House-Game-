@@ -133,7 +133,7 @@ func _process(_delta):
 	if battery > 30:
 		flashlight_enabled = true
 	if interaction_target != null && Input.is_action_just_pressed("interact"):
-		interaction_target.interact_action()
+		interaction_target.interact_action($InteractionArea)
 
 
 func _on_HurtTimer_timeout():
@@ -175,7 +175,8 @@ func _on_Hitbox_area_entered(area):
 		emit_signal("health_changed", health)
 	if area.get("TYPE") == "BKEY":
 		hasBrassKey = true
-		print("You now have the brass key")
+		get_parent().get_node("HUD/Inventory Background/BrassKey").visible = true
+		$ItemPickup.play()
 		area.queue_free()
 
 
