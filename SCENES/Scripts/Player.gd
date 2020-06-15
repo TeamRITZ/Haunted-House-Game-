@@ -176,6 +176,7 @@ func _on_Hitbox_area_entered(area):
 	if area.get("TYPE") == "BKEY":
 		hasBrassKey = true
 		get_node("../HUD/InventoryBackground").visible = true
+		get_node("../HUD/InventoryBackground/BrassKey").visible = true
 		$ItemPickup.play()
 		area.queue_free()
 
