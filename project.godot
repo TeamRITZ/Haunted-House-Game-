@@ -8,14 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://git_api.gdns"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"GitAPI": ""
+
 }
 
 [application]
@@ -23,6 +18,11 @@ _global_script_class_icons={
 config/name="Haunted House Game"
 run/main_scene="res://test.tscn"
 config/icon="res://Tilemap Images/icon.png"
+
+[autoload]
+
+Global="*res://SCENES/Scripts/Global.gd"
+SceneChanger="*res://SCENES/SceneChanger.tscn"
 
 [display]
 
@@ -33,8 +33,8 @@ window/stretch/aspect="keep"
 
 [gdnative]
 
-singletons=[ "res://git_api.gdnlib" ]
-singletons_disabled=[ "res://git_api.gdnlib" ]
+singletons=[  ]
+singletons_disabled=[  ]
 
 [input]
 

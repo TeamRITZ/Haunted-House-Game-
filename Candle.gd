@@ -2,7 +2,7 @@ extends Area2D
 
 var lit = true
 
-func interact_action():
+func interact_action(_area):
 	if lit:
 		$Light2D.enabled = false
 		$AnimatedSprite.animation = "unlit"

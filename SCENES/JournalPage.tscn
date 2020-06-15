@@ -20,18 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.37405
-margin_top = 9.4046
-margin_right = 5.37402
-margin_bottom = 9.4046
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="JournalPage" type="Control" parent="."]
+[node name="JournalPage" type="Control"]
 margin_left = 221.164
 margin_top = -5.75947
 margin_right = 748.164
@@ -42,7 +31,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="JournalPage"]
+[node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color( 0.670588, 0.670588, 0.670588, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,7 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="JournalPage"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 103.0
@@ -71,10 +60,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="JournalPage"]
+[node name="Tween" type="Tween" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="JournalPage"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 402.011, 396.251 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 frame = 3
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.37405
+margin_top = 9.4046
+margin_right = 5.37402
+margin_bottom = 9.4046
+__meta__ = {
+"_edit_use_anchors_": false
+}
