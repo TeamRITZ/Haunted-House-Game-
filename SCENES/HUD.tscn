@@ -74,6 +74,7 @@ __meta__ = {
 }
 
 [node name="BrassKey" type="Sprite" parent="Inventory Background"]
+visible = false
 position = Vector2( 7.049, 6.75 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
