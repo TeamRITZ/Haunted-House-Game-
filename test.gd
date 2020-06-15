@@ -13,5 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$CanvasLayer/FlashlightBar.value = $Player.battery
-	$CanvasLayer/HealthBar.value = $Player.health
+	$HUD/FlashlightBar.value = $Player.battery
+	$HUD/HealthBar.value = $Player.health
