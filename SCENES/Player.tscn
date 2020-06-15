@@ -82,7 +82,7 @@ cull_mode = 1
 polygon = PoolVector2Array( -8.26788, 0.627165, 34.8853, 15.7447, -19.3393, 0.0481396, 33.6962, -12.5567 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 0, 350, 160, 350, -130 )
+points = PoolVector2Array( 0, 0, 425, 190, 460, 0, 425, -160 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 75, 75 )
@@ -105,6 +105,7 @@ frames = SubResource( 1 )
 animation = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 18, 15 )
 shape = SubResource( 2 )
 
