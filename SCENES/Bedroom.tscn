@@ -20,8 +20,6 @@
 [ext_resource path="res://Tilemap Images/Asset/house_inside.png" type="Texture" id=18]
 [ext_resource path="res://Tilemap Images/Asset/SouthDoor.png" type="Texture" id=19]
 
-
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
 
@@ -1165,7 +1163,7 @@ extents = Vector2( 48.3344, 5.45337 )
 [node name="Bedroom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2( 1.00631, 1.03297 )
+scale = Vector2( 1.00631, 1.03443 )
 tile_set = SubResource( 46 )
 cell_size = Vector2( 16, 16 )
 format = 1
