@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://SCENES/Library.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/Kitchen.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SCENES/MasterBedroom.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCENES/elaborateKey.tscn" type="PackedScene" id=17]
+[ext_resource path="res://SCENES/goldKey.tscn" type="PackedScene" id=18]
+[ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=19]
+[ext_resource path="res://SCENES/bone.tscn" type="PackedScene" id=20]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
@@ -47,7 +51,7 @@ closed = false
 cull_mode = 2
 polygon = PoolVector2Array( -75.6339, 265.463, -60.2905, 263.924, -56.9722, 246.801, -47.6414, 251.467, -45.3087, 268.962, -47.6414, 285.291 )
 
-[sub_resource type="Curve2D" id=25]
+[sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 535.87, 107.361, 0, 0, 0, 0, 533.079, 163.662, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
 }
@@ -57,6 +61,7 @@ polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44
 
 [node name="Node2D" type="Node2D"]
 modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
+position = Vector2( -1.36047, -1.36035 )
 script = ExtResource( 3 )
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
@@ -147,7 +152,7 @@ dropBrassKey = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 28.5001, 116.85 )
-curve = SubResource( 25 )
+curve = SubResource( 8 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 89.1335, 104.155 )
@@ -180,3 +185,15 @@ current = true
 [node name="Music Box" parent="." instance=ExtResource( 12 )]
 position = Vector2( 412.857, 97.2701 )
 scale = Vector2( 0.570743, 0.659984 )
+
+[node name="elaborateKey" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1274.36, -302.306 )
+
+[node name="goldKey" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1404.64, -295.625 )
+
+[node name="silverKey" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1317.79, -160.339 )
+
+[node name="bone" parent="." instance=ExtResource( 20 )]
+position = Vector2( 2632.23, -100.212 )

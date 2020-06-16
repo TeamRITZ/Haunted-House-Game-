@@ -9,6 +9,10 @@ var flashlight_enabled = true
 var interaction_target = null
 
 var hasBrassKey = false
+var hasSilverKey = false
+var hasGoldKey = false
+var hasElaborateKey = false
+var hasBone = false
 
 var screen_size
 var playerDirection = 0
@@ -177,6 +181,30 @@ func _on_Hitbox_area_entered(area):
 		hasBrassKey = true
 		get_node("../HUD/InventoryBackground").visible = true
 		get_node("../HUD/InventoryBackground/BrassKey").visible = true
+		$ItemPickup.play()
+		area.queue_free()
+	if area.get("TYPE") == "SKEY":
+		hasSilverKey = true
+		get_node("../HUD/InventoryBackground").visible = true
+		get_node("../HUD/InventoryBackground/SilverKey").visible = true
+		$ItemPickup.play()
+		area.queue_free()
+	if area.get("TYPE") == "GKEY":
+		hasGoldKey = true
+		get_node("../HUD/InventoryBackground").visible = true
+		get_node("../HUD/InventoryBackground/GoldKey").visible = true
+		$ItemPickup.play()
+		area.queue_free()
+	if area.get("TYPE") == "EKEY":
+		hasElaborateKey = true
+		get_node("../HUD/InventoryBackground").visible = true
+		get_node("../HUD/InventoryBackground/ElaborateKey").visible = true
+		$ItemPickup.play()
+		area.queue_free()
+	if area.get("TYPE") == "BONE":
+		hasBone = true
+		get_node("../HUD/InventoryBackground").visible = true
+		get_node("../HUD/InventoryBackground/Bone").visible = true
 		$ItemPickup.play()
 		area.queue_free()
 
