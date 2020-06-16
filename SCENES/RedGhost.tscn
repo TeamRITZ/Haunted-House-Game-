@@ -15,10 +15,11 @@
 [ext_resource path="res://SCENES/HealthBar.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tilemap Images/RedLight.png" type="Texture" id=14]
 [ext_resource path="res://ASSETS/Audio/whiteGhostPain.wav" type="AudioStream" id=15]
-[ext_resource path="res://SCENES/RedGhost.gd" type="Script" id=16]
+[ext_resource path="res://SCENES/Scripts/RedGhost.gd" type="Script" id=16]
 [ext_resource path="res://SCENES/Scripts/redGhostBodyArea.gd" type="Script" id=17]
 [ext_resource path="res://ASSETS/Audio/ghostDeath.wav" type="AudioStream" id=18]
 [ext_resource path="res://ASSETS/Audio/ghosts_agro.wav" type="AudioStream" id=19]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

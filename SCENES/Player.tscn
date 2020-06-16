@@ -30,8 +30,9 @@
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_low.png" type="Texture" id=28]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_mid.png" type="Texture" id=29]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_high.png" type="Texture" id=30]
-[ext_resource path="res://SCENES/InteractionArea.gd" type="Script" id=31]
+[ext_resource path="res://SCENES/Scripts/InteractionArea.gd" type="Script" id=31]
 [ext_resource path="res://ASSETS/Audio/pick up.wav" type="AudioStream" id=32]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

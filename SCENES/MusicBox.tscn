@@ -1,8 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/Music Box.png" type="Texture" id=1]
-[ext_resource path="res://Music Box.gd" type="Script" id=2]
+[ext_resource path="res://SCENES/Scripts/Music Box.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/Audio/412224__inspectorj__creepy-lullaby-a.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

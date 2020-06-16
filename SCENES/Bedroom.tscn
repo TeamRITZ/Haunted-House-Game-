@@ -13,12 +13,14 @@
 [ext_resource path="res://Tilemap Images/Asset/Music Box.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=12]
 [ext_resource path="res://Tilemap Images/Asset/door.png" type="Texture" id=13]
-[ext_resource path="res://SCENES/Door.gd" type="Script" id=14]
-[ext_resource path="res://SCENES/interactionEnabler.gd" type="Script" id=15]
+[ext_resource path="res://SCENES/Scripts/Door.gd" type="Script" id=14]
+[ext_resource path="res://SCENES/Scripts/interactionEnabler.gd" type="Script" id=15]
 [ext_resource path="res://ASSETS/Audio/Key Jiggle.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/Audio/door_open.wav" type="AudioStream" id=17]
 [ext_resource path="res://Tilemap Images/Asset/house_inside.png" type="Texture" id=18]
 [ext_resource path="res://Tilemap Images/Asset/SouthDoor.png" type="Texture" id=19]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )

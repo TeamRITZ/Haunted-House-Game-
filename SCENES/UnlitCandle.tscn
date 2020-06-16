@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/Art/candle/Candle.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://SCENES/Scripts/UnlitCandle.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 12 )
+
+[node name="UnlitCandle" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "This candle will extinguish itself when lit. Intended for candle puzzle template."
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "unlit"
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+enabled = false
+texture = ExtResource( 1 )
+texture_scale = 0.09
+energy = 0.9
+
+[node name="UnlightTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="UnlightTimer" to="." method="_on_UnlightTimer_timeout"]
