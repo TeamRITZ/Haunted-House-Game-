@@ -22,6 +22,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
@@ -30,11 +35,6 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ) ],

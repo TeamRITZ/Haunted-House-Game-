@@ -8,6 +8,11 @@ var prevAnimation
 const TYPE = "GHOST"
 var dead = false
 
+var rng = RandomNumberGenerator.new()
+var potion_scene = preload("res://SCENES/HealthPotion.tscn")
+var brass_key_scene = preload("res://SCENES/brassKey.tscn")
+export var dropBrassKey = false
+
 func ready():
 	$HealthBar.visible = false
 	$HealthBar/HealthBar.max_value = hp
@@ -34,6 +39,18 @@ func _process(_delta):
 		$HealthBar._on_health_updated(hp, hp-1)
 	if hp <=0:
 		if dead == false:
+			if dropBrassKey == true:
+				var key = brass_key_scene.instance()
+				get_tree().get_root().add_child(key)
+				key.position = get_global_position()
+			else:
+				rng.randomize()
+				var random = rng.randf()
+				if random <= 0.1: #10% cahnce to drop health potion on death
+					print("pottion")
+					var Health_Potion = potion_scene.instance()
+					get_tree().get_root().add_child(Health_Potion)
+					Health_Potion.position = get_global_position()
 			$GhostDeath.play()
 			dead = true
 			visible = false
