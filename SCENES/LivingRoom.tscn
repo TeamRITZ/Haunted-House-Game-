@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/tileset_16x16_interior.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Tilemap Images/Asset/interior.png" type="Texture" id=8]
 [ext_resource path="res://Tilemap Images/Asset/dungeonex.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap Images/Asset/house_inside.png" type="Texture" id=10]
+[ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=11]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -1352,6 +1353,20 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
 66/shape_one_way_margin = 0.0
 66/shapes = [  ]
 66/z_index = 0
+67/name = "Inside_B.png 67"
+67/texture = ExtResource( 5 )
+67/tex_offset = Vector2( 0, 0 )
+67/modulate = Color( 1, 1, 1, 1 )
+67/region = Rect2( 160, 160, 32, 32 )
+67/tile_mode = 0
+67/occluder_offset = Vector2( 0, 0 )
+67/navigation_offset = Vector2( 0, 0 )
+67/shape_offset = Vector2( 0, 0 )
+67/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+67/shape_one_way = false
+67/shape_one_way_margin = 0.0
+67/shapes = [  ]
+67/z_index = 0
 
 [node name="LivingRoom" type="Node2D"]
 scale = Vector2( 1.00629, 1.03448 )
@@ -1375,7 +1390,37 @@ __meta__ = {
 tile_set = SubResource( 55 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 327730, 61, 0, 524331, 49, 0, 524345, 45, 0, 589867, 48, 0, 589881, 46, 0, 655403, 47, 0, 655417, 50, 0, 1507331, 46, 0, 1572867, 45, 0, 1703937, 55, 0, 1769525, 47, 0, 1900601, 18, 0 )
+tile_data = PoolIntArray( 262170, 67, 0, 262180, 67, 0, 327730, 61, 0, 524331, 49, 0, 524345, 45, 0, 589867, 48, 0, 589881, 46, 0, 655403, 47, 0, 655417, 50, 0, 1507331, 46, 0, 1572867, 45, 0, 1703937, 55, 0, 1769525, 47, 0, 1900570, 67, 0, 1900580, 67, 0, 1900601, 18, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 752.652, 39.4382 )
+scale = Vector2( 0.0481564, 0.0435306 )
+texture = ExtResource( 11 )
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 879.97, 42.8223 )
+scale = Vector2( 0.0504028, 0.0480453 )
+texture = ExtResource( 11 )
+
+[node name="Light2D3" type="Light2D" parent="."]
+position = Vector2( 431.497, 67.9719 )
+scale = Vector2( 0.0182432, 0.0176969 )
+texture = ExtResource( 11 )
+
+[node name="Light2D4" type="Light2D" parent="."]
+position = Vector2( 591.572, 67.1852 )
+scale = Vector2( 0.0194725, 0.0186712 )
+texture = ExtResource( 11 )
+
+[node name="Light2D5" type="Light2D" parent="."]
+position = Vector2( 431.82, 469.101 )
+scale = Vector2( 0.0191185, 0.018491 )
+texture = ExtResource( 11 )
+
+[node name="Light2D6" type="Light2D" parent="."]
+position = Vector2( 592.061, 466.38 )
+scale = Vector2( 0.0214869, 0.0215108 )
+texture = ExtResource( 11 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/ak&#039;s_assets.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap Images/Asset/food.png" type="Texture" id=10]
 [ext_resource path="res://Tilemap Images/Asset/door.png" type="Texture" id=11]
+[ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=12]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 96, 0, 96 )
@@ -1559,3 +1560,33 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( 498.819, 65.6451 )
 shape = SubResource( 65 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 256.586, 33.5844 )
+scale = Vector2( 0.059124, 0.0667427 )
+texture = ExtResource( 12 )
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 434.275, 33.3232 )
+scale = Vector2( 0.0597584, 0.0622963 )
+texture = ExtResource( 12 )
+
+[node name="Light2D3" type="Light2D" parent="."]
+position = Vector2( 32.2034, 64.6092 )
+scale = Vector2( 0.06287, 0.0708022 )
+texture = ExtResource( 12 )
+
+[node name="Light2D4" type="Light2D" parent="."]
+position = Vector2( 564.18, 34.7576 )
+scale = Vector2( 0.0631619, 0.0676901 )
+texture = ExtResource( 12 )
+
+[node name="Light2D5" type="Light2D" parent="."]
+position = Vector2( 820.69, 30.9447 )
+scale = Vector2( 0.0518238, 0.0596078 )
+texture = ExtResource( 12 )
+
+[node name="Light2D6" type="Light2D" parent="."]
+position = Vector2( 916.809, 33.1145 )
+scale = Vector2( 0.0586131, 0.0628777 )
+texture = ExtResource( 12 )

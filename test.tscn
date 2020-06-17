@@ -148,6 +148,9 @@ position = Vector2( 1911.62, -1081.22 )
 position = Vector2( 5.07874, 541.365 )
 scale = Vector2( 0.996177, 0.965238 )
 
+[node name="Entrance" parent="." instance=ExtResource( 22 )]
+position = Vector2( 955.631, 0.450562 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 382.938, 393.946 )
 scale = Vector2( 0.516466, 0.533881 )
@@ -204,6 +207,3 @@ position = Vector2( 1317.79, -160.339 )
 
 [node name="bone" parent="." instance=ExtResource( 20 )]
 position = Vector2( 2632.23, -100.212 )
-
-[node name="Entrance" parent="." instance=ExtResource( 22 )]
-position = Vector2( 955.631, 0.450562 )
