@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -16,9 +16,6 @@
 [ext_resource path="res://SCENES/Library.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/Kitchen.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SCENES/MasterBedroom.tscn" type="PackedScene" id=16]
-[ext_resource path="res://SCENES/elaborateKey.tscn" type="PackedScene" id=17]
-[ext_resource path="res://SCENES/goldKey.tscn" type="PackedScene" id=18]
-[ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=19]
 [ext_resource path="res://SCENES/bone.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SCENES/Basement.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SCENES/Entrance.tscn" type="PackedScene" id=22]
@@ -192,15 +189,6 @@ current = true
 [node name="Music Box" parent="." instance=ExtResource( 12 )]
 position = Vector2( 412.857, 97.2701 )
 scale = Vector2( 0.570743, 0.659984 )
-
-[node name="elaborateKey" parent="." instance=ExtResource( 17 )]
-position = Vector2( 1274.36, -302.306 )
-
-[node name="goldKey" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1404.64, -295.625 )
-
-[node name="silverKey" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1317.79, -160.339 )
 
 [node name="bone" parent="." instance=ExtResource( 20 )]
 position = Vector2( 2632.23, -100.212 )

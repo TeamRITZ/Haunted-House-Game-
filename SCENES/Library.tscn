@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/Inside_B.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ASSETS/Audio/OOT_Secret.wav" type="AudioStream" id=8]
 [ext_resource path="res://SCENES/InteractableBookcase.gd" type="Script" id=9]
 [ext_resource path="res://AnatomyBook.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -599,6 +600,9 @@ shape = SubResource( 25 )
 
 [node name="secretSound" type="AudioStreamPlayer2D" parent="InteractableBookcase"]
 stream = ExtResource( 8 )
+
+[node name="silverKey" parent="InteractableBookcase" instance=ExtResource( 11 )]
+position = Vector2( 239.095, 188.678 )
 
 [node name="AnatomyBook" parent="." instance=ExtResource( 10 )]
 position = Vector2( 42.2245, 432.652 )
