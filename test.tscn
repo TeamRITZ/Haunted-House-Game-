@@ -161,6 +161,21 @@ position = Vector2( 124.004, 388.427 )
 scale = Vector2( 1.48, 1.48 )
 dropBrassKey = true
 
+[node name="RedGhost2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 145.204, -350.935 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
+[node name="RedGhost3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2093, -908.958 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
+[node name="RedGhost4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2725.4, -692.523 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 28.5001, 116.85 )
 curve = SubResource( 8 )
