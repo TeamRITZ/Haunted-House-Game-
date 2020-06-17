@@ -21,11 +21,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "up",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "right",
@@ -34,6 +29,11 @@ animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ) ],
@@ -72,6 +72,7 @@ margin_top = -31.4697
 margin_right = -17.4424
 margin_bottom = -13.4697
 rect_scale = Vector2( 0.072, 0.13 )
+Max = 250
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 17 )

@@ -2,7 +2,7 @@ extends Area2D
 
 export var speed = 150
 var move_direction = 0
-export var hp = 200
+export var hp = 250
 var harm = false
 var prevAnimation
 const TYPE = "GHOST"
@@ -15,8 +15,8 @@ export var dropBrassKey = false
 
 func ready():
 	$HealthBar.visible = false
-	$HealthBar/HealthBar.max_value = hp
-	$HealthBar/HealthBar.value = hp
+	$HealthBar._on_max_health_updated(hp)
+	$HealthBar._on_health_updated(hp)
 
 onready var path_follow = get_parent()
 
@@ -36,7 +36,7 @@ func _process(_delta):
 	#Checks if ghost is in flashlight beam
 	if harm:
 		hp -= 1
-		$HealthBar._on_health_updated(hp, hp-1)
+		$HealthBar._on_health_updated(hp)
 	if hp <=0:
 		if dead == false:
 			if dropBrassKey == true:

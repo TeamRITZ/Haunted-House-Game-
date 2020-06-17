@@ -22,8 +22,8 @@ onready var player = get_parent().get_node("Player")
 onready var start_position = get_global_position()
 
 func ready():
-	$HealthBar/HealthBar.max_value = hp
-	$HealthBar/HealthBar.value = hp
+	$HealthBar._on_max_health_updated(hp)
+	$HealthBar._on_health_updated(hp)
 
 onready var path_follow = get_parent()
 
@@ -44,7 +44,7 @@ func _process(delta):
 	#Checks if ghost is in flashlight beam
 	if harm:
 		hp -= 1
-		$HealthBar._on_health_updated(hp, hp-1)
+		$HealthBar._on_health_updated(hp)
 	if hp <=0:
 		$GhostAgro.stop()
 		if dead == false:
