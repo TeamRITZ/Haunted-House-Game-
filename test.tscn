@@ -67,7 +67,7 @@ script = ExtResource( 3 )
 scale = Vector2( 1.00036, 1.00073 )
 
 [node name="window" type="Light2D" parent="Bedroom"]
-position = Vector2( 780.769, 85.4695 )
+position = Vector2( 782.863, 84.7717 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0

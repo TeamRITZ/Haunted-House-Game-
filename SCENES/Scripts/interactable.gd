@@ -9,8 +9,8 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-func interact_action():
-	$ColorRect.color = Color(1,0,0)
+func interact_action(_area):
+	SceneChanger.change_scene("res://test.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

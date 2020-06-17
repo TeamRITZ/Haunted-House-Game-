@@ -24,6 +24,7 @@ config/icon="res://Tilemap Images/icon.png"
 Global="*res://SCENES/Scripts/Global.gd"
 SceneChanger="*res://SCENES/SceneChanger.tscn"
 JournalPage="*res://SCENES/JournalPage.tscn"
+DialogBox="*res://SCENES/DialogBox.tscn"
 
 [display]
 
