@@ -13,6 +13,7 @@ var hasSilverKey = false
 var hasGoldKey = false
 var hasElaborateKey = false
 var hasBone = false
+var hasAnatomyBook = false
 
 var screen_size
 var playerDirection = 0
@@ -138,6 +139,8 @@ func _process(_delta):
 		flashlight_enabled = true
 	if interaction_target != null && Input.is_action_just_pressed("interact"):
 		interaction_target.interact_action($InteractionArea)
+		if interaction_target.name == "AnatomyBook":
+			get_node("../HUD/InventoryBackground/AnatomyBook").visible = true
 
 
 func _on_HurtTimer_timeout():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ASSETS/Art/brassKey.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/Art/fancyKey.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/Art/goldKey.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/Art/silverKey.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/Art/bone.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/Art/bookIcon.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0.8, 0, 1 )
@@ -106,3 +107,9 @@ visible = false
 position = Vector2( 59, 7 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
+
+[node name="AnatomyBook" type="Sprite" parent="InventoryBackground"]
+visible = false
+position = Vector2( 73.1011, 7.00969 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
