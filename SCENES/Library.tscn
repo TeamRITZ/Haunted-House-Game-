@@ -9,8 +9,9 @@
 [ext_resource path="res://Tilemap Images/Asset/tileset_16x16_interior.png" type="Texture" id=7]
 [ext_resource path="res://ASSETS/Audio/OOT_Secret.wav" type="AudioStream" id=8]
 [ext_resource path="res://SCENES/InteractableBookcase.gd" type="Script" id=9]
-[ext_resource path="res://AnatomyBook.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SCENES/AnatomyBook.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
