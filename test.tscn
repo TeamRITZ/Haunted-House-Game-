@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://SCENES/Library.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/Kitchen.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SCENES/MasterBedroom.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCENES/Attic.tscn" type="PackedScene" id=17]
 [ext_resource path="res://SCENES/bone.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SCENES/Basement.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SCENES/Entrance.tscn" type="PackedScene" id=22]
@@ -67,7 +68,7 @@ script = ExtResource( 3 )
 scale = Vector2( 1.00036, 1.00073 )
 
 [node name="window" type="Light2D" parent="Bedroom"]
-position = Vector2( 780.769, 85.4695 )
+position = Vector2( 782.863, 84.7717 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0
@@ -148,12 +149,30 @@ scale = Vector2( 0.996177, 0.965238 )
 [node name="Entrance" parent="." instance=ExtResource( 22 )]
 position = Vector2( 955.631, 0.450562 )
 
+[node name="Attic" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1911.61, -1622.1 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 382.938, 393.946 )
 scale = Vector2( 0.516466, 0.533881 )
 
 [node name="RedGhost" parent="." instance=ExtResource( 11 )]
 position = Vector2( 124.004, 388.427 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
+[node name="RedGhost2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 145.204, -350.935 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
+[node name="RedGhost3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2093, -908.958 )
+scale = Vector2( 1.48, 1.48 )
+dropBrassKey = true
+
+[node name="RedGhost4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2725.4, -692.523 )
 scale = Vector2( 1.48, 1.48 )
 dropBrassKey = true
 
