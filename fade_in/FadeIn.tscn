@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fade_in/fade_in.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.00784314, 0.00392157, 0.00392157, 0 ), Color( 0.00784314, 0.00392157, 0.00392157, 0.996078 ) ]
+}
+
+[node name="FadeIn" type="ColorRect"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_scale = Vector2( 13.0159, 14.9186 )
+color = Color( 0.00784314, 0.00392157, 0.00392157, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 1 )

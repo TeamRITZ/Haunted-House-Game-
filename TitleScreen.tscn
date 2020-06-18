@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game/creepymusic.wav" type="AudioStream" id=1]
+[ext_resource path="res://fonts/halloween_party_st/Hallowen Party St.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Game/picturetopeople.org-1a2ff2d8ac72aebe34db1db019c8b01490e17367933e7aa91d.png" type="Texture" id=3]
+[ext_resource path="res://Buttons/NewGameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buttons/InstructionsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://haunted.jpg" type="Texture" id=7]
+[ext_resource path="res://Game/title_screen.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 9.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Logo:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3, 3.2, 4.8, 6.4, 8, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -13.1589, 79.9349 ), Vector2( 20.1522, 24.4164 ), Vector2( 63.5096, 69.3599 ), Vector2( 121.005, 24.416 ), Vector2( 63.5096, 69.3599 ), Vector2( 20.1522, 24.4164 ), Vector2( -13.1589, 79.9349 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.99811
+margin_top = -9.33081
+margin_right = 6.99805
+margin_bottom = -9.33081
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="haunted" type="Sprite" parent="."]
+position = Vector2( 627.885, 366.949 )
+scale = Vector2( 0.668656, 0.661182 )
+texture = ExtResource( 7 )
+
+[node name="VersionLabel" type="Label" parent="."]
+margin_left = 56.8015
+margin_top = 572.684
+margin_right = 174.801
+margin_bottom = 623.684
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Version 4.1.5
+Team Ritz"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 61.7181
+margin_top = 14.0266
+margin_right = 1234.72
+margin_bottom = 716.027
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Logo" type="TextureRect" parent="Menu/AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -13.1589
+margin_top = 79.9349
+margin_right = -13.1591
+margin_bottom = 79.9349
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_right = 1173.0
+margin_bottom = 702.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_top = 214.0
+margin_right = 1173.0
+margin_bottom = 487.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_constants/separation = 53
+alignment = 1
+
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1173.0
+margin_bottom = 80.0
+
+[node name="InstructionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 133.0
+margin_right = 1173.0
+margin_bottom = 213.0
+
+[node name="debugButton" type="Button" parent="Menu/CenterRow/Buttons"]
+margin_top = 266.0
+margin_right = 1173.0
+margin_bottom = 273.0
+custom_fonts/font = SubResource( 3 )
+text = "debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="FadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.90735e-06
+margin_top = -9.53674e-07
+margin_right = 0.0
+margin_bottom = 0.0
+rect_scale = Vector2( 1, 1 )
