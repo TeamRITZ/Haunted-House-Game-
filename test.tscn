@@ -154,7 +154,7 @@ position = Vector2( 1911.61, -1622.1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 382.938, 393.946 )
-scale = Vector2( 0.516466, 0.533881 )
+scale = Vector2( 0.388791, 0.395173 )
 
 [node name="RedGhost" parent="." instance=ExtResource( 11 )]
 position = Vector2( 124.004, 388.427 )
