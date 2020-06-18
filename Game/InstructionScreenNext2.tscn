@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/InstructionScreenNext.tscn" type="PackedScene" id=1]
+[ext_resource path="res://InstructionScreen3temp.PNG" type="Texture" id=2]
+[ext_resource path="res://Game/return_to_title.gd" type="Script" id=3]
+[ext_resource path="res://fonts/coraline_s_cat/Coraline's Cat.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Game/InstructionScreen1.PNG" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 4 )
+
+[node name="InstructionScreen1" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="CenterContainer" parent="." index="0"]
+margin_left = 12.3033
+margin_top = 20.5055
+margin_right = 12.3033
+margin_bottom = 20.5055
+
+[node name="InstructionScreen3temp" type="Sprite" parent="CenterContainer/VBoxContainer/Label" index="0"]
+position = Vector2( 333.685, 7.76501 )
+scale = Vector2( 1.59739, 1.41643 )
+texture = ExtResource( 2 )
+
+[node name="InstructionScreen1" parent="CenterContainer/VBoxContainer/Label" index="2"]
+position = Vector2( -739.306, -13.9856 )
+texture = ExtResource( 5 )
+
+[node name="Button" parent="CenterContainer/VBoxContainer/Label" index="3"]
+margin_left = 697.0
+margin_top = 266.0
+margin_right = 980.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 54.5, 29.5 )
+custom_fonts/font = SubResource( 1 )
+text = "Back to Menu"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Label/Button" to="." method="_on_Button_pressed"]

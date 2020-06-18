@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/coralinesCat_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Game/return_to_title.gd" type="Script" id=2]
+[ext_resource path="res://fonts/coraline_s_cat/Coraline's Cat.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ASSETS/Art/MBRsMml.jpg" type="Texture" id=4]
+[ext_resource path="res://ASSETS/Art/TexturesCom_BookOpen0076_6_masked_S.png" type="Texture" id=5]
+
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 3 )
+
+[node name="InstructionScreen1" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MBRsMml" type="Sprite" parent="."]
+position = Vector2( 692.222, 380.896 )
+scale = Vector2( 0.718544, 0.649627 )
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.5486
+margin_top = -21.097
+margin_right = 84.4514
+margin_bottom = 43.903
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 324.0
+margin_top = 366.0
+margin_right = 1051.0
+margin_bottom = 419.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 727.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "New Game Scene or Instructions"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/Label"]
+margin_left = 835.99
+margin_top = 269.964
+margin_right = 948.99
+margin_bottom = 328.964
+rect_pivot_offset = Vector2( 54.5, 29.5 )
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TexturesCom_BookOpen0076_6_masked_S" type="Sprite" parent="."]
+position = Vector2( 644.572, 359.596 )
+texture = ExtResource( 5 )
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Label/Button" to="." method="_on_Button_pressed"]
