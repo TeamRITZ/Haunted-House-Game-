@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TexturesCom_BookOpen0076_6_masked_S.png-d7e16b9754c61f85eefa4f0dda79a582.stex"
+path="res://.import/halloween-haunted-house-background-21772713.jpg-94f8d17866f783f97e75b420000b3e2d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TexturesCom_BookOpen0076_6_masked_S.png"
-dest_files=[ "res://.import/TexturesCom_BookOpen0076_6_masked_S.png-d7e16b9754c61f85eefa4f0dda79a582.stex" ]
+source_file="res://ASSETS/Art/halloween-haunted-house-background-21772713.jpg"
+dest_files=[ "res://.import/halloween-haunted-house-background-21772713.jpg-94f8d17866f783f97e75b420000b3e2d.stex" ]
 
 [params]
 

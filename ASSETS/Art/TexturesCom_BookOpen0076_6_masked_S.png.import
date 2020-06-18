@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroundImage.jpg-9e3345f890ef63e0be5628f52c312b7f.stex"
+path="res://.import/TexturesCom_BookOpen0076_6_masked_S.png-e22c7e61621a9aad3e4760407cd66b04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgroundImage.jpg"
-dest_files=[ "res://.import/backgroundImage.jpg-9e3345f890ef63e0be5628f52c312b7f.stex" ]
+source_file="res://ASSETS/Art/TexturesCom_BookOpen0076_6_masked_S.png"
+dest_files=[ "res://.import/TexturesCom_BookOpen0076_6_masked_S.png-e22c7e61621a9aad3e4760407cd66b04.stex" ]
 
 [params]
 

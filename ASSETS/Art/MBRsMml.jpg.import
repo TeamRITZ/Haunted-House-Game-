@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IKRNqU.jpg-b579ffa08b671be89763b9ccb0b1f06b.stex"
+path="res://.import/MBRsMml.jpg-15a47ac553d21353e2cac01cad63b0f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://IKRNqU.jpg"
-dest_files=[ "res://.import/IKRNqU.jpg-b579ffa08b671be89763b9ccb0b1f06b.stex" ]
+source_file="res://ASSETS/Art/MBRsMml.jpg"
+dest_files=[ "res://.import/MBRsMml.jpg-15a47ac553d21353e2cac01cad63b0f7.stex" ]
 
 [params]
 

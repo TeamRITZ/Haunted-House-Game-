@@ -3,8 +3,10 @@
 [ext_resource path="res://fonts/coralinesCat_48.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Game/return_to_title.gd" type="Script" id=2]
 [ext_resource path="res://fonts/coraline_s_cat/Coraline's Cat.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://MBRsMml.jpg" type="Texture" id=4]
-[ext_resource path="res://TexturesCom_BookOpen0076_6_masked_S.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/Art/MBRsMml.jpg" type="Texture" id=4]
+[ext_resource path="res://ASSETS/Art/TexturesCom_BookOpen0076_6_masked_S.png" type="Texture" id=5]
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 23

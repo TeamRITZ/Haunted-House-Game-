@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroundpic.jpg-306755a615273c5edc5bebb90182844c.stex"
+path="res://.import/IKRNqU.jpg-f66c05c14791a0fdc06a05ac49b142cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgroundpic.jpg"
-dest_files=[ "res://.import/backgroundpic.jpg-306755a615273c5edc5bebb90182844c.stex" ]
+source_file="res://ASSETS/Art/IKRNqU.jpg"
+dest_files=[ "res://.import/IKRNqU.jpg-f66c05c14791a0fdc06a05ac49b142cf.stex" ]
 
 [params]
 
