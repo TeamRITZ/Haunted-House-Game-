@@ -35,11 +35,13 @@ func _process(delta):
 	match state:
 		"Rest":
 			pass
+			print("rest")
 		"Follow":
-			#print("charge!")
+			print("charge!")
 			Follow(delta)
 		"Return":
 			Return(delta)
+			print("return")
 	
 	#Checks if ghost is in flashlight beam
 	if harm:

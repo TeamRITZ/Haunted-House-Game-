@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const TYPE = "PLAYER"
+
 signal health_changed
 signal directionChanged
 export var battery = 100

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ASSETS/Art/Grue/grueFront.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/Art/Grue/grueFront2.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Art/Grue/grueBack.png" type="Texture" id=3]
+[ext_resource path="res://SCENES/Boss.gd" type="Script" id=4]
+[ext_resource path="res://SCENES/HealthBar.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "back",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "front",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 20.577
+height = 28.6093
+
+[sub_resource type="CircleShape2D" id=3]
+
+[node name="Boss" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "back"
+speed_scale = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 5 )]
+margin_left = -30.8694
+margin_top = -44.8106
+margin_right = 9.13055
+margin_bottom = -4.81062
+rect_scale = Vector2( 0.119997, 0.16 )
+Max = 500
+
+[node name="Sight" type="Area2D" parent="."]
+scale = Vector2( 26.24, 26.24 )
+
+[node name="SightCollider" type="CollisionShape2D" parent="Sight"]
+shape = SubResource( 3 )
+[connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Boss_area_exited"]
+[connection signal="body_entered" from="Sight" to="." method="_on_Sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_Sight_body_exited"]
