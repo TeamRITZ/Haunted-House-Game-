@@ -7,11 +7,12 @@ var player_in_range = false
 
 export var hp = 500
 
-var red_ghost_scene = preload("res://SCENES/RedGhost.tscn")
+var boss_ghost_scene = preload("res://SCENES/BossGhost.tscn")
 
 func ready():
 	$HealthBar._on_max_health_updated(hp)
 	$HealthBar._on_health_updated(hp)
+	$AnimatedSprite.play()
 
 
 
@@ -38,10 +39,12 @@ func _on_Sight_body_entered(body):
 		player_in_range = true
 		print ("Player in range")
 		$AnimatedSprite.animation = "front"
-		var key = red_ghost_scene.instance()
-		get_tree().get_root().add_child(key)
+		var key = boss_ghost_scene.instance()
+		
 		key.start_position = get_global_position()
 		key.position = get_global_position()
+		key.player = get_parent().get_node("Player")
+		get_tree().get_root().add_child(key)
 		
 
 func _on_Sight_body_exited(body):

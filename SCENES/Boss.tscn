@@ -23,7 +23,7 @@ animations = [ {
 radius = 20.577
 height = 28.6093
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=3]
 
 [node name="Boss" type="Area2D"]
 collision_layer = 5
@@ -50,6 +50,7 @@ Max = 500
 scale = Vector2( 26.24, 26.24 )
 
 [node name="SightCollider" type="CollisionShape2D" parent="Sight"]
+rotation = 1.5708
 shape = SubResource( 3 )
 [connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Boss_area_exited"]

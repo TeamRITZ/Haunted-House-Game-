@@ -1,0 +1,92 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://ASSETS/Art/RedGhost/8.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/Art/RedGhost/4.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Art/RedGhost/5.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/Art/RedGhost/1.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/Art/RedGhost/0.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/Art/RedGhost/11.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/Art/RedGhost/10.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/Art/RedGhost/9.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/Art/RedGhost/3.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/Art/RedGhost/2.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/Art/RedGhost/7.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/Art/RedGhost/6.png" type="Texture" id=12]
+[ext_resource path="res://SCENES/BossGhost.gd" type="Script" id=13]
+[ext_resource path="res://ASSETS/Audio/ghostDeath.wav" type="AudioStream" id=14]
+[ext_resource path="res://ASSETS/Audio/whiteGhostPain.wav" type="AudioStream" id=15]
+[ext_resource path="res://ASSETS/Audio/ghosts_agro.wav" type="AudioStream" id=16]
+[ext_resource path="res://SCENES/HealthBar.tscn" type="PackedScene" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.9224
+height = 22.2688
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 11.645
+height = 21.1593
+
+[node name="BossGhost" type="KinematicBody2D"]
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "up"
+
+[node name="BodyArea" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
+position = Vector2( 0.554787, -2.21915 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.554779, -2.21915 )
+shape = SubResource( 3 )
+
+[node name="GhostDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
+[node name="GhostHurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+
+[node name="ghostAggro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 17 )]
+margin_left = -13.0367
+margin_top = -31.1385
+margin_right = 26.9633
+margin_bottom = 8.86152
+rect_scale = Vector2( 0.0572347, 0.0918653 )
+[connection signal="area_entered" from="BodyArea" to="." method="_on_BodyArea_area_entered"]
+[connection signal="area_exited" from="BodyArea" to="." method="_on_BodyArea_area_exited"]
