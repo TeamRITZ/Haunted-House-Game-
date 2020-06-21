@@ -40,14 +40,29 @@ animations = [ {
 "name": "walk_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "walk_left",
+"name": "light_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "light_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "light_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
@@ -59,21 +74,6 @@ animations = [ {
 "loop": true,
 "name": "light_left",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "light_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "light_right",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -84,7 +84,7 @@ cull_mode = 1
 polygon = PoolVector2Array( -8.26788, 0.627165, 34.8853, 15.7447, -19.3393, 0.0481396, 33.6962, -12.5567 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 0, 425, 190, 460, 0, 425, -160 )
+points = PoolVector2Array( -10, -10, 425, 190, 460, 0, 425, -160 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 75, 75 )

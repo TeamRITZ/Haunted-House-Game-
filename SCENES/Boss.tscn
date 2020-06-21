@@ -52,7 +52,11 @@ scale = Vector2( 26.24, 26.24 )
 [node name="SightCollider" type="CollisionShape2D" parent="Sight"]
 rotation = 1.5708
 shape = SubResource( 3 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="area_entered" from="." to="." method="_on_Boss_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Boss_area_exited"]
 [connection signal="body_entered" from="Sight" to="." method="_on_Sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_Sight_body_exited"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

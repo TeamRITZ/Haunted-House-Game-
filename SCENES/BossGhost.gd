@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 export var speed = 100
-export var hp = 100
+export var hp = 80
+
 
 var harm = false
 var prevAnimation
@@ -59,7 +60,7 @@ func AnimationLoop():
 	
 #Ghost will follow player
 func Follow(_delta):
-	player_position = player.get_global_position()
+	player_position = player.get_node("InteractionArea").get_global_position()
 	follow_direction = (get_angle_to(player_position) / 3.14) * 180
 	AnimationLoop()
 	var move_rotation = get_angle_to(player_position)
