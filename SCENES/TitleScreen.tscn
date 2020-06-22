@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game/creepymusic.wav" type="AudioStream" id=1]
 [ext_resource path="res://fonts/halloween_party_st/Hallowen Party St.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Game/picturetopeople.org-1a2ff2d8ac72aebe34db1db019c8b01490e17367933e7aa91d.png" type="Texture" id=3]
-[ext_resource path="res://Buttons/NewGameButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Buttons/InstructionsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buttons/MenuButton.gd" type="Script" id=4]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ASSETS/Art/haunted.jpg" type="Texture" id=7]
 [ext_resource path="res://Game/title_screen.gd" type="Script" id=8]
-
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -31,31 +29,46 @@ tracks/0/keys = {
 "values": [ Vector2( -13.1589, 79.9349 ), Vector2( 20.1522, 24.4164 ), Vector2( 63.5096, 69.3599 ), Vector2( 121.005, 24.416 ), Vector2( 63.5096, 69.3599 ), Vector2( 20.1522, 24.4164 ), Vector2( -13.1589, 79.9349 ) ]
 }
 
-[sub_resource type="DynamicFont" id=3]
-size = 40
+[sub_resource type="InputEventAction" id=3]
+action = "title_new_game"
 
-[node name="TitleScreen" type="Control"]
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 117
+outline_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "title_instructions"
+
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 5
+
+[node name="TitleScreen" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.99811
-margin_top = -9.33081
-margin_right = 6.99805
-margin_bottom = -9.33081
+mouse_filter = 1
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="haunted" type="Sprite" parent="."]
-position = Vector2( 627.885, 366.949 )
-scale = Vector2( 0.668656, 0.661182 )
+[node name="haunted" type="Sprite" parent="TitleScreen"]
+scale = Vector2( 0.502385, 0.49677 )
 texture = ExtResource( 7 )
+centered = false
 
-[node name="VersionLabel" type="Label" parent="."]
-margin_left = 56.8015
-margin_top = 572.684
-margin_right = 174.801
-margin_bottom = 623.684
+[node name="VersionLabel" type="Label" parent="TitleScreen"]
+margin_left = 19.5701
+margin_top = 475.31
+margin_right = 137.57
+margin_bottom = 526.31
 size_flags_horizontal = 0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -65,71 +78,123 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 61.7181
-margin_top = 14.0266
-margin_right = 1234.72
-margin_bottom = 716.027
+[node name="Menu" type="VBoxContainer" parent="TitleScreen"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -346.193
+margin_top = -348.049
+margin_right = 539.807
+margin_bottom = 181.951
+rect_scale = Vector2( 0.827185, 0.765912 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen/Menu"]
 autoplay = "New Anim"
 "anims/New Anim" = SubResource( 2 )
 
-[node name="Logo" type="TextureRect" parent="Menu/AnimationPlayer"]
+[node name="Logo" type="TextureRect" parent="TitleScreen/Menu/AnimationPlayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -13.1589
-margin_top = 79.9349
-margin_right = -13.1591
-margin_bottom = 79.9349
+margin_left = 33.8872
+margin_top = 38.6539
+margin_right = 246.887
+margin_bottom = 38.6539
+rect_scale = Vector2( 0.698301, 0.850139 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_right = 1173.0
-margin_bottom = 702.0
-size_flags_vertical = 3
-
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_top = 214.0
-margin_right = 1173.0
-margin_bottom = 487.0
+[node name="Buttons" type="VBoxContainer" parent="TitleScreen/Menu"]
+margin_top = 122.0
+margin_right = 886.0
+margin_bottom = 408.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_constants/separation = 53
 alignment = 1
 
-[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1173.0
+[node name="NewGameButton" type="Button" parent="TitleScreen/Menu/Buttons"]
+margin_right = 886.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 500, 80 )
+action_mode = 0
+shortcut = SubResource( 4 )
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Game/NewGame.tscn"
 
-[node name="InstructionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 133.0
-margin_right = 1173.0
-margin_bottom = 213.0
-
-[node name="debugButton" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_top = 266.0
-margin_right = 1173.0
-margin_bottom = 273.0
-custom_fonts/font = SubResource( 3 )
-text = "debug"
+[node name="Label" type="Label" parent="TitleScreen/Menu/Buttons/NewGameButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.5
+margin_top = -56.5
+margin_right = 192.5
+margin_bottom = 56.5
+rect_scale = Vector2( 0.878259, 0.867817 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.945098, 0.929412, 0.929412, 1 )
+custom_colors/font_outline_modulate = Color( 0.929412, 0.917647, 0.917647, 1 )
+custom_colors/font_color_shadow = Color( 0.439216, 0.298039, 0.388235, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 4
+text = "1 - New Game"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="InstructionsButton" type="Button" parent="TitleScreen/Menu/Buttons"]
+margin_top = 133.0
+margin_right = 886.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 500, 80 )
+shortcut = SubResource( 7 )
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Game/NewGame.tscn"
+
+[node name="Label" type="Label" parent="TitleScreen/Menu/Buttons/InstructionsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.945098, 0.929412, 0.929412, 1 )
+custom_colors/font_outline_modulate = Color( 0.929412, 0.917647, 0.917647, 1 )
+custom_colors/font_color_shadow = Color( 0.439216, 0.298039, 0.388235, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 4
+text = "2 - Instructions"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TitleScreen/Menu/Buttons"]
+margin_top = 266.0
+margin_right = 886.0
+margin_bottom = 286.0
+text = "TestButton"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitleScreen"]
 stream = ExtResource( 1 )
 autoplay = true
 
-[node name="FadeIn" parent="." instance=ExtResource( 6 )]
+[node name="FadeIn" parent="TitleScreen" instance=ExtResource( 6 )]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -138,3 +203,7 @@ margin_top = -9.53674e-07
 margin_right = 0.0
 margin_bottom = 0.0
 rect_scale = Vector2( 1, 1 )
+[connection signal="pressed" from="TitleScreen/Menu/Buttons/NewGameButton" to="TitleScreen/Menu/Buttons/NewGameButton" method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="TitleScreen/Menu/Buttons/NewGameButton" to="TitleScreen" method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="TitleScreen/Menu/Buttons/InstructionsButton" to="TitleScreen" method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="TitleScreen/Menu/Buttons/Button" to="TitleScreen" method="_on_Button_pressed"]

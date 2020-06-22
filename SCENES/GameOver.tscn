@@ -70,11 +70,12 @@ playback_default_blend_time = 1727.23
 "anims/New Anim" = SubResource( 1 )
 
 [node name="8" type="Sprite" parent="AnimationPlayer"]
-position = Vector2( 720.199, 410.07 )
+position = Vector2( 661.137, -110.72 )
 scale = Vector2( 5.83605, 4.34236 )
 texture = ExtResource( 5 )
 
 [node name="MainCharacter_LW_F1" type="Sprite" parent="AnimationPlayer"]
+visible = false
 position = Vector2( 683.436, 404.016 )
 scale = Vector2( 5.55342, 4.05974 )
 texture = ExtResource( 4 )
@@ -89,7 +90,9 @@ margin_left = 7.37329
 margin_top = 447.453
 margin_right = 332.373
 margin_bottom = 527.453
+rect_scale = Vector2( 0.993154, 0.985591 )
 custom_fonts/font = SubResource( 2 )
+action_mode = 0
 text = "Back to Title Screen"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,4 +112,13 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
+
+[node name="Button2" type="Button" parent="."]
+margin_right = 211.0
+margin_bottom = 66.0
+text = "Button 2 test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

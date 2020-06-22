@@ -19,7 +19,7 @@ animations = [ {
 } ]
 
 [node name="Paper" type="Area2D"]
-pause_mode = 2
+pause_mode = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 1 )

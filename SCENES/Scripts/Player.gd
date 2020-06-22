@@ -157,18 +157,22 @@ func _on_Player_directionChanged():
 		$Light2D.position = Vector2 (70, -15)
 		$LightOccluder2D.position = Vector2 (70, -15)
 		$FlashlightBeam.position = Vector2 (70, -15)
+		$LightOccluder2D2.position = Vector2 (0, 0)
 	elif playerDirection == 90:
 		$Light2D.position = Vector2 (-42, -15)
 		$LightOccluder2D.position = Vector2 (-42, -15)
 		$FlashlightBeam.position = Vector2 (-42, -15)
+		$LightOccluder2D2.position = Vector2 (0, 0)
 	elif playerDirection == 180:
 		$Light2D.position = Vector2 (-60, -10)
 		$LightOccluder2D.position = Vector2 (-60, -10)
 		$FlashlightBeam.position = Vector2 (-60, -10)
+		$LightOccluder2D2.position = Vector2 (-40, 0)
 	elif playerDirection == 270:
 		$Light2D.position = Vector2 (50, -5)
 		$LightOccluder2D.position = Vector2 (50, -5)
 		$FlashlightBeam.position = Vector2 (50, -5)
+		$LightOccluder2D2.position = Vector2 (-40, 0)
 
 func _on_Hitbox_area_entered(area):
 	if area.get("TYPE") == "HPOTION":

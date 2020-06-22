@@ -6,6 +6,6 @@ func interact_action(area):
 			$CollisionShape2D.disabled = true
 			get_parent().get_node("CollisionShape2D").disabled = true
 			$DoorOpen.play()
-			get_parent().get_node("Sprite").visible = false #Should be replaced with door opening animation
+			get_parent().get_node("Closed").visible = false #Should be replaced with door opening animation
 		else:
 			$DoorLocked.play()

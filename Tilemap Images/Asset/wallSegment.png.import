@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/doorwayV2.png-ac622366c431dda91a0c77cd828db169.stex"
+path="res://.import/wallSegment.png-a77a56fb648ad66e7db64afde999fbe5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/door/doorwayV2.png"
-dest_files=[ "res://.import/doorwayV2.png-ac622366c431dda91a0c77cd828db169.stex" ]
+source_file="res://Tilemap Images/Asset/wallSegment.png"
+dest_files=[ "res://.import/wallSegment.png-a77a56fb648ad66e7db64afde999fbe5.stex" ]
 
 [params]
 

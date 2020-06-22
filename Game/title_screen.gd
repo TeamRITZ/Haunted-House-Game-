@@ -4,19 +4,18 @@ extends Control
 var scene_path_to_load
 
 func _ready():
-	$Menu/CenterRow/Buttons/NewGameButton.grab_focus()
-	for button in $Menu/CenterRow/Buttons.get_children():
-		button.connect("pressed", self, "_on_Button_pressed")
+	$Menu/Buttons/NewGameButton.grab_focus()
 
 
-func _on_Button_pressed(scene_to_load):
-	scene_path_to_load = scene_to_load
-	$FadeIn.show()
-	$FadeIn.fade_in()
-	
-	
 
-func _on_FadeIn_fade_finished():
-	$FadeIn.hide()
-	get_tree().change_scene(scene_path_to_load)
+func _on_NewGameButton_pressed():
+	SceneChanger.change_scene("res://test.tscn")
 
+
+func _on_InstructionsButton_pressed():
+	pass
+	#SceneChanger.change_scene("res://SCENES/")
+
+
+func _on_Button_pressed():
+	print("clicked!!!")
