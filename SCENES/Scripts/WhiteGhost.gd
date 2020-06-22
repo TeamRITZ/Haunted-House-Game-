@@ -12,6 +12,7 @@ var rng = RandomNumberGenerator.new()
 var potion_scene = preload("res://SCENES/HealthPotion.tscn")
 var brass_key_scene = preload("res://SCENES/brassKey.tscn")
 export var dropBrassKey = false
+var player
 
 func ready():
 	$HealthBar.visible = false
@@ -47,7 +48,6 @@ func _process(_delta):
 				rng.randomize()
 				var random = rng.randf()
 				if random <= 0.1: #10% cahnce to drop health potion on death
-					print("pottion")
 					var Health_Potion = potion_scene.instance()
 					get_tree().get_root().add_child(Health_Potion)
 					Health_Potion.position = get_global_position()
@@ -56,6 +56,7 @@ func _process(_delta):
 			visible = false
 			$CollisionShape2D.disabled = true
 		if $GhostDeath.playing == false:
+			player.killedWhiteGhost = true
 			queue_free()
 
 #Picks the appropriate animation based on direction of movement
@@ -81,3 +82,4 @@ func _on_WhiteGhost_area_entered(area):
 		harm = true
 		speed = speed / 3
 		$GhostHurtSound.play()
+		player = area.get_parent()

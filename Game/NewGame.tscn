@@ -6,8 +6,6 @@
 [ext_resource path="res://ASSETS/Art/MBRsMml.jpg" type="Texture" id=4]
 [ext_resource path="res://ASSETS/Art/TexturesCom_BookOpen0076_6_masked_S.png" type="Texture" id=5]
 
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 23
 font_data = ExtResource( 3 )
@@ -37,10 +35,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 324.0
-margin_top = 366.0
-margin_right = 1051.0
-margin_bottom = 419.0
+margin_left = 164.0
+margin_top = 276.0
+margin_right = 891.0
+margin_bottom = 329.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 727.0
