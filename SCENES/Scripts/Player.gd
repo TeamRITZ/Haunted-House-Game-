@@ -161,7 +161,6 @@ func death():
 	$Hitbox/CollisionShape2D2.disabled = true
 	$AnimatedSprite.animation = "death"
 	$AnimatedSprite.play()
-	print("death")
 	dead = true
 	#show death screen after animation is finished. See animation finihished function
 
