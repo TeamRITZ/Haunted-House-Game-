@@ -16,7 +16,6 @@ func ready():
 	$HealthBar._on_max_health_updated(hp)
 	$HealthBar._on_health_updated(hp)
 	$AnimatedSprite.play()
-	#$SpawnTimer.set_wait_time(2)
 	
 func _process(delta):
 	if harm:
@@ -28,7 +27,8 @@ func _process(delta):
 			dead = true
 			$SpawnTimer.stop()
 			$Sight.get_node("SightCollider").disabled = true
-			#$AnimatedSprite.animation = "death"
+			$AnimatedSprite.animation = "death"
+			$AnimatedSprite.play()
 		if $death.playing == false:
 			queue_free()
 
@@ -57,7 +57,7 @@ func _on_Sight_body_entered(body):
 		get_tree().get_root().add_child(key)
 
 func _on_Sight_body_exited(body):
-	if body.name == "Player":
+	if body.name == "Player" and dead == false:
 		player_in_range = false
 		$AnimatedSprite.animation = "back"
 		$SpawnTimer.stop()

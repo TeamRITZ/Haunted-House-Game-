@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1.png-8c0fe01f07c8370306068c6991d246ac.stex"
+path="res://.import/death20.png-b1a66bc09677f088cf471ba628071138.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/Art/Grue/1.png"
-dest_files=[ "res://.import/1.png-8c0fe01f07c8370306068c6991d246ac.stex" ]
+source_file="res://ASSETS/Art/Grue/death/death20.png"
+dest_files=[ "res://.import/death20.png-b1a66bc09677f088cf471ba628071138.stex" ]
 
 [params]
 
