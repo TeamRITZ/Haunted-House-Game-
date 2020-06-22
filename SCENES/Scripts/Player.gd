@@ -161,6 +161,8 @@ func death():
 	$Hitbox/CollisionShape2D2.disabled = true
 	$AnimatedSprite.animation = "death"
 	$AnimatedSprite.play()
+	yield($AnimatedSprite, "animation_finished")
+	SceneChanger.change_scene("res://SCENES/GameOver.tscn")
 	dead = true
 	#show death screen after animation is finished. See animation finihished function
 
@@ -227,7 +229,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground").visible = true
 			get_node("../HUD/InventoryBackground/SilverKey").visible = true
 			$ItemPickup.play()
-			var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and a this key fell out."]
+			var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and this key fell out."]
 			DialogBox.load_dialog(text)
 			area.queue_free()
 		if area.get("TYPE") == "GKEY":
@@ -270,4 +272,4 @@ func _on_InteractionArea_area_exited(_area):
 	
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.stop()
-	#go to end screen here
+	

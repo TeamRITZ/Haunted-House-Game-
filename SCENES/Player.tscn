@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://ASSETS/Art/Magician-Magi_Witch/Magician-Magi-Witch/Individual PNG/MainCharacter_LW_F7.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/Art/Magician-Magi_Witch/Magician-Magi-Witch/Individual PNG/MainCharacter_LW_F8.png" type="Texture" id=2]
@@ -57,29 +57,14 @@ animations = [ {
 "name": "walk_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "light_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "light_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "light_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "light_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
 "loop": true,
-"name": "walk_right",
+"name": "light_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
@@ -90,6 +75,21 @@ animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "light_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "light_down",
 "speed": 5.0
 } ]
 
@@ -114,14 +114,17 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( 16.7948, -86.1459, 33.8181, -67.5751, 47.7462, 8.25577, 63.2219, 75.575, -21.8944, 74.0274, -10.2876, 11.3509, -8.74005, -66.8013 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 4 )
 speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -1.47021 )
-scale = Vector2( 3.02023, 3.01453 )
+scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
+animation = "walk_left"
 speed_scale = 0.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -182,6 +185,9 @@ frames = SubResource( 6 )
 [node name="ItemPickup" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 32 )
 volume_db = 5.0
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource( 7 )
 [connection signal="directionChanged" from="." to="." method="_on_Player_directionChanged"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
