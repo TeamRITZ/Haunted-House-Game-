@@ -18,14 +18,19 @@ func ready():
 	$AnimatedSprite.play()
 	#$SpawnTimer.set_wait_time(2)
 	
-
 func _process(delta):
 	if harm:
 		hp -= 1
 		$HealthBar._on_health_updated(hp)
 	if hp <=0:
-		queue_free()
-
+		if dead == false:
+			$death.play()
+			dead = true
+			$SpawnTimer.stop()
+			$Sight.get_node("SightCollider").disabled = true
+			#$AnimatedSprite.animation = "death"
+		if $death.playing == false:
+			queue_free()
 
 func _on_Boss_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
@@ -35,7 +40,6 @@ func _on_Boss_area_entered(area):
 func _on_Boss_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
 		harm = false
-
 
 func _on_Sight_body_entered(body):
 	if body.name == "Player":
@@ -64,6 +68,7 @@ func _on_SpawnTimer_timeout():
 	rng.randomize()
 	var random = rng.randf()
 	if random <= prob: #50% cahnce to spawn BossGhost
+		$GhostSpawn.play()
 		var key = boss_ghost_scene.instance()
 		key.start_position = get_global_position()
 		key.position = get_global_position()
