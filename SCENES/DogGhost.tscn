@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/Art/dog/dogSit.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://SCENES/interactableBowl.gd" type="Script" id=11]
 [ext_resource path="res://ASSETS/Audio/OOT_Secret.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/Art/bone.png" type="Texture" id=13]
+[ext_resource path="res://SCENES/brassKey.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -96,6 +97,9 @@ stream = ExtResource( 12 )
 visible = false
 position = Vector2( 155.647, 27.4361 )
 texture = ExtResource( 13 )
+
+[node name="brassKey" parent="." instance=ExtResource( 14 )]
+position = Vector2( 159.68, -88.2164 )
 [connection signal="area_entered" from="." to="." method="_on_DogGhost_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_DogGhost_area_exited"]
 [connection signal="body_entered" from="Sight" to="." method="_on_Sight_body_entered"]

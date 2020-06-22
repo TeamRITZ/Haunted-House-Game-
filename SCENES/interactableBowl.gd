@@ -4,8 +4,8 @@ var secretFound = false
 var readable = true
 var text = ["There doesn't seem to be anything left to do here."]
 func _ready():
-	#$silverKey/CollisionShape2D.disabled = true
-	#$silverKey/Sprite.visible = false
+	get_parent().get_node("brassKey/CollisionShape2D").disabled = true
+	get_parent().get_node("brassKey/Sprite").visible = false
 	pass
 func interact_action(area):
 	if area.get_parent().hasBone == true:
@@ -13,8 +13,9 @@ func interact_action(area):
 			$secretSound.play()
 			secretFound = true
 			$boneSprite.visible= true
-			#$silverKey/CollisionShape2D.disabled = false
-			#$silverKey/Sprite.visible = true
+			get_parent().get_node("brassKey/CollisionShape2D").disabled = false
+			get_parent().get_node("brassKey/Sprite").visible = true
+	
 		elif readable:
 			DialogBox.load_dialog(text)
 			#The following is an over-complicated way to make sure
