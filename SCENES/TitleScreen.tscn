@@ -112,16 +112,15 @@ __meta__ = {
 [node name="Buttons" type="VBoxContainer" parent="TitleScreen/Menu"]
 margin_top = 158.0
 margin_right = 886.0
-margin_bottom = 408.0
+margin_bottom = 371.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_constants/separation = 53
 alignment = 1
 
 [node name="NewGameButton" type="Button" parent="TitleScreen/Menu/Buttons"]
-margin_top = 18.0
 margin_right = 886.0
-margin_bottom = 98.0
+margin_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 500, 80 )
@@ -165,9 +164,9 @@ margin_bottom = 286.0
 text = "TestButton"
 
 [node name="InstructionsButton" type="Button" parent="TitleScreen/Menu/Buttons"]
-margin_top = 151.0
+margin_top = 133.0
 margin_right = 886.0
-margin_bottom = 231.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 500, 80 )
 shortcut = SubResource( 7 )
 flat = true
