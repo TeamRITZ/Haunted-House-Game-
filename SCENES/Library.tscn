@@ -13,7 +13,6 @@
 [ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=12]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
 

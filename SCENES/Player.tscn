@@ -45,11 +45,6 @@ animations = [ {
 "name": "light_down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "light_right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "light_up",
@@ -68,6 +63,11 @@ animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "light_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
