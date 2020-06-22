@@ -17,6 +17,11 @@ var hasElaborateKey = false
 var hasBone = false
 var hasAnatomyBook = false
 
+var killedDog = false
+var killedWhiteGhost = false
+var killedBoss = true
+var text = [""]
+
 var screen_size
 var playerDirection = 0
 var prevPlayerDir = 0
@@ -187,12 +192,20 @@ func _on_Hitbox_area_entered(area):
 		get_node("../HUD/InventoryBackground").visible = true
 		get_node("../HUD/InventoryBackground/BrassKey").visible = true
 		$ItemPickup.play()
+		if killedDog == false:
+			var text = ["The dog spirit seemed gratefull for the bone and gave you its favorite toy. Fortunately that toy was a key! "]
+			DialogBox.load_dialog(text)
+		else:
+			var text = ["When you banished the dog spirt it left this key behind."]
+			DialogBox.load_dialog(text)
 		area.queue_free()
 	if area.get("TYPE") == "SKEY":
 		hasSilverKey = true
 		get_node("../HUD/InventoryBackground").visible = true
 		get_node("../HUD/InventoryBackground/SilverKey").visible = true
 		$ItemPickup.play()
+		var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and a this key fell out."]
+		DialogBox.load_dialog(text)
 		area.queue_free()
 	if area.get("TYPE") == "GKEY":
 		hasGoldKey = true
@@ -211,6 +224,12 @@ func _on_Hitbox_area_entered(area):
 		get_node("../HUD/InventoryBackground").visible = true
 		get_node("../HUD/InventoryBackground/Bone").visible = true
 		$ItemPickup.play()
+		if killedDog == false:
+			var text = ["That dog spirit looks frienly enough... maybe it would appreciate this bone to chew on..."]
+			DialogBox.load_dialog(text)
+		else:
+			var text = ["That dog spirit I banished probably would have enjoyed this bone..."]
+			DialogBox.load_dialog(text)
 		area.queue_free()
 
 

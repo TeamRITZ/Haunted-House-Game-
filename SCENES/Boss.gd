@@ -11,6 +11,7 @@ export var hp = 500
 
 var boss_ghost_scene = preload("res://SCENES/BossGhost.tscn")
 var rng = RandomNumberGenerator.new()
+var player
 
 func ready():
 	$HealthBar._on_max_health_updated(hp)
@@ -30,12 +31,14 @@ func _process(delta):
 			$AnimatedSprite.animation = "death"
 			$AnimatedSprite.play()
 		if $death.playing == false:
+			player.killedBoss = true
 			queue_free()
 
 func _on_Boss_area_entered(area):
 	if area.get_name() == "FlashlightBeam":
 		$HealthBar.visible = true
 		harm = true
+		player = area.get_parent()
 		
 func _on_Boss_area_exited(area):
 	if area.get_name() == "FlashlightBeam":
