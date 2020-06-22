@@ -4,6 +4,8 @@ var invulnerable = true
 var harm = false
 var dead = false
 var player_in_range = false
+var playerSeen = false
+var prob = 0.5
 
 export var hp = 500
 
@@ -38,6 +40,9 @@ func _on_Boss_area_exited(area):
 func _on_Sight_body_entered(body):
 	if body.name == "Player":
 		player_in_range = true
+		if playerSeen == false:
+			playerSeen = true
+			$ISeeYou.play()
 		$AnimatedSprite.animation = "front"
 		$SpawnTimer.start()
 		#Spawn a single ghost immediately 
@@ -58,11 +63,15 @@ func _on_Sight_body_exited(body):
 func _on_SpawnTimer_timeout():
 	rng.randomize()
 	var random = rng.randf()
-	if random <= 0.5: #50% cahnce to spawn BossGhost
+	if random <= prob: #50% cahnce to spawn BossGhost
 		var key = boss_ghost_scene.instance()
 		key.start_position = get_global_position()
 		key.position = get_global_position()
 		key.player = get_parent().get_node("Player")
 		get_tree().get_root().add_child(key)
+		prob = 0.5
+	else:
+		prob += 0.2
+		print(prob)
 	
 	
