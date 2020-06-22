@@ -9,7 +9,7 @@
 [ext_resource path="res://Tilemap Images/Asset/house_inside.png" type="Texture" id=7]
 [ext_resource path="res://Tilemap Images/Asset/interior.png" type="Texture" id=8]
 [ext_resource path="res://Tilemap Images/Asset/DemonicSymbols.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/Art/bookIcon.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/Art/MagicBook.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -438,5 +438,5 @@ __meta__ = {
 
 [node name="book" type="Sprite" parent="."]
 position = Vector2( 480.322, 111.138 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 10 )
