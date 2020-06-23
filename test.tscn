@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -57,6 +57,21 @@ polygon = PoolVector2Array( -75.6339, 265.463, -60.2905, 263.924, -56.9722, 246.
 [sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 535.87, 107.361, 0, 0, 0, 0, 533.079, 163.662, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 751.525, -411.264, 0, 0, 0, 0, 881.487, -413.069, 0, 0, 0, 0, 890.512, -340.868, 0, 0, 0, 0, 748.818, -339.965, 0, 0, 0, 0, 751.525, -411.264 )
+}
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1858.31, -410.603, 0, 0, 0, 0, 1588.2, -414.48, 0, 0, 0, 0, 1513.24, -74.5866, 0, 0, 0, 0, 1862.18, -73.2943 )
+}
+
+[sub_resource type="Curve2D" id=12]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2145.66, -357.714, 0, 0, 0, 0, 2433.49, -349.122, 0, 0, 0, 0, 2430.62, -270.363, 0, 0, 0, 0, 2145.66, -270.363, 0, 0, 0, 0, 2145.66, -357.714 )
 }
 
 [sub_resource type="OccluderPolygon2D" id=9]
@@ -189,6 +204,42 @@ rotate = false
 
 [node name="WhiteGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
 position = Vector2( 0.612042, -3.33053 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 10 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 751.525, -411.264 )
+rotate = false
+
+[node name="WhiteGhost2" parent="Path2D2/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 0.828857, 0.0133362 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource( 11 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2( 1858.31, -410.603 )
+rotate = false
+
+[node name="WhiteGhost3" parent="Path2D3/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 1.4574, -2.7377 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D4" type="Path2D" parent="."]
+curve = SubResource( 12 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2( 2145.66, -357.714 )
+rotate = false
+
+[node name="WhiteGhost4" parent="Path2D4/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 3.12524, 7.06012 )
+rotation = 0.0200484
 scale = Vector2( 1.5, 1.5 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 7 )]
