@@ -161,10 +161,10 @@ func death():
 	$Hitbox/CollisionShape2D2.disabled = true
 	$AnimatedSprite.animation = "death"
 	$AnimatedSprite.play()
+	$gameOver.play()
 	yield($AnimatedSprite, "animation_finished")
 	SceneChanger.change_scene("res://SCENES/GameOver.tscn")
 	dead = true
-	#show death screen after animation is finished. See animation finihished function
 
 func _on_HurtTimer_timeout():
 	$Hitbox/CollisionShape2D2.disabled = false
@@ -269,7 +269,4 @@ func _on_InteractionArea_area_exited(_area):
 	interaction_target = null
 	$InteractPrompt.stop()
 	$InteractPrompt.visible = false
-	
-func _on_AnimatedSprite_animation_finished():
-	$AnimatedSprite.stop()
 	
