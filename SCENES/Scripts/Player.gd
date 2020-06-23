@@ -21,6 +21,7 @@ var hasAnatomyBook = false
 var killedDog = false
 var killedWhiteGhost = false
 var killedBoss = true
+var tookDamage = false
 var text = [""]
 
 var screen_size
@@ -206,6 +207,7 @@ func _on_Hitbox_area_entered(area):
 			area.queue_free()
 		if area.get("TYPE") == "GHOST":
 			health -= 25
+			tookDamage = true
 			$Hitbox/CollisionShape2D2.set_deferred("disabled", true)
 			$HurtTimer.start()
 			$AnimatedSprite.set_modulate(Color(1,0,0))

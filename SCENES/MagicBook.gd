@@ -14,6 +14,10 @@ With that dark magic gone you can more easily tell the difference between the ag
 spirts and the passive nature of the white spirits. Maybe it would have been possible to clear the mansion of only the 
 red and black spirits"""]
 			DialogBox.load_dialog(text)
+		elif area.get_parent().tookDamage == false:
+			var text = ["""When you remove the book from its pedastle you feel a sense of dark magic leaving the GrimWood Chateau.
+Congratulations! You have beaten the game with optimal results! You didn't kill any passive spirits, and you didn't take any damage!"""]
+			DialogBox.load_dialog(text)
 		else:
 			var text = ["""When you remove the book from its pedastle you feel a sense of dark magic leaving the GrimWood Chateau.
 Congratulations! You have beaten the game without killing any passive spirits!"""]
