@@ -252,7 +252,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground/Bone").visible = true
 			$ItemPickup.play()
 			if killedDog == false:
-				var text = ["That dog spirit looks frienly enough... maybe it would appreciate this bone to chew on..."]
+				var text = ["That dog spirit looks friendly enough... maybe it would appreciate this bone to chew on..."]
 				DialogBox.load_dialog(text)
 			else:
 				var text = ["That dog spirit I banished probably would have enjoyed this bone..."]
