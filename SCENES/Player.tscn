@@ -47,6 +47,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk_up",
@@ -55,16 +60,6 @@ animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "light_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walk_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
@@ -87,9 +82,14 @@ animations = [ {
 "name": "light_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "death",
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk_down",
 "speed": 5.0
 } ]
 
@@ -123,8 +123,9 @@ speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
+z_index = 1
 frames = SubResource( 1 )
-animation = "walk_left"
+animation = "walk_right"
 speed_scale = 0.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
