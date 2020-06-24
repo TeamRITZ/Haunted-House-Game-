@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/Inside_B.png" type="Texture" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://SCENES/AnatomyBook.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/silverKey.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=12]
+[ext_resource path="res://SCENES/LibraryDoor.gd" type="Script" id=13]
+[ext_resource path="res://ASSETS/Audio/door_open.wav" type="AudioStream" id=14]
+[ext_resource path="res://ASSETS/Audio/Key Jiggle.wav" type="AudioStream" id=15]
+[ext_resource path="res://Tilemap Images/Asset/RightDoor.png" type="Texture" id=16]
+[ext_resource path="res://SCENES/InterationEnabler2.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -559,6 +564,12 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 69, 0, 69 )
 } ]
 25/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 4.97137, 49.8026 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 5.22412, 49.8658 )
+
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 15.926, 34.5383 )
 
@@ -581,7 +592,7 @@ tile_set = SubResource( 24 )
 cell_size = Vector2( 16, 16 )
 occluder_light_mask = 0
 format = 1
-tile_data = PoolIntArray( 65557, 13, 0, 131097, 16, 0, 131101, 17, 0, 196609, 9, 0, 196611, 9, 0, 196613, 10, 0, 196615, 9, 0, 196617, 9, 0, 196619, 10, 0, 196621, 10, 0, 196623, 9, 0, 196625, 9, 0, 196627, 10, 0, 196647, 10, 0, 196649, 9, 0, 196651, 9, 0, 196653, 10, 0, 196655, 9, 0, 196657, 10, 0, 196659, 10, 0, 196661, 9, 0, 196663, 9, 0, 196665, 9, 0, 262171, 18, 0, 262179, 18, 0, 262181, 15, 0, 393238, 20, 0, 524345, 20, 0, 655365, 20, 0, 655390, 19, 0, 655394, 25, 0, 852010, 20, 0, 1114114, 14, 0, 1114125, 20, 0, 1114169, 14, 0, 1441827, 20, 0, 1507367, 9, 0, 1507369, 10, 0, 1507371, 10, 0, 1507373, 9, 0, 1507375, 9, 0, 1507377, 10, 0, 1507379, 10, 0, 1507381, 9, 0, 1507383, 9, 0, 1507385, 10, 0, 1572865, 20, 0, 1703937, 11, 0, 1769495, 20, 0, 1835065, 20, 0, 1966085, 20, 0 )
+tile_data = PoolIntArray( 65557, 13, 0, 131097, 16, 0, 131101, 17, 0, 196609, 9, 0, 196611, 9, 0, 196613, 10, 0, 196615, 9, 0, 196617, 9, 0, 196619, 10, 0, 196621, 10, 0, 196623, 9, 0, 196625, 9, 0, 196627, 10, 0, 196647, 10, 0, 196649, 9, 0, 196651, 9, 0, 196653, 10, 0, 196655, 9, 0, 196657, 10, 0, 196659, 10, 0, 196661, 9, 0, 196663, 9, 0, 196665, 9, 0, 262171, 18, 0, 262179, 18, 0, 262181, 15, 0, 655390, 19, 0, 655394, 25, 0, 1114114, 14, 0, 1114169, 14, 0, 1507367, 9, 0, 1507369, 10, 0, 1507371, 10, 0, 1507373, 9, 0, 1507375, 9, 0, 1507377, 10, 0, 1507379, 10, 0, 1507381, 9, 0, 1507383, 9, 0, 1507385, 10, 0, 1572865, 20, 0, 1703937, 11, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -594,6 +605,42 @@ tile_data = PoolIntArray( 589858, 23, 0, 1703938, 12, 0, 1769473, 24, 0, 1835010
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Door" type="StaticBody2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="Closed" type="Sprite" parent="Door"]
+visible = false
+position = Vector2( 955.807, 265.76 )
+scale = Vector2( 1.54777, 1.75913 )
+texture = ExtResource( 16 )
+
+[node name="Open" type="Sprite" parent="Door"]
+position = Vector2( 955.334, 265.929 )
+scale = Vector2( 1.37455, 1.74482 )
+z_index = 2
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+visible = false
+position = Vector2( 954.467, 265.061 )
+shape = SubResource( 27 )
+
+[node name="InterationEnabler2" type="Area2D" parent="Door"]
+visible = false
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/InterationEnabler2"]
+position = Vector2( 954.97, 265.095 )
+shape = SubResource( 28 )
+
+[node name="DoorClosed" type="AudioStreamPlayer2D" parent="Door/InterationEnabler2"]
+stream = ExtResource( 15 )
+volume_db = 2.0
+
+[node name="DoorOpen" type="AudioStreamPlayer2D" parent="Door/InterationEnabler2"]
+stream = ExtResource( 14 )
+volume_db = 24.0
 
 [node name="InteractableBookcase" type="Area2D" parent="."]
 collision_layer = 3
