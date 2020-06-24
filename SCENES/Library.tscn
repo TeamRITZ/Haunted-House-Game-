@@ -564,16 +564,16 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 69, 0, 69 )
 } ]
 25/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 4.97137, 49.8026 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 5.22412, 49.8658 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 15.926, 34.5383 )
 
-[sub_resource type="OccluderPolygon2D" id=26]
+[sub_resource type="OccluderPolygon2D" id=28]
 closed = false
 polygon = PoolVector2Array( 623.701, 440.126, 623.701, 368.105, 943.547, 368.105, 943.547, 440.126 )
 
@@ -607,32 +607,25 @@ __meta__ = {
 }
 
 [node name="Door" type="StaticBody2D" parent="."]
+collision_layer = 3
 script = ExtResource( 13 )
 
-[node name="Closed" type="Sprite" parent="Door"]
-visible = false
+[node name="sprite" type="Sprite" parent="Door"]
 position = Vector2( 955.807, 265.76 )
 scale = Vector2( 1.54777, 1.75913 )
 texture = ExtResource( 16 )
 
-[node name="Open" type="Sprite" parent="Door"]
-position = Vector2( 955.334, 265.929 )
-scale = Vector2( 1.37455, 1.74482 )
-z_index = 2
-texture = ExtResource( 16 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-visible = false
 position = Vector2( 954.467, 265.061 )
-shape = SubResource( 27 )
+shape = SubResource( 25 )
 
 [node name="InterationEnabler2" type="Area2D" parent="Door"]
-visible = false
+collision_layer = 3
 script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/InterationEnabler2"]
 position = Vector2( 954.97, 265.095 )
-shape = SubResource( 28 )
+shape = SubResource( 26 )
 
 [node name="DoorClosed" type="AudioStreamPlayer2D" parent="Door/InterationEnabler2"]
 stream = ExtResource( 15 )
@@ -649,7 +642,7 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableBookcase"]
 position = Vector2( 320.122, 82.4976 )
-shape = SubResource( 25 )
+shape = SubResource( 27 )
 
 [node name="secretSound" type="AudioStreamPlayer2D" parent="InteractableBookcase"]
 stream = ExtResource( 8 )
@@ -684,4 +677,4 @@ shadow_gradient_length = 3.0
 shadow_filter_smooth = 3.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 26 )
+occluder = SubResource( 28 )

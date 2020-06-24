@@ -196,10 +196,6 @@ scale = Vector2( 0.388791, 0.395173 )
 position = Vector2( 124.004, 388.427 )
 scale = Vector2( 1.48, 1.48 )
 
-[node name="RedGhost5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 905.359, 894.102 )
-scale = Vector2( 1.48, 1.48 )
-
 [node name="RedGhost2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 145.204, -350.935 )
 scale = Vector2( 1.48, 1.48 )
