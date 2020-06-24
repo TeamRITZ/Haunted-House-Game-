@@ -327,3 +327,6 @@ rotate = false
 
 [node name="WhiteGhost" parent="Path2D7/PathFollow2D" instance=ExtResource( 6 )]
 scale = Vector2( 1.25, 1.25 )
+
+[node name="HealthPotion2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2793.07, -897.394 )
