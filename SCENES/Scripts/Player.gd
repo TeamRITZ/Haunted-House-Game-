@@ -220,7 +220,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground/BrassKey").visible = true
 			$ItemPickup.play()
 			if killedDog == false:
-				var text = ["The dog spirit seemed gratefull for the bone and gave you its favorite toy. Fortunately that toy was a key! "]
+				var text = ["The dog spirit seemed grateful for the bone and gave you its favorite toy. Fortunately that toy was a key! "]
 				DialogBox.load_dialog(text)
 			else:
 				var text = ["When you banished the dog spirt it left this key behind."]
