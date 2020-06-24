@@ -63,6 +63,7 @@ margin_bottom = -47.0643
 rect_scale = Vector2( 0.24, 0.24 )
 
 [node name="Sight" type="Area2D" parent="."]
+visible = false
 
 [node name="SightArea" type="CollisionShape2D" parent="Sight"]
 shape = SubResource( 3 )
@@ -100,6 +101,12 @@ stream = ExtResource( 12 )
 visible = false
 position = Vector2( 155.647, 27.4361 )
 texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="interactableBowl"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactableBowl/StaticBody2D"]
+position = Vector2( 154.249, 39.6628 )
+shape = SubResource( 4 )
 [connection signal="area_entered" from="." to="." method="_on_DogGhost_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_DogGhost_area_exited"]
 [connection signal="body_entered" from="Sight" to="." method="_on_Sight_body_entered"]
