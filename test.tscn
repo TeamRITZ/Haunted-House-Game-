@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -66,7 +66,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=10]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1858.31, -410.603, 0, 0, 0, 0, 1588.2, -414.48, 0, 0, 0, 0, 1513.24, -74.5866, 0, 0, 0, 0, 1862.18, -73.2943 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1858.31, -410.603, 0, 0, 0, 0, 1588.2, -414.48, 0, 0, 0, 0, 1513.24, -74.5866, 0, 0, 0, 0, 1862.18, -73.2943, 0, 0, 0, 0, 1863.61, -43.6223, 0, 0, 0, 0, 1492.71, -35.4578, 0, 0, 0, 0, 1588.35, -411.025, 0, 0, 0, 0, 1859.06, -389.942, 0, 0, 0, 0, 1858.31, -410.603 )
 }
 
 [sub_resource type="Curve2D" id=11]
@@ -76,6 +76,21 @@ _data = {
 
 [sub_resource type="OccluderPolygon2D" id=12]
 polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44366, 5.39517, 4.38928 )
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 363.256, 183.909, 0, 0, 0, 0, 364.154, 118.134, 0, 0, 0, 0, 442.38, 113.611, 0, 0, 0, 0, 433.91, -14.0391, 0, 0, 0, 0, 311.341, -10.1038, 0, 0, 0, 0, 310.601, -47.0309, 0, 0, 0, 0, 239.701, -45.6093, 0, 0, 0, 0, 241.776, 94.7288, 0, 0, 0, 0, -69.0771, 104.656, 0, 0, 0, 0, -70.3728, 187.432, 0, 0, 0, 0, 99.4183, 180.333, 0, 0, 0, 0, 239.727, 176.781, 0, 0, 0, 0, 363.256, 183.909 )
+}
+
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1293.92, -414.323, 0, 0, 0, 0, 1314.97, -105.181, 0, 0, 0, 0, 1036.85, -97.4243, 0, 0, 0, 0, 1035.75, -116.261, 0, 0, 0, 0, 1291.7, -119.585, 0, 0, 0, 0, 1266.22, -413.215, 0, 0, 0, 0, 1293.92, -414.323 )
+}
+
+[sub_resource type="Curve2D" id=15]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2295.55, -62.5146, 0, 0, 0, 0, 2506.55, -59.5146, 0, 0, 0, 0, 2506.55, -403.516, 0, 0, 0, 0, 2295.55, -62.5146 )
+}
 
 [node name="Node2D" type="Node2D"]
 modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
@@ -274,3 +289,40 @@ position = Vector2( 2391.79, -1459.95 )
 position = Vector2( 62.2289, 841.924 )
 scale = Vector2( 0.3, 0.3 )
 dropBrassKey = true
+
+[node name="Path2D5" type="Path2D" parent="."]
+position = Vector2( 2148.79, -350.654 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2( 363.256, 183.909 )
+rotation = -1.55714
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D5/PathFollow2D" instance=ExtResource( 6 )]
+rotation = 1.5708
+speed = 100
+
+[node name="Path2D6" type="Path2D" parent="."]
+curve = SubResource( 14 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D6"]
+position = Vector2( 1293.92, -414.323 )
+rotation = 1.50279
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D6/PathFollow2D" instance=ExtResource( 6 )]
+rotation = 4.72984
+
+[node name="Path2D7" type="Path2D" parent="."]
+curve = SubResource( 15 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
+position = Vector2( 2295.55, -62.5146 )
+rotation = 0.0142211
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D7/PathFollow2D" instance=ExtResource( 6 )]
+scale = Vector2( 1.25, 1.25 )

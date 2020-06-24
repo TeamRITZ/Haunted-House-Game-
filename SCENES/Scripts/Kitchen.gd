@@ -33,6 +33,9 @@ func _on_Candle_candle_changed():
 					if can4.lit:
 						if can5.lit:
 							if !can6.lit:
-								$Door.queue_free()
+								$KitchenDoor/closedSprite.visible=false
 								$AudioStreamPlayer2D.play()
+								$KitchenDoor/doorOpen.play()
+								$KitchenDoor/CollisionShape2D.disabled = true
+								$KitchenDoor/collision/CollisionShape2D.disabled = true
 								solved = true
