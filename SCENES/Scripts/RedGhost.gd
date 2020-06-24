@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var speed = 125
 export var hp = 125
-export var dropBrassKey = false
+export var dropElaborateKey = false
 var harm = false
 var prevAnimation
 
@@ -16,7 +16,7 @@ var dead = false
 
 var rng = RandomNumberGenerator.new()
 var potion_scene = preload("res://SCENES/HealthPotion.tscn")
-var brass_key_scene = preload("res://SCENES/brassKey.tscn")
+var elaborate_key_scene = preload("res://SCENES/elaborateKey.tscn")
 
 onready var player = get_parent().get_node("Player")
 onready var start_position = get_global_position()
@@ -50,8 +50,8 @@ func _process(delta):
 	if hp <=0:
 		$GhostAgro.stop()
 		if dead == false:
-			if dropBrassKey == true:
-				var key = brass_key_scene.instance()
+			if dropElaborateKey == true:
+				var key = elaborate_key_scene.instance()
 				get_tree().get_root().add_child(key)
 				key.position = position
 			else:

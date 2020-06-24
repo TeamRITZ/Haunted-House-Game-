@@ -1431,6 +1431,7 @@ shape = SubResource( 69 )
 
 [node name="doorOpen" type="AudioStreamPlayer2D" parent="KitchenDoor"]
 stream = ExtResource( 18 )
+volume_db = 24.0
 
 [node name="doorLocked" type="AudioStreamPlayer2D" parent="KitchenDoor"]
 stream = ExtResource( 19 )

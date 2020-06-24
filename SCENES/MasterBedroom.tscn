@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/ak&#039;s_assets.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=2]
@@ -10,7 +10,12 @@
 [ext_resource path="res://Tilemap Images/Asset/interior.png" type="Texture" id=8]
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap Images/Asset/food.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/Art/door/masterBedroomDoorOpen.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/Art/door/masterBedroomDoor.png" type="Texture" id=13]
+[ext_resource path="res://SCENES/MasterBedroomDoor.gd" type="Script" id=14]
+[ext_resource path="res://ASSETS/Audio/door_open.wav" type="AudioStream" id=15]
+[ext_resource path="res://ASSETS/Audio/Key Jiggle.wav" type="AudioStream" id=16]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 96, 0, 96 )
@@ -1517,6 +1522,12 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 76/shapes = [  ]
 76/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 32.3413, 48.7308 )
+
+[sub_resource type="RectangleShape2D" id=66]
+extents = Vector2( 37.2014, 10 )
+
 [node name="MasterBedroom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1575,3 +1586,34 @@ texture = ExtResource( 12 )
 position = Vector2( 916.809, 33.1145 )
 scale = Vector2( 0.0586131, 0.0628777 )
 texture = ExtResource( 12 )
+
+[node name="MasterBedroomDoor" type="Area2D" parent="."]
+collision_layer = 3
+script = ExtResource( 14 )
+
+[node name="Closed" type="Sprite" parent="MasterBedroomDoor"]
+position = Vector2( 498.997, 48.2544 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MasterBedroomDoor"]
+position = Vector2( 499.168, 50.5274 )
+shape = SubResource( 65 )
+
+[node name="Open" type="Sprite" parent="MasterBedroomDoor"]
+position = Vector2( 499.457, 48.2552 )
+z_index = 2
+texture = ExtResource( 11 )
+
+[node name="collision" type="StaticBody2D" parent="MasterBedroomDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MasterBedroomDoor/collision"]
+position = Vector2( 498.891, 88.6486 )
+shape = SubResource( 66 )
+
+[node name="lockedSound" type="AudioStreamPlayer2D" parent="MasterBedroomDoor"]
+stream = ExtResource( 16 )
+
+[node name="openSound" type="AudioStreamPlayer2D" parent="MasterBedroomDoor"]
+stream = ExtResource( 15 )
+volume_db = 24.0
+attenuation = 0.435275

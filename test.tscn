@@ -203,6 +203,7 @@ scale = Vector2( 1.48, 1.48 )
 [node name="RedGhost3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2093, -908.958 )
 scale = Vector2( 1.48, 1.48 )
+dropElaborateKey = true
 
 [node name="RedGhost4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2725.4, -692.523 )
