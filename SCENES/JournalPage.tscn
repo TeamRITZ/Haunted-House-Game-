@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SCENES/Scripts/JournalPage.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/Art/paper/oldpage1.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/Font/DisposableDroidBB.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ASSETS/Art/paper/oldpage2.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Font/INFROMAN.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_low.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_mid.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_high.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 27
-outline_size = 1
+size = 33
+use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="SpriteFrames" id=2]
@@ -35,7 +35,6 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="JournalPage"]
-modulate = Color( 0.572549, 0.572549, 0.572549, 1 )
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,15 +49,17 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="JournalPage"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 327.0
-margin_top = 89.0
-margin_right = -330.0
-margin_bottom = -95.0
+margin_left = 319.591
+margin_top = 58.4087
+margin_right = -337.409
+margin_bottom = -81.5913
+rect_clip_content = false
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = " \"The [color=red]candles[/color] in this room are[wave] strange.[/wave]\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
 text = " \"The candles in this room are strange.\\n Those that are lit refuse to be extinguished. \\n The others refuse to stay lit.\""
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,7 +67,7 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="JournalPage"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="JournalPage"]
-position = Vector2( 605.551, 440.023 )
+position = Vector2( 625.42, 483.582 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 frame = 3

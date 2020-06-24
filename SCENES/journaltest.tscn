@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SCENES/Charlotte.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SCENES/Lady.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SCENES/Amelia.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SCENES/SweetBuddy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SCENES/DamageFromDad.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152.794, 97.2326 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="SweetBuddy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 824.514, 52.1384 )
+
+[node name="Amelia" parent="." instance=ExtResource( 4 )]
+position = Vector2( 883.928, 240.079 )
+
+[node name="Lady" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
+position = Vector2( 859.678, 444.995 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Charlotte" parent="." instance=ExtResource( 2 )]
+position = Vector2( 175.816, 441.358 )
+
+[node name="DamageFromDad" parent="." instance=ExtResource( 6 )]
+position = Vector2( 174.603, 265.542 )

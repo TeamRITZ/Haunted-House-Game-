@@ -1234,10 +1234,12 @@ position = Vector2( 515.253, 58.9666 )
 shape = SubResource( 49 )
 
 [node name="DoorLocked" type="AudioStreamPlayer2D" parent="Door/interactionEnabler"]
+pause_mode = 2
 stream = ExtResource( 16 )
 volume_db = 2.0
 
 [node name="DoorOpen" type="AudioStreamPlayer2D" parent="Door/interactionEnabler"]
+pause_mode = 2
 stream = ExtResource( 17 )
 volume_db = 24.0
 

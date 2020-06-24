@@ -1,7 +1,9 @@
 extends Area2D
 
 var readable = true
-var text = ["The [color=red]candles[/color] in this room are [wave]strange.[/wave]\n Those that are lit refuse to be extinguished. \n The others refuse to stay lit.","Meanwhile, the [color=red]candles in the kitchen[/color] are behaving normally. This house and its secrets are driving me insane"]
+var text = ["Our dear sweet [color=red]Buddy[/color], as loyal as can be,\nOnce got aggressive and bit poor Timmy.",
+"[color=red]William[/color] got mad and took it too far\nThen locked Buddy in the [color=red]basement[/color] to hide his scars.",
+"Now his spirit remains whimpering and alone,\nMaybe give him some company or bring him a [color=red]bone[/color]."]
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 

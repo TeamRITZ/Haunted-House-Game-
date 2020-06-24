@@ -1,9 +1,10 @@
 extends Area2D
 
 var readable = true
-var text = ["The [color=red]candles[/color] in this room are [wave]strange.[/wave]\n Those that are lit refuse to be extinguished. \n The others refuse to stay lit.","Meanwhile, the [color=red]candles in the kitchen[/color] are behaving normally. This house and its secrets are driving me insane"]
-# Called when the node enters the scene tree for the first time.
-#func _ready():
+var text = ["The damage from [color=red]Dad[/color] was almost irreparable,\nIt made Timmy and Billy completely inseparable.",
+"Billy was neglected and bullied, only Timmy could relate.\nBut Timmy was young, stuck in a naive helpless state.",
+"So Billy swore to protect him, he still does to this day.\nFind [color=red]where they once stood[/color] to make their past escapes. "]
+
 
 func interact_action(_area):
 	if readable:

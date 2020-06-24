@@ -48,29 +48,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walk_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "light_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "light_up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
@@ -88,9 +73,24 @@ animations = [ {
 "name": "walk_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "death",
+"name": "light_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "light_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk_down",
 "speed": 5.0
 } ]
 
@@ -160,6 +160,7 @@ shape = SubResource( 4 )
 one_shot = true
 
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 6 )
 volume_db = 1.0
 
@@ -185,6 +186,7 @@ scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 
 [node name="ItemPickup" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 32 )
 volume_db = 5.0
 
@@ -192,6 +194,7 @@ volume_db = 5.0
 occluder = SubResource( 7 )
 
 [node name="gameOver" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 45 )
 [connection signal="directionChanged" from="." to="." method="_on_Player_directionChanged"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

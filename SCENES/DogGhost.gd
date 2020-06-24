@@ -24,6 +24,8 @@ func takeBone():
 		$whimper.play()
 		dead = true
 		$CollisionShape2D.disabled = true
+		get_node("../Player").hasBone = false
+		get_node("../HUD/InventoryBackground/Bone").visible = false
 	if $whimper.playing == false:
 		queue_free()
 	

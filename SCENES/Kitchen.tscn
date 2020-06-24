@@ -1430,15 +1430,16 @@ position = Vector2( 497.848, 47.8922 )
 shape = SubResource( 69 )
 
 [node name="doorOpen" type="AudioStreamPlayer2D" parent="KitchenDoor"]
+pause_mode = 2
 stream = ExtResource( 18 )
 volume_db = 24.0
 
 [node name="doorLocked" type="AudioStreamPlayer2D" parent="KitchenDoor"]
+pause_mode = 2
 stream = ExtResource( 19 )
 
 [node name="closedSprite" type="Sprite" parent="KitchenDoor"]
 position = Vector2( 497.848, 45.4873 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 17 )
 
 [node name="openSprite" type="Sprite" parent="KitchenDoor"]
@@ -1460,6 +1461,7 @@ position = Vector2( 500.37, 87.68 )
 shape = SubResource( 70 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 15 )
 [connection signal="candle_changed" from="Candle" to="." method="_on_Candle_candle_changed"]
 [connection signal="candle_changed" from="Candle2" to="." method="_on_Candle_candle_changed"]

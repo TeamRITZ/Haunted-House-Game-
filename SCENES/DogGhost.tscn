@@ -69,15 +69,19 @@ visible = false
 shape = SubResource( 3 )
 
 [node name="bark" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 8 )
 
 [node name="whine" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 9 )
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 6 )
 
 [node name="whimper" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
 stream = ExtResource( 15 )
 
 [node name="interactableBowl" type="Area2D" parent="."]
