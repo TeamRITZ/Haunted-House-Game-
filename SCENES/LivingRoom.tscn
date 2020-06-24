@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/castle.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/tileset_16x16_interior.png" type="Texture" id=2]
@@ -1371,6 +1371,14 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
 67/shapes = [  ]
 67/z_index = 0
 
+[sub_resource type="OccluderPolygon2D" id=56]
+closed = false
+polygon = PoolVector2Array( 953.999, 224.267, 953.999, 0, 7.95, 0, 7.95, 518.135, 461.1, 518.135 )
+
+[sub_resource type="OccluderPolygon2D" id=57]
+closed = false
+polygon = PoolVector2Array( 953.999, 301.601, 953.999, 518.135, 556.5, 518.135 )
+
 [node name="LivingRoom" type="Node2D"]
 scale = Vector2( 1.00629, 1.03448 )
 
@@ -1433,3 +1441,9 @@ position = Vector2( 592, 482 )
 [node name="Paper" parent="." instance=ExtResource( 14 )]
 position = Vector2( 186.166, 408.64 )
 scale = Vector2( 0.9, 0.9 )
+
+[node name="walls" type="LightOccluder2D" parent="."]
+occluder = SubResource( 56 )
+
+[node name="wall2" type="LightOccluder2D" parent="walls"]
+occluder = SubResource( 57 )

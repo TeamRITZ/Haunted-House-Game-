@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Haunted House Game"
-run/main_scene="res://test.tscn"
+run/main_scene="res://SCENES/TitleScreen.tscn"
 config/icon="res://Tilemap Images/icon.png"
 
 [autoload]

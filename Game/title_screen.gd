@@ -4,7 +4,7 @@ extends Control
 var scene_path_to_load
 
 func _ready():
-	$Menu/Buttons/NewGameButton.grab_focus()
+	pass#$Menu/Buttons/NewGameButton.grab_focus()
 
 
 
@@ -15,7 +15,3 @@ func _on_NewGameButton_pressed():
 func _on_InstructionsButton_pressed():
 	pass
 	#SceneChanger.change_scene("res://SCENES/")
-
-
-func _on_Button_pressed():
-	print("clicked!!!")

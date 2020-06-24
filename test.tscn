@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
@@ -23,8 +23,10 @@
 [ext_resource path="res://SCENES/Basement.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SCENES/Entrance.tscn" type="PackedScene" id=22]
 [ext_resource path="res://SCENES/MagicBook.tscn" type="PackedScene" id=23]
-[ext_resource path="res://SCENES/DamageFromDad.tscn" type="PackedScene" id=24]
+[ext_resource path="res://SCENES/Amelia.tscn" type="PackedScene" id=24]
 [ext_resource path="res://SCENES/SweetBuddy.tscn" type="PackedScene" id=25]
+[ext_resource path="res://SCENES/Charlotte.tscn" type="PackedScene" id=26]
+[ext_resource path="res://SCENES/Lady.tscn" type="PackedScene" id=27]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 closed = false
@@ -69,43 +71,20 @@ modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
 position = Vector2( -1.36047, -1.36035 )
 script = ExtResource( 3 )
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1423.18, 419.27 )
+scale = Vector2( 0.388791, 0.395173 )
+
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]
 scale = Vector2( 1.00036, 1.00073 )
 
 [node name="window" type="Light2D" parent="Bedroom"]
-position = Vector2( 782.863, 84.7717 )
+position = Vector2( 778.548, 58.889 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 shadow_gradient_length = 10.0
 shadow_filter = 5
 shadow_filter_smooth = 5.0
-
-[node name="curtain" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 0.993649, -19.9769 )
-occluder = SubResource( 1 )
-
-[node name="bookshelf" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 195.948, -44.3215 )
-occluder = SubResource( 2 )
-
-[node name="dresses" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 0, -85.319 )
-occluder = SubResource( 3 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 62.26, 31.4677 )
-occluder = SubResource( 4 )
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 3.49902, 5.83176 )
-occluder = SubResource( 5 )
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="Bedroom/window"]
-occluder = SubResource( 6 )
-
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="Bedroom/window"]
-position = Vector2( 1.16632, 14.9876 )
-occluder = SubResource( 7 )
 
 [node name="window2" type="Light2D" parent="Bedroom"]
 position = Vector2( 600.337, 51.2165 )
@@ -135,6 +114,34 @@ position = Vector2( 27.6825, 465.475 )
 scale = Vector2( 0.0768506, 0.0748481 )
 texture = ExtResource( 4 )
 
+[node name="curtain" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 783.857, 64.7948 )
+occluder = SubResource( 1 )
+
+[node name="bookshelf" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 978.811, 40.4502 )
+occluder = SubResource( 2 )
+
+[node name="dresses" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 782.863, -0.547301 )
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 845.123, 116.239 )
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 786.362, 90.6035 )
+occluder = SubResource( 5 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 782.863, 84.7717 )
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Bedroom"]
+position = Vector2( 784.029, 99.7593 )
+occluder = SubResource( 7 )
+
 [node name="LivingRoom" parent="." instance=ExtResource( 13 )]
 position = Vector2( 0.919495, -540.375 )
 
@@ -152,17 +159,13 @@ position = Vector2( 5.07874, 541.365 )
 scale = Vector2( 0.996177, 0.965238 )
 
 [node name="Entrance" parent="." instance=ExtResource( 22 )]
-position = Vector2( 955.631, 0.450562 )
+position = Vector2( 955, 0 )
 
 [node name="Attic" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1911.61, -1622.1 )
 
 [node name="MagicBook" parent="Attic" instance=ExtResource( 23 )]
 position = Vector2( 481.426, 108.566 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 382.938, 393.946 )
-scale = Vector2( 0.388791, 0.395173 )
 
 [node name="RedGhost" parent="." instance=ExtResource( 11 )]
 position = Vector2( 124.004, 388.427 )
@@ -208,6 +211,7 @@ autoplay = true
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 visible = false
+position = Vector2( 960, 0 )
 current = true
 
 [node name="Music Box" parent="." instance=ExtResource( 12 )]
@@ -215,7 +219,7 @@ position = Vector2( 412.857, 97.2701 )
 scale = Vector2( 0.570743, 0.659984 )
 
 [node name="bone" parent="." instance=ExtResource( 20 )]
-position = Vector2( 711.816, 815.229 )
+position = Vector2( 905.061, 372.606 )
 
 [node name="Boss" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2391.79, -1459.95 )
@@ -225,9 +229,14 @@ position = Vector2( 62.2289, 841.924 )
 scale = Vector2( 0.3, 0.3 )
 dropBrassKey = true
 
-[node name="DamageFromDad" parent="." instance=ExtResource( 24 )]
-position = Vector2( 818.039, 315.836 )
-scale = Vector2( 1.00008, 1.00009 )
+[node name="SweetBuddy" parent="." instance=ExtResource( 25 )]
+position = Vector2( 410.976, 671.595 )
 
-[node name="Paper" parent="." instance=ExtResource( 25 )]
-position = Vector2( 799.467, 460.804 )
+[node name="Amelia" parent="." instance=ExtResource( 24 )]
+position = Vector2( 505.939, -398.616 )
+
+[node name="Charlotte" parent="." instance=ExtResource( 26 )]
+position = Vector2( 2775.29, -197.171 )
+
+[node name="Lady" parent="." instance=ExtResource( 27 )]
+position = Vector2( 2717.51, -887.131 )

@@ -231,7 +231,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground").visible = true
 			get_node("../HUD/InventoryBackground/SilverKey").visible = true
 			$ItemPickup.play()
-			var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and this key fell out."]
+			var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and this silver key fell out."]
 			DialogBox.load_dialog(text)
 			area.queue_free()
 		if area.get("TYPE") == "GKEY":
