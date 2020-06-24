@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SCENES/Scripts/JournalPage.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/Art/paper/notebook_paper.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/Art/paper/oldpage1.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/Font/DisposableDroidBB.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_low.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/Art/KeyPrompt/e_mid.png" type="Texture" id=5]
@@ -35,7 +35,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="JournalPage"]
-modulate = Color( 0.39, 0.3718, 0.3354, 1 )
+modulate = Color( 0.572549, 0.572549, 0.572549, 1 )
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,10 +50,10 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="JournalPage"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 373.0
-margin_top = 99.0
-margin_right = -284.0
-margin_bottom = -85.0
+margin_left = 327.0
+margin_top = 89.0
+margin_right = -330.0
+margin_bottom = -95.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -66,7 +66,7 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="JournalPage"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="JournalPage"]
-position = Vector2( 682.152, 362.328 )
+position = Vector2( 605.551, 440.023 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 frame = 3
