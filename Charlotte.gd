@@ -1,7 +1,8 @@
 extends Area2D
 
 var readable = true
-var text = ["Charlotte was the sweetest little girl\nAlways off in her own little world.\nThe family’s glaring looks made her outcasted\nBut escaping through books is how she lasted."]
+var text = ["Charlotte was the sweetest little girl\nAlways off in her own little world.\nThe family’s glaring looks made her outcasted\nBut [color=red]escaping through books[/color] is how she lasted.",
+"At the [color=red]library desk[/color], she would sit for hours.\nLost in her head, as the princess in the tower."]
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 

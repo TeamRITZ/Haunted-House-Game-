@@ -220,10 +220,10 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground/BrassKey").visible = true
 			$ItemPickup.play()
 			if killedDog == false:
-				var text = ["The dog spirit seemed grateful for the bone and gave you its favorite toy. Fortunately that toy was a key! "]
+				var text = ["Buddy is pleased to be reunited with his bone. He gave you this brass key in return."]
 				DialogBox.load_dialog(text)
 			else:
-				var text = ["When you banished the dog spirt it left this key behind."]
+				var text = ["When you banished the dog spirt, it left this brass key behind."]
 				DialogBox.load_dialog(text)
 			area.queue_free()
 		if area.get("TYPE") == "SKEY":
@@ -231,7 +231,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground").visible = true
 			get_node("../HUD/InventoryBackground/SilverKey").visible = true
 			$ItemPickup.play()
-			var text = ["When you placed the anatomy book back on the shelf where it belongs, a small compartment opened in the shelf and this silver key fell out."]
+			var text = ["This key fell from the bookcase.\nIt's silver, polished to a brilliant shine."]
 			DialogBox.load_dialog(text)
 			area.queue_free()
 		if area.get("TYPE") == "GKEY":
@@ -252,7 +252,7 @@ func _on_Hitbox_area_entered(area):
 			get_node("../HUD/InventoryBackground/Bone").visible = true
 			$ItemPickup.play()
 			if killedDog == false:
-				var text = ["That dog spirit looks friendly enough... maybe it would appreciate this bone to chew on..."]
+				var text = ["It's a bone covered in bite marks.\nA dog must have enjoyed chewing on this.","Might as well take it with me."]
 				DialogBox.load_dialog(text)
 			else:
 				var text = ["That dog spirit I banished probably would have enjoyed this bone..."]

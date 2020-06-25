@@ -3,6 +3,7 @@ extends Area2D
 var secretFound = false
 var readable = true
 var text = ["There doesn't seem to be anything left to do here."]
+var hint = ["It's filled with books about the human body.\nThere appears to be a book missing"]
 func _ready():
 	$silverKey/CollisionShape2D.disabled = true
 	$silverKey/Sprite.visible = false
@@ -24,3 +25,9 @@ func interact_action(area):
 			readable = true
 		else:
 			return
+	else:
+		DialogBox.load_dialog(hint)
+		readable = false
+		yield(DialogBox, "finished")
+		yield(get_tree().create_timer(.5), "timeout")
+		readable = true
