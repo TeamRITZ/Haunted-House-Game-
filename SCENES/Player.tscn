@@ -183,6 +183,7 @@ shape = SubResource( 5 )
 [node name="InteractPrompt" type="AnimatedSprite" parent="."]
 position = Vector2( 110, -50 )
 scale = Vector2( 4, 4 )
+z_index = 1
 frames = SubResource( 6 )
 
 [node name="ItemPickup" type="AudioStreamPlayer2D" parent="."]

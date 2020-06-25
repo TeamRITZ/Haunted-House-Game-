@@ -1,0 +1,327 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://SCENES/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SCENES/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test.gd" type="Script" id=3]
+[ext_resource path="res://Tilemap Images/Asset/light.png" type="Texture" id=4]
+[ext_resource path="res://SCENES/camera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SCENES/WhiteGhost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/HealthPotion.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SCENES/Bedroom.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tilemap Images/RedLight.png" type="Texture" id=9]
+[ext_resource path="res://Background Sounds/277192__thedweebman__eerie-tone-music-background-loop.ogg" type="AudioStream" id=10]
+[ext_resource path="res://SCENES/RedGhost.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SCENES/MusicBox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://SCENES/LivingRoom.tscn" type="PackedScene" id=13]
+[ext_resource path="res://SCENES/Library.tscn" type="PackedScene" id=14]
+[ext_resource path="res://SCENES/Kitchen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://SCENES/MasterBedroom.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCENES/Attic.tscn" type="PackedScene" id=17]
+[ext_resource path="res://SCENES/Boss.tscn" type="PackedScene" id=18]
+[ext_resource path="res://SCENES/DogGhost.tscn" type="PackedScene" id=19]
+[ext_resource path="res://SCENES/bone.tscn" type="PackedScene" id=20]
+[ext_resource path="res://SCENES/Basement.tscn" type="PackedScene" id=21]
+[ext_resource path="res://SCENES/Entrance.tscn" type="PackedScene" id=22]
+[ext_resource path="res://SCENES/MagicBook.tscn" type="PackedScene" id=23]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+closed = false
+polygon = PoolVector2Array( -31.025, 20.0769, -19.2019, -26.4471, -18.7618, -26.4471, 6.76563, -26.4471, 15.3043, 20.0769 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -235.569, -6.64414, -235.192, 62.0345, -347.266, 62.4118, -346.889, -7.0215 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 141.687, 112.67, 152.185, 111.504, 153.351, 124.334, 162.682, 127.833, 163.848, 176.82, 163.848, 179.153, 152.185, 190.816, 151.018, 204.812, 139.355, 207.145, 138.188, 190.816, 132.357, 174.487, 133.523, 132.498, 140.521, 125.5 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -175.941, 261.964, -171.275, 239.803, -140.95, 238.637, -136.284, 259.631 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+closed = false
+cull_mode = 2
+polygon = PoolVector2Array( -138.617, 266.629, -132.785, 289.956, -114.124, 287.624, -111.791, 277.126 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -66.3031, 285.291, -55.6478, 282.495, -55.8058, 263.13, -42.976, 265.463, -40.1722, 301.066 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+closed = false
+cull_mode = 2
+polygon = PoolVector2Array( -75.6339, 265.463, -60.2905, 263.924, -56.9722, 246.801, -47.6414, 251.467, -45.3087, 268.962, -47.6414, 285.291 )
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 89.1335, 104.155, 0, 0, 0, 0, 225.552, 108.551, 0, 0, 0, 0, 535.87, 107.361, 0, 0, 0, 0, 533.079, 163.662, 0, 0, 0, 0, 532.347, 212.743, 0, 0, 0, 0, 91.3495, 209.419, 0, 0, 0, 0, 89.1335, 104.155 )
+}
+
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 751.525, -411.264, 0, 0, 0, 0, 881.487, -413.069, 0, 0, 0, 0, 890.512, -340.868, 0, 0, 0, 0, 748.818, -339.965, 0, 0, 0, 0, 751.525, -411.264 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1858.31, -410.603, 0, 0, 0, 0, 1588.2, -414.48, 0, 0, 0, 0, 1513.24, -74.5866, 0, 0, 0, 0, 1862.18, -73.2943, 0, 0, 0, 0, 1863.61, -43.6223, 0, 0, 0, 0, 1492.71, -35.4578, 0, 0, 0, 0, 1588.35, -411.025, 0, 0, 0, 0, 1859.06, -389.942, 0, 0, 0, 0, 1858.31, -410.603 )
+}
+
+[sub_resource type="Curve2D" id=11]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2145.66, -357.714, 0, 0, 0, 0, 2433.49, -349.122, 0, 0, 0, 0, 2430.62, -270.363, 0, 0, 0, 0, 2145.66, -270.363, 0, 0, 0, 0, 2145.66, -357.714 )
+}
+
+[sub_resource type="OccluderPolygon2D" id=12]
+polygon = PoolVector2Array( -3.5033, 4.77617, -2.34262, -7.21744, 2.68695, -6.44366, 5.39517, 4.38928 )
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 363.256, 183.909, 0, 0, 0, 0, 364.154, 118.134, 0, 0, 0, 0, 442.38, 113.611, 0, 0, 0, 0, 433.91, -14.0391, 0, 0, 0, 0, 311.341, -10.1038, 0, 0, 0, 0, 310.601, -47.0309, 0, 0, 0, 0, 239.701, -45.6093, 0, 0, 0, 0, 241.776, 94.7288, 0, 0, 0, 0, -69.0771, 104.656, 0, 0, 0, 0, -70.3728, 187.432, 0, 0, 0, 0, 99.4183, 180.333, 0, 0, 0, 0, 239.727, 176.781, 0, 0, 0, 0, 363.256, 183.909 )
+}
+
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1293.92, -414.323, 0, 0, 0, 0, 1314.97, -105.181, 0, 0, 0, 0, 1036.85, -97.4243, 0, 0, 0, 0, 1035.75, -116.261, 0, 0, 0, 0, 1291.7, -119.585, 0, 0, 0, 0, 1266.22, -413.215, 0, 0, 0, 0, 1293.92, -414.323 )
+}
+
+[sub_resource type="Curve2D" id=15]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2295.55, -62.5146, 0, 0, 0, 0, 2506.55, -59.5146, 0, 0, 0, 0, 2506.55, -403.516, 0, 0, 0, 0, 2295.55, -62.5146 )
+}
+
+[node name="Node2D" type="Node2D"]
+modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
+position = Vector2( -1.36047, -1.36035 )
+script = ExtResource( 3 )
+
+[node name="Bedroom" parent="." instance=ExtResource( 8 )]
+scale = Vector2( 1.00036, 1.00073 )
+
+[node name="window" type="Light2D" parent="Bedroom"]
+position = Vector2( 782.863, 84.7717 )
+texture = ExtResource( 4 )
+shadow_enabled = true
+shadow_gradient_length = 10.0
+shadow_filter = 5
+shadow_filter_smooth = 5.0
+
+[node name="curtain" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 0.993649, -19.9769 )
+occluder = SubResource( 1 )
+
+[node name="bookshelf" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 195.948, -44.3215 )
+occluder = SubResource( 2 )
+
+[node name="dresses" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 0, -85.319 )
+occluder = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 62.26, 31.4677 )
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 3.49902, 5.83176 )
+occluder = SubResource( 5 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Bedroom/window"]
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Bedroom/window"]
+position = Vector2( 1.16632, 14.9876 )
+occluder = SubResource( 7 )
+
+[node name="window2" type="Light2D" parent="Bedroom"]
+position = Vector2( 600.337, 51.2165 )
+texture = ExtResource( 4 )
+shadow_enabled = true
+shadow_gradient_length = 10.0
+shadow_filter = 5
+shadow_filter_smooth = 5.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="curtain2" type="LightOccluder2D" parent="Bedroom/window2"]
+position = Vector2( 5.47541, 14.2932 )
+occluder = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DemonicSymbolLight" type="Light2D" parent="Bedroom/window2"]
+position = Vector2( -514.51, 154.454 )
+scale = Vector2( 0.315008, 0.351921 )
+texture = ExtResource( 9 )
+
+[node name="CandleLight" type="Light2D" parent="Bedroom"]
+position = Vector2( 27.6825, 465.475 )
+scale = Vector2( 0.0768506, 0.0748481 )
+texture = ExtResource( 4 )
+
+[node name="LivingRoom" parent="." instance=ExtResource( 13 )]
+position = Vector2( 0.919495, -540.375 )
+
+[node name="Library" parent="." instance=ExtResource( 14 )]
+position = Vector2( 955.646, -540.364 )
+
+[node name="Kitchen" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1911.57, -540.353 )
+
+[node name="MasterBedroom" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1911.62, -1081.22 )
+
+[node name="Basement" parent="." instance=ExtResource( 21 )]
+position = Vector2( 5.07874, 541.365 )
+scale = Vector2( 0.996177, 0.965238 )
+
+[node name="Entrance" parent="." instance=ExtResource( 22 )]
+position = Vector2( 955.631, 0.450562 )
+
+[node name="Attic" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1911.61, -1622.1 )
+
+[node name="MagicBook" parent="Attic" instance=ExtResource( 23 )]
+position = Vector2( 481.426, 108.566 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1396.82, 428.853 )
+scale = Vector2( 0.388791, 0.395173 )
+
+[node name="RedGhost" parent="." instance=ExtResource( 11 )]
+position = Vector2( 124.004, 388.427 )
+scale = Vector2( 1.48, 1.48 )
+
+[node name="RedGhost2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 145.204, -350.935 )
+scale = Vector2( 1.48, 1.48 )
+
+[node name="RedGhost3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2093, -908.958 )
+scale = Vector2( 1.48, 1.48 )
+
+[node name="RedGhost4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2725.4, -692.523 )
+scale = Vector2( 1.48, 1.48 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 28.5001, 116.85 )
+curve = SubResource( 8 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 89.1335, 104.155 )
+rotation = 0.0200484
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 0.612042, -3.33053 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 751.525, -411.264 )
+rotate = false
+
+[node name="WhiteGhost2" parent="Path2D2/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 0.828857, 0.0133362 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource( 10 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2( 1858.31, -410.603 )
+rotate = false
+
+[node name="WhiteGhost3" parent="Path2D3/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 1.4574, -2.7377 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Path2D4" type="Path2D" parent="."]
+curve = SubResource( 11 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2( 2145.66, -357.714 )
+rotate = false
+
+[node name="WhiteGhost4" parent="Path2D4/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 3.12524, 7.06012 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+
+[node name="HealthPotion" parent="." instance=ExtResource( 7 )]
+position = Vector2( 687.749, 280.117 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="HealthPotion"]
+occluder = SubResource( 12 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 960, 0 )
+current = true
+
+[node name="Music Box" parent="." instance=ExtResource( 12 )]
+position = Vector2( 412.857, 97.2701 )
+scale = Vector2( 0.570743, 0.659984 )
+
+[node name="bone" parent="." instance=ExtResource( 20 )]
+position = Vector2( 711.816, 815.229 )
+
+[node name="Boss" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2391.79, -1459.95 )
+
+[node name="DogGhost" parent="." instance=ExtResource( 19 )]
+position = Vector2( 62.2289, 841.924 )
+scale = Vector2( 0.3, 0.3 )
+dropBrassKey = true
+
+[node name="Path2D5" type="Path2D" parent="."]
+position = Vector2( 2148.79, -350.654 )
+rotation = 0.0200484
+scale = Vector2( 1.5, 1.5 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2( 363.256, 183.909 )
+rotation = -1.55714
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D5/PathFollow2D" instance=ExtResource( 6 )]
+rotation = 1.5708
+speed = 100
+
+[node name="Path2D6" type="Path2D" parent="."]
+curve = SubResource( 14 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D6"]
+position = Vector2( 1293.92, -414.323 )
+rotation = 1.50279
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D6/PathFollow2D" instance=ExtResource( 6 )]
+rotation = 4.72984
+
+[node name="Path2D7" type="Path2D" parent="."]
+curve = SubResource( 15 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D7"]
+position = Vector2( 2295.55, -62.5146 )
+rotation = 0.0142211
+rotate = false
+
+[node name="WhiteGhost" parent="Path2D7/PathFollow2D" instance=ExtResource( 6 )]
+scale = Vector2( 1.25, 1.25 )

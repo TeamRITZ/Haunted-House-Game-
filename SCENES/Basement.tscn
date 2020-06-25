@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Tilemap Images/Asset/dungeonex.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap Images/Asset/container.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Tilemap Images/Asset/food.png" type="Texture" id=6]
 [ext_resource path="res://Tilemap Images/Asset/stone_house_interior (2).png" type="Texture" id=7]
 [ext_resource path="res://Tilemap Images/Asset/corpse.png" type="Texture" id=8]
+[ext_resource path="res://SCENES/Candle.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
@@ -1008,3 +1009,13 @@ tile_data = PoolIntArray( 262154, 34, 0, 262156, 34, 0, 524345, 41, 0, 655417, 4
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Candle" parent="." instance=ExtResource( 9 )]
+position = Vector2( 381.012, 131.584 )
+monitoring = false
+monitorable = false
+
+[node name="Light2D" parent="Candle" index="2"]
+energy = 0.9
+
+[editable path="Candle"]
