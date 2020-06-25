@@ -97,7 +97,7 @@ position = Vector2( -1.36047, -1.36035 )
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1423.18, 419.27 )
+position = Vector2( 1466.46, 390.597 )
 scale = Vector2( 0.388791, 0.395173 )
 
 [node name="Bedroom" parent="." instance=ExtResource( 8 )]

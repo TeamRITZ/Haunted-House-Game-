@@ -71,7 +71,7 @@ margin_bottom = 526.31
 size_flags_horizontal = 0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
-text = "Version 4.1.5
+text = "Version 0.9.1
 Team Ritz"
 __meta__ = {
 "_edit_use_anchors_": false
