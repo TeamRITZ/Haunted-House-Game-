@@ -219,7 +219,7 @@ position = Vector2( 412.857, 97.2701 )
 scale = Vector2( 0.570743, 0.659984 )
 
 [node name="bone" parent="." instance=ExtResource( 20 )]
-position = Vector2( 905.061, 372.606 )
+position = Vector2( 331.1, 122.19 )
 
 [node name="Boss" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2391.79, -1459.95 )

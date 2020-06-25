@@ -8,7 +8,7 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	var pos = get_node("../Player").global_position
 	var x = floor(pos.x / screen_size.x) * screen_size.x
 	var y = floor(pos.y / screen_size.y) * screen_size.y

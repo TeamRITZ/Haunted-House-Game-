@@ -12,14 +12,22 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
-	if not body is Player:
+	pass
+
+
+func _on_body_exited(body: PhysicsBody2D) -> void:
+	pass
+
+
+func _on_Switch_body_entered(body):
+	if body.get_name() != "Player":
 		return
 	animated_sprite.play("down")
 	emit_signal("pressed")
 
 
-func _on_body_exited(body: PhysicsBody2D) -> void:
-	if not body is Player:
+func _on_Switch_body_exited(body):
+	if body.get_name() != "Player":
 		return
 	animated_sprite.play("up")
 	emit_signal("unpressed")

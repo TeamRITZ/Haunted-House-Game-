@@ -58,29 +58,14 @@ animations = [ {
 "name": "walk_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "light_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "light_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "light_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "light_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "light_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 3 ) ],
@@ -88,9 +73,24 @@ animations = [ {
 "name": "walk_left",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 17 ), ExtResource( 25 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "light_down",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "light_left",
 "speed": 5.0
 } ]
 
@@ -197,7 +197,6 @@ occluder = SubResource( 7 )
 pause_mode = 2
 stream = ExtResource( 45 )
 [connection signal="directionChanged" from="." to="." method="_on_Player_directionChanged"]
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_HurtTimer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
