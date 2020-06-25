@@ -27,5 +27,5 @@ Congratulations! You have beaten the game without killing any passive spirits! N
 		yield(DialogBox, "finished") #wait for the player to finish reading
 		yield(get_tree().create_timer(.5), "timeout") #wait half a second so pressing E doesn't trigger the read again
 		readable = true
-		
+		SceneChanger.change_scene("res://SCENES/WinScene.tscn")
 		#Go to game ending screen here?

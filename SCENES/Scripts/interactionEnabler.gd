@@ -1,6 +1,8 @@
 extends Area2D
+
 var readable = true
-var text = ["It won't open. \n It's sealed with a heavy [color=red]brass[/color] lock."]
+var text = ["It won't open. \nIt's sealed with a heavy [color=red]brass[/color] lock."]
+
 func interact_action(area):
 	if area.TYPE == "PLAYER":
 		if area.get_parent().hasBrassKey == true:
